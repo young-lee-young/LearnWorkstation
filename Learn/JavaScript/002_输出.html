@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--弹窗-->
+    <script>
+        function window_alert() {
+            window.alert('leeyoung');
+        }
+    </script>
+    <button type="button" onclick="window_alert()">弹窗</button>
+
+
+    <!--操作HTML元素-->
+    <p id="demo1">被修改的文本</p>
+    <script>
+        function change_text() {
+            document.getElementById('demo1').innerHTML = '修改后的文本';
+        }
+    </script>
+    <button type="button" onclick="change_text()">修改文本</button>
+
+
+    <!--在文档加载完成后执行document.write()，整个HTML页面都会被覆盖-->
+    <p>写入HTML文档</p>
+    <script>
+        document.write(Date());
+    </script>
+
+
+    <!--控制台输出-->
+    <script>
+        function console_log() {
+            console.log('leeyoung');
+        }
+    </script>
+    <button type="button" onclick="console_log()">控制台输出</button>
+</body>
+</html>

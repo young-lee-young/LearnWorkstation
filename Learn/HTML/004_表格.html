@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<table>定义表格，border属性定义边框，cellpadding控制内容和边框的距离，cellspacing控制单元格之间的距离-->
+    <!--<th>表格头部-->
+    <!--<tr>定义行-->
+    <!--<td>定义列-->
+    <!--<caption>定义表格标题-->
+    <!--<col>定义用于表格列的属性-->
+    <!--<colgroup>定义表格列组-->
+    <!--<thead>定义表格页眉-->
+    <!--<tbody>定义表格主体-->
+    <!--<tfoot>定义表格页脚-->
+
+    <!--横向表格头-->
+    <table border='0'>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>李二</td>
+            <td>22</td>
+            <td>男</td>
+        </tr>
+    </table>
+
+    <!--竖向表格头,带标题-->
+    <table border='1'>
+        <caption>标题</caption>
+        <tr>
+            <th>姓名</th>
+            <td>李二</td>
+        <tr>
+        <tr>
+            <th>年龄</th>
+            <td>22</td>
+        <tr>
+        <tr>
+            <th>姓名</th>
+            <td>李二</td>
+        <tr>
+    </table>
+
+    <!--表格跨列-->
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th colspan='2'>电话</th>
+        </tr>
+        <tr>
+            <td>李二</td>
+            <td>18800000000</td>
+            <td>18400000000</td>
+        </tr>
+    </table>
+
+    <!--表格跨列，控制内容和边框距离-->
+    <table border='1', cellpadding='10'>
+        <tr>
+            <th>姓名</th>
+            <td>李瑶</tr>
+        </tr>
+        <tr>
+            <th rowspan='2'>电话</th>
+            <td>18800000000</td>
+        </tr>
+        <tr>
+            <td>18400000000</td>
+        </tr>
+    </table>
+</body>
+</html>

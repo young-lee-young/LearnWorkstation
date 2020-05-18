@@ -1,0 +1,32 @@
+
+/*字体之间用逗号隔开，如果浏览器不支持第一种字体，就开始用第二种，以此类推*/
+p {font-family: 'Times New Roman', Times, serif;}
+
+
+/*字体样式*/
+p.normal {font-style: normal;}
+/*斜体*/
+p.italic {font-style: italic;}
+/*倾斜*/
+p.oblique {font-style: oblique;}
+
+
+/*字体大小，默认的字体大小是16px=1em*/
+/*绝对大小*/
+p {font-size: 40px;} /*这种方法在IE9之前的浏览器无法使用*/
+p {font-size: 2.5em;} /*40px/16=2.5em*/
+
+
+/*字体加粗*/
+p {font-weight: normal;}
+p.light {font-weight: lighter;}
+p.thick {font-weight: bold;}
+p.thicker {font-weight: 900;}
+
+
+/*以小型大写字体或者正常字体显示文本*/
+p.normal {font-variant: normal;}
+p.small {font-variant: small-caps;}
+
+
+/*简写的顺序是font-family、font-style、font-variant、font-weight、font-size*/

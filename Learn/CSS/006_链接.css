@@ -1,0 +1,22 @@
+
+/*链接的样式*/
+a:link {color: #ff0000;} /*正常的链接*/
+a:visited {color: #00FF00;} /*被点击过的链接*/
+a:hover {color: #FF00FF;} /*鼠标放在链接上时*/
+a:active {color: #0000FF;} /*链接被点击那一刻*/
+
+
+/*链接顺序*/
+a:hover必须在a:link和a:visited之后
+a:active必须分在a:hover之后
+
+
+/*文本装饰*/
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+a:active {text-decoration: underline;}
+
+
+/*背景颜色*/
+a:link {background-color: #fff;}

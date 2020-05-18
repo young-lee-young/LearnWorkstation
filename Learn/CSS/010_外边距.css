@@ -1,0 +1,10 @@
+
+/*外边距*/
+/*接收任意长度单位，百分数，负值，没有背景颜色，完全透明*/
+
+p {margin-left: auto;}
+p {margin-top: 20px;}
+p {margin-bottom: 20%;}
+p {margin-right: -20px;} /*重叠*/
+
+

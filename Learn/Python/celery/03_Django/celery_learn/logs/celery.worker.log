@@ -1,0 +1,2156 @@
+[2019-07-14 05:36:16,333: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-07-14 05:36:16,342: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/billiard/__init__.py:321: RuntimeWarning: force_execv is not supported as the billiard C extension is not installed
+  warnings.warn(RuntimeWarning(W_NO_EXECV))
+[2019-07-14 05:36:16,499: INFO/MainProcess] Connected to redis://localhost:6379/1
+[2019-07-14 05:36:16,509: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-14 05:36:17,519: INFO/MainProcess] mingle: all alone
+[2019-07-14 05:36:17,531: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-07-14 05:36:17,531: WARNING/MainProcess] celery@MyMac ready.
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@MyMac v3.1.23 (Cipater)
+---- **** ----- 
+--- * ***  * -- Darwin-17.5.0-x86_64-64bit
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x109038f98 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   redis://localhost:6379/1
+- ** ---------- .> results:     redis://localhost:6379/2
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> beat_tasks       exchange=beat_tasks(direct) key=beat_tasks
+                .> work_queue       exchange=work_queue(direct) key=work_queue
+
+[tasks]
+  . test_task
+
+[2019-07-14 05:47:41,693: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-07-14 05:47:41,702: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/billiard/__init__.py:321: RuntimeWarning: force_execv is not supported as the billiard C extension is not installed
+  warnings.warn(RuntimeWarning(W_NO_EXECV))
+[2019-07-14 05:47:41,846: INFO/MainProcess] Connected to redis://localhost:6379/1
+[2019-07-14 05:47:41,855: INFO/MainProcess] mingle: searching for neighbors
+[2019-07-14 05:47:42,863: INFO/MainProcess] mingle: all alone
+[2019-07-14 05:47:42,875: WARNING/MainProcess] /Users/leeyoung/Code/python3bottomvirtual/lib/python3.6/site-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-07-14 05:47:42,875: WARNING/MainProcess] celery@MyMac ready.
+[2019-07-14 05:54:30,648: INFO/MainProcess] Received task: test_task[cf03297c-4928-47bf-9803-e5dcccf7a88b]
+[2019-07-14 05:54:30,651: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:31,647: INFO/MainProcess] Received task: test_task[00dec67c-8da2-4375-9351-30815d2822bf]
+[2019-07-14 05:54:31,649: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:32,647: INFO/MainProcess] Received task: test_task[468e49a4-13da-4695-8020-bdb8b65b86fe]
+[2019-07-14 05:54:32,649: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:33,646: INFO/MainProcess] Received task: test_task[ce578056-b2cf-4479-adb3-8cba6065f186]
+[2019-07-14 05:54:33,647: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:34,647: INFO/MainProcess] Received task: test_task[9c412bf7-f2c9-4815-9e59-5cbeccd97fa9]
+[2019-07-14 05:54:35,646: INFO/MainProcess] Received task: test_task[542c7bf5-b7d7-46f0-a288-82112487174f]
+[2019-07-14 05:54:35,653: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:54:35,654: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:54:35,664: INFO/MainProcess] Task test_task[cf03297c-4928-47bf-9803-e5dcccf7a88b] succeeded in 5.0136960560048465s: None
+[2019-07-14 05:54:35,664: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:36,646: INFO/MainProcess] Received task: test_task[5e19f346-22c3-4478-92b9-f9ffd64641f8]
+[2019-07-14 05:54:36,651: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:54:36,651: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:54:36,658: INFO/MainProcess] Task test_task[00dec67c-8da2-4375-9351-30815d2822bf] succeeded in 5.008903600013582s: None
+[2019-07-14 05:54:36,658: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:37,647: INFO/MainProcess] Received task: test_task[da7a601e-9043-43d7-bbf3-bb541ef750e5]
+[2019-07-14 05:54:37,650: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:54:37,651: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:54:37,660: INFO/MainProcess] Task test_task[468e49a4-13da-4695-8020-bdb8b65b86fe] succeeded in 5.0116436750104185s: None
+[2019-07-14 05:54:37,660: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:38,648: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:54:38,649: INFO/MainProcess] Received task: test_task[107656b4-a7a6-4495-8480-ff39aece0b9d]
+[2019-07-14 05:54:38,649: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:54:38,656: INFO/MainProcess] Task test_task[ce578056-b2cf-4479-adb3-8cba6065f186] succeeded in 5.008900824002922s: None
+[2019-07-14 05:54:38,656: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:39,647: INFO/MainProcess] Received task: test_task[5f8b67f0-d507-47f1-ac99-7c65e29fedf9]
+[2019-07-14 05:54:40,647: INFO/MainProcess] Received task: test_task[dfcd40d3-ce51-487c-ac2b-0f4702e5ebc4]
+[2019-07-14 05:54:40,666: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:54:40,667: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:54:40,669: INFO/MainProcess] Task test_task[9c412bf7-f2c9-4815-9e59-5cbeccd97fa9] succeeded in 5.004858164989855s: None
+[2019-07-14 05:54:40,670: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:41,648: INFO/MainProcess] Received task: test_task[df3f230b-a589-478f-8ae2-d8171754e466]
+[2019-07-14 05:54:41,660: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:54:41,661: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:54:41,663: INFO/MainProcess] Task test_task[542c7bf5-b7d7-46f0-a288-82112487174f] succeeded in 5.00438054301776s: None
+[2019-07-14 05:54:41,664: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:42,648: INFO/MainProcess] Received task: test_task[4fd248f0-b5d0-42a0-b878-5f628aa718c9]
+[2019-07-14 05:54:42,661: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:54:42,661: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:54:42,664: INFO/MainProcess] Task test_task[5e19f346-22c3-4478-92b9-f9ffd64641f8] succeeded in 5.003693440987263s: None
+[2019-07-14 05:54:42,665: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:43,649: INFO/MainProcess] Received task: test_task[a85e670c-5495-44ed-9ee2-356cae6312ca]
+[2019-07-14 05:54:43,658: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:54:43,659: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:54:43,662: INFO/MainProcess] Task test_task[da7a601e-9043-43d7-bbf3-bb541ef750e5] succeeded in 5.005142823996721s: None
+[2019-07-14 05:54:43,663: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:44,649: INFO/MainProcess] Received task: test_task[d9d8e960-6ca1-4d32-9780-eb8b55b02056]
+[2019-07-14 05:54:45,649: INFO/MainProcess] Received task: test_task[53104874-8218-4b93-9815-765241254990]
+[2019-07-14 05:54:45,670: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:54:45,671: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:54:45,672: INFO/MainProcess] Task test_task[107656b4-a7a6-4495-8480-ff39aece0b9d] succeeded in 5.002080758014927s: None
+[2019-07-14 05:54:45,672: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:46,649: INFO/MainProcess] Received task: test_task[c59f19d7-6aa9-465e-bd5a-2bc68762e15c]
+[2019-07-14 05:54:46,665: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:54:46,666: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:54:46,667: INFO/MainProcess] Task test_task[5f8b67f0-d507-47f1-ac99-7c65e29fedf9] succeeded in 5.0033168450172525s: None
+[2019-07-14 05:54:46,668: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:47,650: INFO/MainProcess] Received task: test_task[167e0a9c-4876-4476-baee-e945101a3f0f]
+[2019-07-14 05:54:47,666: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:54:47,667: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:54:47,670: INFO/MainProcess] Task test_task[dfcd40d3-ce51-487c-ac2b-0f4702e5ebc4] succeeded in 5.004785680997884s: None
+[2019-07-14 05:54:47,670: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:48,650: INFO/MainProcess] Received task: test_task[25bb5d54-f8c4-4cc1-98ab-93aff8bdd9c9]
+[2019-07-14 05:54:48,664: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:54:48,664: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:54:48,666: INFO/MainProcess] Task test_task[df3f230b-a589-478f-8ae2-d8171754e466] succeeded in 5.003068335994612s: None
+[2019-07-14 05:54:48,666: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:49,650: INFO/MainProcess] Received task: test_task[e2bc333a-8743-4353-b702-234c56269182]
+[2019-07-14 05:54:50,651: INFO/MainProcess] Received task: test_task[27deea84-9ac8-47c0-9535-2eadd840fba1]
+[2019-07-14 05:54:50,673: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:54:50,675: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:54:50,676: INFO/MainProcess] Task test_task[4fd248f0-b5d0-42a0-b878-5f628aa718c9] succeeded in 5.003929165017325s: None
+[2019-07-14 05:54:50,678: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:51,650: INFO/MainProcess] Received task: test_task[8544d5ed-1577-40e7-b2a3-3a5810660c9a]
+[2019-07-14 05:54:51,669: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:54:51,670: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:54:51,672: INFO/MainProcess] Task test_task[a85e670c-5495-44ed-9ee2-356cae6312ca] succeeded in 5.0047018690092955s: None
+[2019-07-14 05:54:51,673: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:52,651: INFO/MainProcess] Received task: test_task[1a53d336-436a-4c56-866a-4485e52d4862]
+[2019-07-14 05:54:52,671: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:54:52,672: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:54:52,673: INFO/MainProcess] Task test_task[d9d8e960-6ca1-4d32-9780-eb8b55b02056] succeeded in 5.002970086992718s: None
+[2019-07-14 05:54:52,674: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:53,667: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:54:53,668: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:54:53,671: INFO/MainProcess] Task test_task[53104874-8218-4b93-9815-765241254990] succeeded in 5.005061467993073s: None
+[2019-07-14 05:54:53,672: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:55,652: INFO/MainProcess] Received task: test_task[9a690b86-e070-444f-a137-bf1efc3ef338]
+[2019-07-14 05:54:55,680: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:54:55,680: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:54:55,684: INFO/MainProcess] Task test_task[c59f19d7-6aa9-465e-bd5a-2bc68762e15c] succeeded in 5.006482747994596s: None
+[2019-07-14 05:54:55,685: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:54:56,652: INFO/MainProcess] Received task: test_task[41e31791-3812-4734-8cbe-41f57a289a2f]
+[2019-07-14 05:54:56,675: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:54:56,675: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:54:56,676: INFO/MainProcess] Task test_task[167e0a9c-4876-4476-baee-e945101a3f0f] succeeded in 5.003006407991052s: None
+[2019-07-14 05:54:56,677: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:54:57,675: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:54:57,676: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:54:57,677: INFO/MainProcess] Task test_task[25bb5d54-f8c4-4cc1-98ab-93aff8bdd9c9] succeeded in 5.002712549001444s: None
+[2019-07-14 05:54:57,678: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:54:58,674: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:54:58,674: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:54:58,677: INFO/MainProcess] Task test_task[e2bc333a-8743-4353-b702-234c56269182] succeeded in 5.004116341995541s: None
+[2019-07-14 05:54:58,677: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:54:59,653: INFO/MainProcess] Received task: test_task[02ccdfa8-bbef-4ab9-ab7c-f23e754a4a3a]
+[2019-07-14 05:55:00,653: INFO/MainProcess] Received task: test_task[d9bd6a94-479c-420a-aa79-6851777c333d]
+[2019-07-14 05:55:00,685: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:00,686: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:00,687: INFO/MainProcess] Task test_task[27deea84-9ac8-47c0-9535-2eadd840fba1] succeeded in 5.002291115990374s: None
+[2019-07-14 05:55:00,688: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:01,653: INFO/MainProcess] Received task: test_task[745257f5-eee3-446a-a9f7-37298410f071]
+[2019-07-14 05:55:01,678: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:01,678: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:01,681: INFO/MainProcess] Task test_task[8544d5ed-1577-40e7-b2a3-3a5810660c9a] succeeded in 5.00366216499242s: None
+[2019-07-14 05:55:01,681: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:02,678: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:02,679: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:02,681: INFO/MainProcess] Task test_task[1a53d336-436a-4c56-866a-4485e52d4862] succeeded in 5.003603830002248s: None
+[2019-07-14 05:55:02,682: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:03,678: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:03,678: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:03,681: INFO/MainProcess] Task test_task[9a690b86-e070-444f-a137-bf1efc3ef338] succeeded in 5.00417838600697s: None
+[2019-07-14 05:55:03,682: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:05,654: INFO/MainProcess] Received task: test_task[c747c324-21fa-4f55-8d3f-14551806c30c]
+[2019-07-14 05:55:05,689: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:05,689: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:05,691: INFO/MainProcess] Task test_task[41e31791-3812-4734-8cbe-41f57a289a2f] succeeded in 5.00324045799789s: None
+[2019-07-14 05:55:05,691: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:06,655: INFO/MainProcess] Received task: test_task[6adefec2-265d-42b4-bf4d-0a340c912884]
+[2019-07-14 05:55:06,682: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:06,683: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:06,686: INFO/MainProcess] Task test_task[02ccdfa8-bbef-4ab9-ab7c-f23e754a4a3a] succeeded in 5.005211848998442s: None
+[2019-07-14 05:55:06,687: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:07,684: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:07,685: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:07,687: INFO/MainProcess] Task test_task[d9bd6a94-479c-420a-aa79-6851777c333d] succeeded in 5.00492427800782s: None
+[2019-07-14 05:55:08,654: INFO/MainProcess] Received task: test_task[025cf65e-3a1a-43b4-8b41-334575e64733]
+[2019-07-14 05:55:08,655: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:08,684: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:08,684: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:08,686: INFO/MainProcess] Task test_task[745257f5-eee3-446a-a9f7-37298410f071] succeeded in 5.003646402998129s: None
+[2019-07-14 05:55:09,655: INFO/MainProcess] Received task: test_task[8b065511-bcfe-4e7d-915e-232c563883a5]
+[2019-07-14 05:55:09,655: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:10,655: INFO/MainProcess] Received task: test_task[b81fb1bc-8ce4-4fe7-b3f1-852810423586]
+[2019-07-14 05:55:10,692: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:10,693: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:10,694: INFO/MainProcess] Task test_task[c747c324-21fa-4f55-8d3f-14551806c30c] succeeded in 5.002506385004381s: None
+[2019-07-14 05:55:10,695: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:11,689: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:11,689: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:11,692: INFO/MainProcess] Task test_task[6adefec2-265d-42b4-bf4d-0a340c912884] succeeded in 5.005020381009672s: None
+[2019-07-14 05:55:13,656: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:13,656: INFO/MainProcess] Received task: test_task[8947aaa7-2118-4197-b022-20abf4d1514b]
+[2019-07-14 05:55:13,656: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:13,657: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:13,657: INFO/MainProcess] Task test_task[025cf65e-3a1a-43b4-8b41-334575e64733] succeeded in 5.002386400999967s: None
+[2019-07-14 05:55:14,656: INFO/MainProcess] Received task: test_task[b2f129ad-14b6-40cf-b168-fdfcc7a7c666]
+[2019-07-14 05:55:14,657: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:14,657: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:14,657: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:14,659: INFO/MainProcess] Task test_task[8b065511-bcfe-4e7d-915e-232c563883a5] succeeded in 5.004101837985218s: None
+[2019-07-14 05:55:15,656: INFO/MainProcess] Received task: test_task[4d965b9e-017d-43da-a1ba-ea5ef34019a3]
+[2019-07-14 05:55:15,657: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:15,695: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:15,696: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:15,697: INFO/MainProcess] Task test_task[b81fb1bc-8ce4-4fe7-b3f1-852810423586] succeeded in 5.001816106989281s: None
+[2019-07-14 05:55:18,657: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:18,657: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:18,659: INFO/MainProcess] Task test_task[8947aaa7-2118-4197-b022-20abf4d1514b] succeeded in 5.001971956982743s: None
+[2019-07-14 05:55:19,658: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:19,659: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:19,660: INFO/MainProcess] Task test_task[b2f129ad-14b6-40cf-b168-fdfcc7a7c666] succeeded in 5.002760094997939s: None
+[2019-07-14 05:55:20,658: INFO/MainProcess] Received task: test_task[f4ff14d9-900a-440f-9418-dfc252308e65]
+[2019-07-14 05:55:20,658: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:20,658: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:20,659: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:20,660: INFO/MainProcess] Task test_task[4d965b9e-017d-43da-a1ba-ea5ef34019a3] succeeded in 5.002582943998277s: None
+[2019-07-14 05:55:21,658: INFO/MainProcess] Received task: test_task[59e16130-1e15-48f9-8acc-21a1532f957c]
+[2019-07-14 05:55:21,659: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:22,658: INFO/MainProcess] Received task: test_task[a2af4d1d-9d0a-4e4f-a918-766738432017]
+[2019-07-14 05:55:22,659: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:25,660: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:25,660: INFO/MainProcess] Received task: test_task[a7be2c4c-9c64-437b-ba66-dce7a5d1c146]
+[2019-07-14 05:55:25,661: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:25,662: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:25,663: INFO/MainProcess] Task test_task[f4ff14d9-900a-440f-9418-dfc252308e65] succeeded in 5.003589771018596s: None
+[2019-07-14 05:55:26,659: INFO/MainProcess] Received task: test_task[221149df-7901-4493-b9e6-0b1a9dc0d35a]
+[2019-07-14 05:55:26,659: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:26,659: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:26,660: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:26,660: INFO/MainProcess] Task test_task[59e16130-1e15-48f9-8acc-21a1532f957c] succeeded in 5.001912751002237s: None
+[2019-07-14 05:55:27,659: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:27,659: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:27,661: INFO/MainProcess] Task test_task[a2af4d1d-9d0a-4e4f-a918-766738432017] succeeded in 5.002263201982714s: None
+[2019-07-14 05:55:30,661: INFO/MainProcess] Received task: test_task[b7c25786-e68c-431f-b381-8594569e507b]
+[2019-07-14 05:55:30,662: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:30,664: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:30,665: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:30,667: INFO/MainProcess] Task test_task[a7be2c4c-9c64-437b-ba66-dce7a5d1c146] succeeded in 5.0044633480138145s: None
+[2019-07-14 05:55:31,660: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:31,660: INFO/MainProcess] Received task: test_task[08eb943c-6432-4c4b-b86f-518e7a411a61]
+[2019-07-14 05:55:31,660: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:31,661: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:31,661: INFO/MainProcess] Task test_task[221149df-7901-4493-b9e6-0b1a9dc0d35a] succeeded in 5.001728268020088s: None
+[2019-07-14 05:55:32,660: INFO/MainProcess] Received task: test_task[e6dff60d-1bc1-4eb7-8cbf-b47e80064e9a]
+[2019-07-14 05:55:32,661: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:35,664: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:35,664: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:35,665: INFO/MainProcess] Task test_task[b7c25786-e68c-431f-b381-8594569e507b] succeeded in 5.003343833988765s: None
+[2019-07-14 05:55:36,661: INFO/MainProcess] Received task: test_task[4aa14a7a-a9d9-4546-8d3d-7a97f8677e45]
+[2019-07-14 05:55:36,661: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:36,662: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:36,662: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:36,663: INFO/MainProcess] Task test_task[08eb943c-6432-4c4b-b86f-518e7a411a61] succeeded in 5.00179262200254s: None
+[2019-07-14 05:55:37,661: INFO/MainProcess] Received task: test_task[36dc14a8-59f1-45ee-b0a5-9e22e51f1392]
+[2019-07-14 05:55:37,662: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:37,662: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:37,662: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:37,663: INFO/MainProcess] Task test_task[e6dff60d-1bc1-4eb7-8cbf-b47e80064e9a] succeeded in 5.002059722988633s: None
+[2019-07-14 05:55:40,662: INFO/MainProcess] Received task: test_task[e6352929-8ac9-4b79-aed8-c55d73d212e6]
+[2019-07-14 05:55:40,663: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:41,662: INFO/MainProcess] Received task: test_task[589cd651-9c3a-44b9-a0c7-ed8ced102ba3]
+[2019-07-14 05:55:41,663: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:41,663: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:41,663: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:41,664: INFO/MainProcess] Task test_task[4aa14a7a-a9d9-4546-8d3d-7a97f8677e45] succeeded in 5.002413197013084s: None
+[2019-07-14 05:55:42,662: INFO/MainProcess] Received task: test_task[9dacc711-96fe-449a-9c99-75524cbda4c9]
+[2019-07-14 05:55:42,663: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:42,663: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:42,664: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:42,665: INFO/MainProcess] Task test_task[36dc14a8-59f1-45ee-b0a5-9e22e51f1392] succeeded in 5.003318771981867s: None
+[2019-07-14 05:55:43,663: INFO/MainProcess] Received task: test_task[191e3b44-4f98-46d5-b236-e3c3862f618a]
+[2019-07-14 05:55:43,663: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:45,663: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:45,663: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:45,665: INFO/MainProcess] Task test_task[e6352929-8ac9-4b79-aed8-c55d73d212e6] succeeded in 5.001992651988985s: None
+[2019-07-14 05:55:46,663: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:46,664: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:46,665: INFO/MainProcess] Task test_task[589cd651-9c3a-44b9-a0c7-ed8ced102ba3] succeeded in 5.002064656000584s: None
+[2019-07-14 05:55:47,664: INFO/MainProcess] Received task: test_task[c6a9c741-a19e-4e0e-8c1c-5a53cba67b9f]
+[2019-07-14 05:55:47,664: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:47,666: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:47,666: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:47,667: INFO/MainProcess] Task test_task[9dacc711-96fe-449a-9c99-75524cbda4c9] succeeded in 5.003897001006408s: None
+[2019-07-14 05:55:48,664: INFO/MainProcess] Received task: test_task[675455b7-f29d-4d56-b899-de041db0fcaf]
+[2019-07-14 05:55:48,664: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:48,664: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:48,664: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:48,665: INFO/MainProcess] Task test_task[191e3b44-4f98-46d5-b236-e3c3862f618a] succeeded in 5.002064567001071s: None
+[2019-07-14 05:55:49,664: INFO/MainProcess] Received task: test_task[e643b7f3-0c79-4717-b633-a05ed894b42f]
+[2019-07-14 05:55:49,664: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:52,665: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:52,665: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:52,666: INFO/MainProcess] Task test_task[c6a9c741-a19e-4e0e-8c1c-5a53cba67b9f] succeeded in 5.001897656999063s: None
+[2019-07-14 05:55:53,666: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:55:53,666: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:55:53,669: INFO/MainProcess] Received task: test_task[ff1152d8-ebda-4e50-a92b-0c357c756b06]
+[2019-07-14 05:55:53,673: INFO/MainProcess] Task test_task[675455b7-f29d-4d56-b899-de041db0fcaf] succeeded in 5.0089950319961645s: None
+[2019-07-14 05:55:53,677: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:55:54,665: INFO/MainProcess] Received task: test_task[39bf4063-34d0-42a4-a6ca-3a69d254320c]
+[2019-07-14 05:55:54,665: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:55:54,665: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:55:54,666: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:55:54,667: INFO/MainProcess] Task test_task[e643b7f3-0c79-4717-b633-a05ed894b42f] succeeded in 5.002475402987329s: None
+[2019-07-14 05:55:58,666: INFO/MainProcess] Received task: test_task[cc5f3fea-7854-4d1d-85ba-fb39e16d91ca]
+[2019-07-14 05:55:58,666: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:55:58,678: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:55:58,679: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:55:58,681: INFO/MainProcess] Task test_task[ff1152d8-ebda-4e50-a92b-0c357c756b06] succeeded in 5.004498169000726s: None
+[2019-07-14 05:55:59,666: INFO/MainProcess] Received task: test_task[3df16ab0-b592-4915-82f9-135d5016c313]
+[2019-07-14 05:55:59,667: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:55:59,667: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:55:59,667: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:55:59,668: INFO/MainProcess] Task test_task[39bf4063-34d0-42a4-a6ca-3a69d254320c] succeeded in 5.002433532004943s: None
+[2019-07-14 05:56:03,667: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:03,667: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:03,668: INFO/MainProcess] Task test_task[cc5f3fea-7854-4d1d-85ba-fb39e16d91ca] succeeded in 5.001854528003605s: None
+[2019-07-14 05:56:04,667: INFO/MainProcess] Received task: test_task[d35dc12f-08b7-47d7-8a6c-6ffde9d16986]
+[2019-07-14 05:56:04,668: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:04,668: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:04,668: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:04,669: INFO/MainProcess] Task test_task[3df16ab0-b592-4915-82f9-135d5016c313] succeeded in 5.002243227994768s: None
+[2019-07-14 05:56:05,668: INFO/MainProcess] Received task: test_task[4b7ea5ee-8078-4219-a6a4-e79aceb7471c]
+[2019-07-14 05:56:05,668: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:08,668: INFO/MainProcess] Received task: test_task[5c4bb010-2593-4141-aa59-e31508cdfdc1]
+[2019-07-14 05:56:08,669: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:09,669: INFO/MainProcess] Received task: test_task[7b461507-fac5-4533-86b0-ad1907129157]
+[2019-07-14 05:56:09,669: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:09,672: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:09,673: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:09,675: INFO/MainProcess] Task test_task[d35dc12f-08b7-47d7-8a6c-6ffde9d16986] succeeded in 5.004828823002754s: None
+[2019-07-14 05:56:10,673: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:10,674: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:10,675: INFO/MainProcess] Task test_task[4b7ea5ee-8078-4219-a6a4-e79aceb7471c] succeeded in 5.003564145008568s: None
+[2019-07-14 05:56:12,669: INFO/MainProcess] Received task: test_task[efbea5a2-1572-4a95-babf-4ddfea2acb3d]
+[2019-07-14 05:56:12,670: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:13,669: INFO/MainProcess] Received task: test_task[f240697b-4ac6-4e49-9753-f3968481918c]
+[2019-07-14 05:56:13,670: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:13,673: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:13,673: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:13,676: INFO/MainProcess] Task test_task[5c4bb010-2593-4141-aa59-e31508cdfdc1] succeeded in 5.004435301001649s: None
+[2019-07-14 05:56:14,669: INFO/MainProcess] Received task: test_task[1a190c1f-a442-4ac7-bd10-9804285bbdc9]
+[2019-07-14 05:56:14,670: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:14,674: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:14,674: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:14,677: INFO/MainProcess] Task test_task[7b461507-fac5-4533-86b0-ad1907129157] succeeded in 5.004580719018122s: None
+[2019-07-14 05:56:15,670: INFO/MainProcess] Received task: test_task[2dc5a120-8014-4853-a5e3-19eb7af69be1]
+[2019-07-14 05:56:15,671: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:17,672: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:17,673: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:17,674: INFO/MainProcess] Task test_task[efbea5a2-1572-4a95-babf-4ddfea2acb3d] succeeded in 5.001684451999608s: None
+[2019-07-14 05:56:18,674: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:18,674: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:18,676: INFO/MainProcess] Task test_task[f240697b-4ac6-4e49-9753-f3968481918c] succeeded in 5.003585048019886s: None
+[2019-07-14 05:56:19,673: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:19,673: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:19,674: INFO/MainProcess] Task test_task[1a190c1f-a442-4ac7-bd10-9804285bbdc9] succeeded in 5.002150670014089s: None
+[2019-07-14 05:56:20,673: INFO/MainProcess] Received task: test_task[67e70eb0-bf50-4b90-932f-5818dd037a91]
+[2019-07-14 05:56:20,673: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:20,673: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:20,673: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:20,674: INFO/MainProcess] Task test_task[2dc5a120-8014-4853-a5e3-19eb7af69be1] succeeded in 5.001983933005249s: None
+[2019-07-14 05:56:21,680: INFO/MainProcess] Received task: test_task[8b346389-7d4d-4c30-b519-9ca9c1bcf4af]
+[2019-07-14 05:56:21,683: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:22,677: INFO/MainProcess] Received task: test_task[cd96c3f8-0f12-4638-943e-471ffb6ac1cf]
+[2019-07-14 05:56:22,678: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:25,676: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:25,677: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:25,679: INFO/MainProcess] Task test_task[67e70eb0-bf50-4b90-932f-5818dd037a91] succeeded in 5.004888486000709s: None
+[2019-07-14 05:56:26,686: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:26,687: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:26,689: INFO/MainProcess] Task test_task[8b346389-7d4d-4c30-b519-9ca9c1bcf4af] succeeded in 5.005144690017914s: None
+[2019-07-14 05:56:27,681: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:27,682: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:27,684: INFO/MainProcess] Task test_task[cd96c3f8-0f12-4638-943e-471ffb6ac1cf] succeeded in 5.004726965998998s: None
+[2019-07-14 05:56:29,679: INFO/MainProcess] Received task: test_task[a53fca49-f01a-4338-a5bb-97f597f66af1]
+[2019-07-14 05:56:29,680: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:30,679: INFO/MainProcess] Received task: test_task[8fc0bd06-ee29-486d-9f92-c41c7f562362]
+[2019-07-14 05:56:30,680: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:31,680: INFO/MainProcess] Received task: test_task[0442f7da-d130-4964-98b0-fa89234e3aa6]
+[2019-07-14 05:56:31,680: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:32,680: INFO/MainProcess] Received task: test_task[b2036d68-2ac2-4308-82b1-f1a9e055b181]
+[2019-07-14 05:56:32,681: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:33,680: INFO/MainProcess] Received task: test_task[fb5046ba-18bd-4e19-93d7-dc9d92e93eb1]
+[2019-07-14 05:56:34,681: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:34,681: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:34,683: INFO/MainProcess] Task test_task[a53fca49-f01a-4338-a5bb-97f597f66af1] succeeded in 5.0018444530142006s: None
+[2019-07-14 05:56:34,683: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:35,681: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:35,682: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:35,683: INFO/MainProcess] Task test_task[8fc0bd06-ee29-486d-9f92-c41c7f562362] succeeded in 5.002014822006458s: None
+[2019-07-14 05:56:36,681: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:36,681: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:36,682: INFO/MainProcess] Task test_task[0442f7da-d130-4964-98b0-fa89234e3aa6] succeeded in 5.001568570995005s: None
+[2019-07-14 05:56:37,682: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:37,682: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:37,683: INFO/MainProcess] Task test_task[b2036d68-2ac2-4308-82b1-f1a9e055b181] succeeded in 5.002029898983892s: None
+[2019-07-14 05:56:38,682: INFO/MainProcess] Received task: test_task[a3e64528-f1bd-4b34-b415-c00a40b30314]
+[2019-07-14 05:56:38,683: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:39,682: INFO/MainProcess] Received task: test_task[82c0ed7a-31fc-4065-a7eb-10a089b707bf]
+[2019-07-14 05:56:39,683: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:39,684: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:39,684: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:39,685: INFO/MainProcess] Task test_task[fb5046ba-18bd-4e19-93d7-dc9d92e93eb1] succeeded in 5.001791788992705s: None
+[2019-07-14 05:56:43,684: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:43,684: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:43,685: INFO/MainProcess] Received task: test_task[80e3427e-0013-4b4c-9b02-5f8c0bb76de1]
+[2019-07-14 05:56:43,686: INFO/MainProcess] Task test_task[a3e64528-f1bd-4b34-b415-c00a40b30314] succeeded in 5.0022735040111s: None
+[2019-07-14 05:56:43,686: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:44,684: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:44,684: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:44,685: INFO/MainProcess] Received task: test_task[68839c05-b420-49fc-857a-1a7fb1d211e8]
+[2019-07-14 05:56:44,686: INFO/MainProcess] Task test_task[82c0ed7a-31fc-4065-a7eb-10a089b707bf] succeeded in 5.002262833993882s: None
+[2019-07-14 05:56:44,686: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:45,684: INFO/MainProcess] Received task: test_task[c43e2c41-3084-452d-a052-8cc8c1ff9446]
+[2019-07-14 05:56:45,685: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:46,685: INFO/MainProcess] Received task: test_task[b74a094f-0f2b-46da-9bb4-7cb78c4f5836]
+[2019-07-14 05:56:46,685: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:47,685: INFO/MainProcess] Received task: test_task[2bcdb9eb-38ec-4304-bfad-a399b644f8dc]
+[2019-07-14 05:56:48,688: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:48,689: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:48,690: INFO/MainProcess] Task test_task[80e3427e-0013-4b4c-9b02-5f8c0bb76de1] succeeded in 5.003518312994856s: None
+[2019-07-14 05:56:48,690: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:49,685: INFO/MainProcess] Received task: test_task[07dacacb-1a40-4f7e-8793-754bbc696752]
+[2019-07-14 05:56:49,687: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:49,688: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:49,690: INFO/MainProcess] Task test_task[68839c05-b420-49fc-857a-1a7fb1d211e8] succeeded in 5.003299750998849s: None
+[2019-07-14 05:56:49,690: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:50,686: INFO/MainProcess] Received task: test_task[9d6cb9f3-f1fb-4725-8742-ee7a37f24c88]
+[2019-07-14 05:56:50,686: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:50,686: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:50,687: INFO/MainProcess] Task test_task[c43e2c41-3084-452d-a052-8cc8c1ff9446] succeeded in 5.001756783982273s: None
+[2019-07-14 05:56:50,688: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:51,686: INFO/MainProcess] Received task: test_task[90cab8de-6d55-48fd-bcb4-7a77f92ea47d]
+[2019-07-14 05:56:51,686: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:51,686: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:51,688: INFO/MainProcess] Task test_task[b74a094f-0f2b-46da-9bb4-7cb78c4f5836] succeeded in 5.002056438999716s: None
+[2019-07-14 05:56:51,688: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:56:52,686: INFO/MainProcess] Received task: test_task[64c2d9ea-699c-4a6c-8345-c71ab1e26c54]
+[2019-07-14 05:56:53,692: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:53,692: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:53,693: INFO/MainProcess] Task test_task[2bcdb9eb-38ec-4304-bfad-a399b644f8dc] succeeded in 5.0026616970135365s: None
+[2019-07-14 05:56:53,694: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:56:54,692: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:56:54,693: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:56:54,695: INFO/MainProcess] Task test_task[07dacacb-1a40-4f7e-8793-754bbc696752] succeeded in 5.0045554949902s: None
+[2019-07-14 05:56:55,689: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:56:55,689: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:56:55,691: INFO/MainProcess] Task test_task[9d6cb9f3-f1fb-4725-8742-ee7a37f24c88] succeeded in 5.002876196987927s: None
+[2019-07-14 05:56:56,687: INFO/MainProcess] Received task: test_task[a5321730-aa07-4442-8cc7-341a686c9207]
+[2019-07-14 05:56:56,688: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:56:56,689: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:56:56,689: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:56:56,690: INFO/MainProcess] Task test_task[90cab8de-6d55-48fd-bcb4-7a77f92ea47d] succeeded in 5.001645292999456s: None
+[2019-07-14 05:56:57,688: INFO/MainProcess] Received task: test_task[48cfb911-2572-449a-8718-46e14cc13a5c]
+[2019-07-14 05:56:57,689: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:56:58,695: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:56:58,696: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:56:58,698: INFO/MainProcess] Task test_task[64c2d9ea-699c-4a6c-8345-c71ab1e26c54] succeeded in 5.0037897970178165s: None
+[2019-07-14 05:57:01,689: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:01,689: INFO/MainProcess] Received task: test_task[9adeef72-acee-4643-bc83-5d0f855691b9]
+[2019-07-14 05:57:01,689: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:01,690: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:01,690: INFO/MainProcess] Task test_task[a5321730-aa07-4442-8cc7-341a686c9207] succeeded in 5.001855156995589s: None
+[2019-07-14 05:57:02,689: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:02,689: INFO/MainProcess] Received task: test_task[787362d9-b27d-4314-81f1-f1e8f5ed2756]
+[2019-07-14 05:57:02,690: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:02,690: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:02,691: INFO/MainProcess] Task test_task[48cfb911-2572-449a-8718-46e14cc13a5c] succeeded in 5.001951088983333s: None
+[2019-07-14 05:57:05,690: INFO/MainProcess] Received task: test_task[efd4b733-b891-4844-9f55-b9bfe3785a95]
+[2019-07-14 05:57:05,691: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:06,690: INFO/MainProcess] Received task: test_task[5af72a57-22b6-4b59-a389-71637da896b9]
+[2019-07-14 05:57:06,690: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:06,690: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:06,691: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:06,692: INFO/MainProcess] Task test_task[9adeef72-acee-4643-bc83-5d0f855691b9] succeeded in 5.001747175003402s: None
+[2019-07-14 05:57:07,690: INFO/MainProcess] Received task: test_task[3ebfcb84-8f77-42d0-9f46-f4948987ed85]
+[2019-07-14 05:57:07,691: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:07,691: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:07,691: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:07,692: INFO/MainProcess] Task test_task[787362d9-b27d-4314-81f1-f1e8f5ed2756] succeeded in 5.0020649950020015s: None
+[2019-07-14 05:57:08,690: INFO/MainProcess] Received task: test_task[7b546273-4912-431d-849a-40255316dc70]
+[2019-07-14 05:57:08,691: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:10,692: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:10,692: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:10,693: INFO/MainProcess] Task test_task[efd4b733-b891-4844-9f55-b9bfe3785a95] succeeded in 5.002579108986538s: None
+[2019-07-14 05:57:11,692: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:11,692: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:11,693: INFO/MainProcess] Task test_task[5af72a57-22b6-4b59-a389-71637da896b9] succeeded in 5.002802570001222s: None
+[2019-07-14 05:57:12,691: INFO/MainProcess] Received task: test_task[01dc1ba2-64c5-47cf-ae22-36ba194982d3]
+[2019-07-14 05:57:12,691: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:12,692: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:12,692: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:12,693: INFO/MainProcess] Task test_task[3ebfcb84-8f77-42d0-9f46-f4948987ed85] succeeded in 5.0022131180157885s: None
+[2019-07-14 05:57:13,691: INFO/MainProcess] Received task: test_task[ccdd4246-532b-42de-be93-bc79199d4d27]
+[2019-07-14 05:57:13,691: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:13,692: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:13,692: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:13,693: INFO/MainProcess] Task test_task[7b546273-4912-431d-849a-40255316dc70] succeeded in 5.0019676980155054s: None
+[2019-07-14 05:57:14,691: INFO/MainProcess] Received task: test_task[84b7b14c-f56e-4c80-a32f-1bc0e6823528]
+[2019-07-14 05:57:14,692: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:17,692: INFO/MainProcess] Received task: test_task[fa287e81-abcc-46dd-bc6c-10b5b05c271c]
+[2019-07-14 05:57:17,692: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:17,692: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:17,692: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:17,694: INFO/MainProcess] Task test_task[01dc1ba2-64c5-47cf-ae22-36ba194982d3] succeeded in 5.002254293009173s: None
+[2019-07-14 05:57:18,693: INFO/MainProcess] Received task: test_task[aa58e3f1-2cfe-46a3-af32-ac6efd9f8e1a]
+[2019-07-14 05:57:18,693: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:18,693: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:18,693: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:18,695: INFO/MainProcess] Task test_task[ccdd4246-532b-42de-be93-bc79199d4d27] succeeded in 5.0028284339932725s: None
+[2019-07-14 05:57:19,692: INFO/MainProcess] Received task: test_task[c1abf7c4-b41e-41b2-a567-5af9e21a6ad7]
+[2019-07-14 05:57:19,693: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:19,693: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:19,693: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:19,694: INFO/MainProcess] Task test_task[84b7b14c-f56e-4c80-a32f-1bc0e6823528] succeeded in 5.002419363998342s: None
+[2019-07-14 05:57:22,693: INFO/MainProcess] Received task: test_task[0c1e67a9-e188-4ac5-8900-1703bca53af6]
+[2019-07-14 05:57:22,694: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:22,694: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:22,694: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:22,695: INFO/MainProcess] Task test_task[fa287e81-abcc-46dd-bc6c-10b5b05c271c] succeeded in 5.002643771993462s: None
+[2019-07-14 05:57:23,693: INFO/MainProcess] Received task: test_task[613263b8-a6a4-470b-adbc-60c77310eec6]
+[2019-07-14 05:57:23,694: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:23,694: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:23,694: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:23,695: INFO/MainProcess] Task test_task[aa58e3f1-2cfe-46a3-af32-ac6efd9f8e1a] succeeded in 5.001737340004183s: None
+[2019-07-14 05:57:24,695: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:24,695: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:24,696: INFO/MainProcess] Task test_task[c1abf7c4-b41e-41b2-a567-5af9e21a6ad7] succeeded in 5.002699684991967s: None
+[2019-07-14 05:57:27,695: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:27,696: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:27,698: INFO/MainProcess] Task test_task[0c1e67a9-e188-4ac5-8900-1703bca53af6] succeeded in 5.00461742898915s: None
+[2019-07-14 05:57:28,694: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:28,695: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:28,696: INFO/MainProcess] Task test_task[613263b8-a6a4-470b-adbc-60c77310eec6] succeeded in 5.001790484995581s: None
+[2019-07-14 05:57:44,688: INFO/MainProcess] Received task: test_task[ff530258-59a3-4c56-9f9a-f147c07e5d24]
+[2019-07-14 05:57:44,689: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:45,686: INFO/MainProcess] Received task: test_task[cd8456fd-1c36-4641-a4bc-2885b4a73f80]
+[2019-07-14 05:57:45,687: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:46,686: INFO/MainProcess] Received task: test_task[135b22cd-d0fa-4cc8-bf22-5bd26c5cd468]
+[2019-07-14 05:57:46,687: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:47,686: INFO/MainProcess] Received task: test_task[cb230b42-07ad-4287-9675-ddc8950fae1a]
+[2019-07-14 05:57:47,687: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:48,687: INFO/MainProcess] Received task: test_task[2609d2e6-b249-4c11-866f-7a76af6f0f86]
+[2019-07-14 05:57:49,687: INFO/MainProcess] Received task: test_task[fccfb7bf-fe0f-4a47-8cb8-4666a9a29495]
+[2019-07-14 05:57:49,690: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:49,690: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:49,693: INFO/MainProcess] Task test_task[ff530258-59a3-4c56-9f9a-f147c07e5d24] succeeded in 5.00412212399533s: None
+[2019-07-14 05:57:49,694: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:50,688: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:50,688: INFO/MainProcess] Received task: test_task[3584bd8b-345f-4b56-8798-4f90e4a10fdd]
+[2019-07-14 05:57:50,688: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:50,689: INFO/MainProcess] Task test_task[cd8456fd-1c36-4641-a4bc-2885b4a73f80] succeeded in 5.002485353994416s: None
+[2019-07-14 05:57:50,690: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:51,687: INFO/MainProcess] Received task: test_task[2ca2d534-85ad-4963-865c-d6c5a62602b8]
+[2019-07-14 05:57:51,687: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:51,688: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:51,689: INFO/MainProcess] Task test_task[135b22cd-d0fa-4cc8-bf22-5bd26c5cd468] succeeded in 5.001779265003279s: None
+[2019-07-14 05:57:51,689: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:52,688: INFO/MainProcess] Received task: test_task[7529970f-4034-47e2-9c6a-fd7d7dc8e75f]
+[2019-07-14 05:57:52,687: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:52,688: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:52,689: INFO/MainProcess] Task test_task[cb230b42-07ad-4287-9675-ddc8950fae1a] succeeded in 5.001842587982537s: None
+[2019-07-14 05:57:52,689: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:53,688: INFO/MainProcess] Received task: test_task[3f647dee-13e0-4e6e-9868-936670cf1f36]
+[2019-07-14 05:57:54,688: INFO/MainProcess] Received task: test_task[061b7ba4-f9a4-4c67-b53d-914359853516]
+[2019-07-14 05:57:54,694: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:54,695: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:54,697: INFO/MainProcess] Task test_task[2609d2e6-b249-4c11-866f-7a76af6f0f86] succeeded in 5.003389497986063s: None
+[2019-07-14 05:57:54,698: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:57:55,688: INFO/MainProcess] Received task: test_task[3121e943-0908-4a57-baee-ec4e2dcae538]
+[2019-07-14 05:57:55,691: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:57:55,691: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:57:55,693: INFO/MainProcess] Task test_task[fccfb7bf-fe0f-4a47-8cb8-4666a9a29495] succeeded in 5.002862980007194s: None
+[2019-07-14 05:57:55,693: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:57:56,688: INFO/MainProcess] Received task: test_task[226d338e-ef0d-4b30-afbb-ae75c67a2786]
+[2019-07-14 05:57:56,691: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:57:56,691: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:57:56,693: INFO/MainProcess] Task test_task[3584bd8b-345f-4b56-8798-4f90e4a10fdd] succeeded in 5.004308184987167s: None
+[2019-07-14 05:57:56,694: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:57:57,689: INFO/MainProcess] Received task: test_task[0910d890-a520-4786-91ad-6cf1a0910a76]
+[2019-07-14 05:57:57,691: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:57:57,691: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:57:57,693: INFO/MainProcess] Task test_task[2ca2d534-85ad-4963-865c-d6c5a62602b8] succeeded in 5.003388444980374s: None
+[2019-07-14 05:57:57,693: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:57:58,689: INFO/MainProcess] Received task: test_task[8c18ff68-ba84-48db-8a21-6df30c949c89]
+[2019-07-14 05:57:59,689: INFO/MainProcess] Received task: test_task[3eabb38d-e6c8-4df6-81a5-5397382861ae]
+[2019-07-14 05:57:59,699: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:57:59,700: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:57:59,703: INFO/MainProcess] Task test_task[7529970f-4034-47e2-9c6a-fd7d7dc8e75f] succeeded in 5.005349118000595s: None
+[2019-07-14 05:57:59,704: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:00,689: INFO/MainProcess] Received task: test_task[3320d2f9-d36d-46b8-80b6-e2254940845d]
+[2019-07-14 05:58:00,695: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:00,695: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:00,698: INFO/MainProcess] Task test_task[3f647dee-13e0-4e6e-9868-936670cf1f36] succeeded in 5.004761356016388s: None
+[2019-07-14 05:58:00,699: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:01,690: INFO/MainProcess] Received task: test_task[35ed9be8-1a7f-4fbb-9ad5-3602133adaa4]
+[2019-07-14 05:58:01,694: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:01,695: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:01,697: INFO/MainProcess] Task test_task[061b7ba4-f9a4-4c67-b53d-914359853516] succeeded in 5.002831173973391s: None
+[2019-07-14 05:58:01,697: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:02,690: INFO/MainProcess] Received task: test_task[a7691a6e-6d5b-4b66-89fb-b0d0d09dc0e7]
+[2019-07-14 05:58:02,694: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:02,694: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:02,696: INFO/MainProcess] Task test_task[3121e943-0908-4a57-baee-ec4e2dcae538] succeeded in 5.002460292016622s: None
+[2019-07-14 05:58:02,696: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:03,691: INFO/MainProcess] Received task: test_task[3a79161f-7dc1-4acb-ad0b-be608aa2ef45]
+[2019-07-14 05:58:04,691: INFO/MainProcess] Received task: test_task[59212b03-c48a-494d-9f72-714a15b627ac]
+[2019-07-14 05:58:04,704: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:04,705: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:04,707: INFO/MainProcess] Task test_task[226d338e-ef0d-4b30-afbb-ae75c67a2786] succeeded in 5.0027613540005405s: None
+[2019-07-14 05:58:04,707: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:05,691: INFO/MainProcess] Received task: test_task[97ebd708-0cd7-4129-9a8b-113fa8efd329]
+[2019-07-14 05:58:05,701: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:05,702: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:05,705: INFO/MainProcess] Task test_task[0910d890-a520-4786-91ad-6cf1a0910a76] succeeded in 5.00580859000911s: None
+[2019-07-14 05:58:05,705: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:06,692: INFO/MainProcess] Received task: test_task[97b679e1-6a3f-46b8-8949-00223f7cc7a9]
+[2019-07-14 05:58:06,698: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:06,698: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:06,703: INFO/MainProcess] Task test_task[8c18ff68-ba84-48db-8a21-6df30c949c89] succeeded in 5.005413310020231s: None
+[2019-07-14 05:58:06,704: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:07,692: INFO/MainProcess] Received task: test_task[a2a59bf5-c63a-47fa-9584-5ce3f8dd8813]
+[2019-07-14 05:58:07,697: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:07,697: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:07,699: INFO/MainProcess] Task test_task[3eabb38d-e6c8-4df6-81a5-5397382861ae] succeeded in 5.002298950013937s: None
+[2019-07-14 05:58:07,699: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:08,692: INFO/MainProcess] Received task: test_task[bcc01585-0fff-41c1-9bec-cd79e1627df7]
+[2019-07-14 05:58:09,692: INFO/MainProcess] Received task: test_task[4edf0e20-b388-4861-9218-385a309e96ff]
+[2019-07-14 05:58:09,709: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:09,709: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:09,712: INFO/MainProcess] Task test_task[3320d2f9-d36d-46b8-80b6-e2254940845d] succeeded in 5.004688688000897s: None
+[2019-07-14 05:58:09,713: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:10,692: INFO/MainProcess] Received task: test_task[ef4b9a07-0adf-45e1-89e2-94b335bacc3f]
+[2019-07-14 05:58:10,706: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:10,707: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:10,710: INFO/MainProcess] Task test_task[35ed9be8-1a7f-4fbb-9ad5-3602133adaa4] succeeded in 5.004107926011784s: None
+[2019-07-14 05:58:10,710: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:11,692: INFO/MainProcess] Received task: test_task[756ed651-7121-4cf4-8617-503a1ec14f33]
+[2019-07-14 05:58:11,704: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:11,705: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:11,707: INFO/MainProcess] Task test_task[a7691a6e-6d5b-4b66-89fb-b0d0d09dc0e7] succeeded in 5.003078836016357s: None
+[2019-07-14 05:58:11,708: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:12,693: INFO/MainProcess] Received task: test_task[935bd6f3-81f8-4318-9c3c-dd5d3818f6d4]
+[2019-07-14 05:58:12,700: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:12,700: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:12,702: INFO/MainProcess] Task test_task[3a79161f-7dc1-4acb-ad0b-be608aa2ef45] succeeded in 5.002722566016018s: None
+[2019-07-14 05:58:12,703: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:13,693: INFO/MainProcess] Received task: test_task[d9fef98f-1063-48bc-94f0-d9e4030f47a1]
+[2019-07-14 05:58:14,693: INFO/MainProcess] Received task: test_task[8ce4bfaf-ae82-40b1-8085-7e9eb69eb8fb]
+[2019-07-14 05:58:14,715: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:14,715: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:14,717: INFO/MainProcess] Task test_task[59212b03-c48a-494d-9f72-714a15b627ac] succeeded in 5.003835084004095s: None
+[2019-07-14 05:58:14,718: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:15,693: INFO/MainProcess] Received task: test_task[1d836677-7f9b-4cb8-ad90-3b1ddbfa3781]
+[2019-07-14 05:58:15,712: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:15,712: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:15,716: INFO/MainProcess] Task test_task[97ebd708-0cd7-4129-9a8b-113fa8efd329] succeeded in 5.005514907010365s: None
+[2019-07-14 05:58:15,717: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:16,694: INFO/MainProcess] Received task: test_task[ceeb3694-dff6-423a-b10e-649c4c8492eb]
+[2019-07-14 05:58:16,709: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:16,710: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:16,712: INFO/MainProcess] Task test_task[97b679e1-6a3f-46b8-8949-00223f7cc7a9] succeeded in 5.0047693609958515s: None
+[2019-07-14 05:58:16,713: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:17,694: INFO/MainProcess] Received task: test_task[95dac54e-5ddc-4ae2-8166-011cdd6eea01]
+[2019-07-14 05:58:17,704: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:17,704: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:17,706: INFO/MainProcess] Task test_task[a2a59bf5-c63a-47fa-9584-5ce3f8dd8813] succeeded in 5.003319464012748s: None
+[2019-07-14 05:58:17,707: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:18,694: INFO/MainProcess] Received task: test_task[f6a34dea-7b10-4614-983c-40468a03b5a8]
+[2019-07-14 05:58:19,695: INFO/MainProcess] Received task: test_task[939def49-2b46-4d8d-a52c-fc77ef015371]
+[2019-07-14 05:58:19,719: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:19,720: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:19,721: INFO/MainProcess] Task test_task[bcc01585-0fff-41c1-9bec-cd79e1627df7] succeeded in 5.003153113008011s: None
+[2019-07-14 05:58:19,722: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:20,695: INFO/MainProcess] Received task: test_task[d0e9ad39-8266-4187-8976-60e496c80f4a]
+[2019-07-14 05:58:20,718: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:20,719: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:20,720: INFO/MainProcess] Task test_task[4edf0e20-b388-4861-9218-385a309e96ff] succeeded in 5.003910341998562s: None
+[2019-07-14 05:58:20,721: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:21,695: INFO/MainProcess] Received task: test_task[46b72d66-808a-4c5c-8226-0975103303c0]
+[2019-07-14 05:58:21,714: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:21,715: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:21,718: INFO/MainProcess] Task test_task[ef4b9a07-0adf-45e1-89e2-94b335bacc3f] succeeded in 5.0044099549995735s: None
+[2019-07-14 05:58:21,718: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:22,695: INFO/MainProcess] Received task: test_task[04025573-14f1-4148-b8b9-5c4dbd72a068]
+[2019-07-14 05:58:22,708: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:22,709: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:22,711: INFO/MainProcess] Task test_task[756ed651-7121-4cf4-8617-503a1ec14f33] succeeded in 5.004013164987555s: None
+[2019-07-14 05:58:22,712: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:23,695: INFO/MainProcess] Received task: test_task[0946e3c9-8a58-464f-acb0-df6103a6f530]
+[2019-07-14 05:58:24,696: INFO/MainProcess] Received task: test_task[a0038087-9c25-4457-86e8-382b074d70dd]
+[2019-07-14 05:58:24,723: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:24,723: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:24,725: INFO/MainProcess] Task test_task[935bd6f3-81f8-4318-9c3c-dd5d3818f6d4] succeeded in 5.003485419991193s: None
+[2019-07-14 05:58:24,726: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:25,696: INFO/MainProcess] Received task: test_task[6a3b9f98-6d48-4bdc-889d-59699edac831]
+[2019-07-14 05:58:25,721: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:25,722: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:25,723: INFO/MainProcess] Task test_task[d9fef98f-1063-48bc-94f0-d9e4030f47a1] succeeded in 5.002546449017245s: None
+[2019-07-14 05:58:25,724: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:26,697: INFO/MainProcess] Received task: test_task[e7f73355-f45a-4119-bb68-e2d8a2f3d6b1]
+[2019-07-14 05:58:26,719: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:26,720: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:26,722: INFO/MainProcess] Task test_task[8ce4bfaf-ae82-40b1-8085-7e9eb69eb8fb] succeeded in 5.0038991709880065s: None
+[2019-07-14 05:58:26,723: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:27,697: INFO/MainProcess] Received task: test_task[8f79a3a0-7829-47d2-b53a-fb277ca7af00]
+[2019-07-14 05:58:27,713: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:27,714: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:27,717: INFO/MainProcess] Task test_task[1d836677-7f9b-4cb8-ad90-3b1ddbfa3781] succeeded in 5.0052800009725615s: None
+[2019-07-14 05:58:27,719: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:28,697: INFO/MainProcess] Received task: test_task[6e3ec176-7993-4c0a-b460-16eed11046f2]
+[2019-07-14 05:58:29,697: INFO/MainProcess] Received task: test_task[0466c14d-9034-4f83-b542-bc07c8bd6451]
+[2019-07-14 05:58:29,727: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:29,727: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:29,730: INFO/MainProcess] Task test_task[ceeb3694-dff6-423a-b10e-649c4c8492eb] succeeded in 5.004046520014526s: None
+[2019-07-14 05:58:29,730: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:30,697: INFO/MainProcess] Received task: test_task[751cd978-18bf-4064-bad0-dcf0947cfbde]
+[2019-07-14 05:58:30,725: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:30,725: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:30,728: INFO/MainProcess] Task test_task[95dac54e-5ddc-4ae2-8166-011cdd6eea01] succeeded in 5.003676033986267s: None
+[2019-07-14 05:58:30,729: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:31,699: INFO/MainProcess] Received task: test_task[e942d16d-1042-47d3-a558-1634168ca2f7]
+[2019-07-14 05:58:31,723: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:31,724: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:31,725: INFO/MainProcess] Task test_task[f6a34dea-7b10-4614-983c-40468a03b5a8] succeeded in 5.001850711996667s: None
+[2019-07-14 05:58:31,725: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:32,698: INFO/MainProcess] Received task: test_task[6973c7f9-b47b-40bc-98f9-213c8a71e1e7]
+[2019-07-14 05:58:32,720: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:32,720: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:32,722: INFO/MainProcess] Task test_task[939def49-2b46-4d8d-a52c-fc77ef015371] succeeded in 5.003079137997702s: None
+[2019-07-14 05:58:32,722: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:33,701: INFO/MainProcess] Received task: test_task[60626c88-4c39-44ff-bd45-318fc488363b]
+[2019-07-14 05:58:34,698: INFO/MainProcess] Received task: test_task[33a9783c-57e8-438c-891f-6fa2e65b24d2]
+[2019-07-14 05:58:34,731: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:34,731: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:34,733: INFO/MainProcess] Task test_task[d0e9ad39-8266-4187-8976-60e496c80f4a] succeeded in 5.002631059993291s: None
+[2019-07-14 05:58:34,734: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:35,698: INFO/MainProcess] Received task: test_task[a4764c7e-49df-4332-9028-f20bda2fc79f]
+[2019-07-14 05:58:35,731: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:35,731: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:35,735: INFO/MainProcess] Task test_task[46b72d66-808a-4c5c-8226-0975103303c0] succeeded in 5.00589328102069s: None
+[2019-07-14 05:58:35,736: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:36,699: INFO/MainProcess] Received task: test_task[d3172aac-dfc1-4a39-aea3-66bfbb089fd7]
+[2019-07-14 05:58:36,726: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:36,726: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:36,727: INFO/MainProcess] Task test_task[04025573-14f1-4148-b8b9-5c4dbd72a068] succeeded in 5.002047069981927s: None
+[2019-07-14 05:58:36,728: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:37,699: INFO/MainProcess] Received task: test_task[5fa3d835-d62c-4a60-8544-e16243590f13]
+[2019-07-14 05:58:37,723: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:37,723: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:37,724: INFO/MainProcess] Task test_task[0946e3c9-8a58-464f-acb0-df6103a6f530] succeeded in 5.002140149008483s: None
+[2019-07-14 05:58:37,725: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:38,699: INFO/MainProcess] Received task: test_task[37804422-6b4b-4e39-9f19-dbae7b61c9b6]
+[2019-07-14 05:58:39,700: INFO/MainProcess] Received task: test_task[fcc160e1-f6c5-475b-90f3-61abb48f408f]
+[2019-07-14 05:58:39,735: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:39,736: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:39,738: INFO/MainProcess] Task test_task[a0038087-9c25-4457-86e8-382b074d70dd] succeeded in 5.00432839198038s: None
+[2019-07-14 05:58:39,739: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:40,701: INFO/MainProcess] Received task: test_task[d95b9335-6d3b-407d-9ee0-f453f11da988]
+[2019-07-14 05:58:40,738: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:40,738: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:40,741: INFO/MainProcess] Task test_task[6a3b9f98-6d48-4bdc-889d-59699edac831] succeeded in 5.004697247000877s: None
+[2019-07-14 05:58:40,742: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:41,700: INFO/MainProcess] Received task: test_task[b8f5e264-b385-4fe0-8019-8ec9b4462b79]
+[2019-07-14 05:58:41,730: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:41,730: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:41,733: INFO/MainProcess] Task test_task[e7f73355-f45a-4119-bb68-e2d8a2f3d6b1] succeeded in 5.005375153996283s: None
+[2019-07-14 05:58:41,734: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:42,700: INFO/MainProcess] Received task: test_task[49449af5-c0e5-4726-9038-ee2d6158a732]
+[2019-07-14 05:58:42,727: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:42,727: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:42,730: INFO/MainProcess] Task test_task[8f79a3a0-7829-47d2-b53a-fb277ca7af00] succeeded in 5.004712485999335s: None
+[2019-07-14 05:58:42,730: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:43,700: INFO/MainProcess] Received task: test_task[73f2358b-f0e2-463b-85af-c0545a420714]
+[2019-07-14 05:58:44,740: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:44,741: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:44,744: INFO/MainProcess] Task test_task[6e3ec176-7993-4c0a-b460-16eed11046f2] succeeded in 5.004567718016915s: None
+[2019-07-14 05:58:44,745: INFO/MainProcess] Received task: test_task[1bf83fe5-b960-4673-896f-d0a976f1924d]
+[2019-07-14 05:58:44,745: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:45,743: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:45,744: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:45,745: INFO/MainProcess] Task test_task[0466c14d-9034-4f83-b542-bc07c8bd6451] succeeded in 5.003459159983322s: None
+[2019-07-14 05:58:45,746: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:45,746: INFO/MainProcess] Received task: test_task[75b7058f-b00b-4643-9751-9ab93e8485fa]
+[2019-07-14 05:58:46,735: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:46,736: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:46,738: INFO/MainProcess] Task test_task[751cd978-18bf-4064-bad0-dcf0947cfbde] succeeded in 5.003811079979641s: None
+[2019-07-14 05:58:46,739: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:46,739: INFO/MainProcess] Received task: test_task[6b201063-d4f6-472f-a3e5-cab46995ad64]
+[2019-07-14 05:58:47,732: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:47,733: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:47,735: INFO/MainProcess] Task test_task[e942d16d-1042-47d3-a558-1634168ca2f7] succeeded in 5.0044919369975105s: None
+[2019-07-14 05:58:47,737: INFO/MainProcess] Received task: test_task[76de99d3-2754-4e2b-af44-9eeecd835ef6]
+[2019-07-14 05:58:47,737: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:49,747: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:49,747: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:49,750: INFO/MainProcess] Task test_task[6973c7f9-b47b-40bc-98f9-213c8a71e1e7] succeeded in 5.004123930993956s: None
+[2019-07-14 05:58:49,750: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:49,751: INFO/MainProcess] Received task: test_task[0e8a74a5-5a29-4515-afff-edc74d9fb0d6]
+[2019-07-14 05:58:50,747: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:50,748: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:50,750: INFO/MainProcess] Task test_task[60626c88-4c39-44ff-bd45-318fc488363b] succeeded in 5.004717828996945s: None
+[2019-07-14 05:58:50,752: INFO/MainProcess] Received task: test_task[7086c580-e45c-4f23-a30c-d80ca2afa856]
+[2019-07-14 05:58:50,752: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:51,739: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:51,740: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:51,743: INFO/MainProcess] Task test_task[33a9783c-57e8-438c-891f-6fa2e65b24d2] succeeded in 5.003684198018163s: None
+[2019-07-14 05:58:51,744: INFO/MainProcess] Received task: test_task[1d18c575-9dad-4817-b4d4-1a0075b69e4b]
+[2019-07-14 05:58:51,744: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:52,738: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:52,739: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:52,740: INFO/MainProcess] Task test_task[a4764c7e-49df-4332-9028-f20bda2fc79f] succeeded in 5.00321621898911s: None
+[2019-07-14 05:58:52,741: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:52,741: INFO/MainProcess] Received task: test_task[c324aa1b-dc0d-406e-af5f-216a90aff88f]
+[2019-07-14 05:58:54,751: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:54,752: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:54,755: INFO/MainProcess] Task test_task[d3172aac-dfc1-4a39-aea3-66bfbb089fd7] succeeded in 5.004417493008077s: None
+[2019-07-14 05:58:54,757: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:58:54,761: INFO/MainProcess] Received task: test_task[cde020cd-b414-42bb-9365-4c335b1ab8fe]
+[2019-07-14 05:58:55,753: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:58:55,754: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:58:55,755: INFO/MainProcess] Task test_task[5fa3d835-d62c-4a60-8544-e16243590f13] succeeded in 5.002825584000675s: None
+[2019-07-14 05:58:55,756: INFO/MainProcess] Received task: test_task[25651128-d5ba-411b-9a62-c453bc8acdea]
+[2019-07-14 05:58:55,757: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:58:56,745: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:58:56,745: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:58:56,748: INFO/MainProcess] Task test_task[37804422-6b4b-4e39-9f19-dbae7b61c9b6] succeeded in 5.003447926021181s: None
+[2019-07-14 05:58:56,749: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:58:56,750: INFO/MainProcess] Received task: test_task[4a5cc8f1-08e3-441e-ad33-8a1a02bec78f]
+[2019-07-14 05:58:57,742: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:58:57,742: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:58:57,744: INFO/MainProcess] Task test_task[fcc160e1-f6c5-475b-90f3-61abb48f408f] succeeded in 5.003246278007282s: None
+[2019-07-14 05:58:57,745: INFO/MainProcess] Received task: test_task[bd5d37a9-e0da-4138-adac-9f5e61acabc7]
+[2019-07-14 05:58:57,746: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:58:59,759: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:58:59,760: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:58:59,762: INFO/MainProcess] Task test_task[d95b9335-6d3b-407d-9ee0-f453f11da988] succeeded in 5.006559547007782s: None
+[2019-07-14 05:58:59,764: INFO/MainProcess] Received task: test_task[e51dab11-2054-4ac3-9f69-da3e435508f6]
+[2019-07-14 05:58:59,764: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:00,758: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:00,759: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:00,762: INFO/MainProcess] Task test_task[b8f5e264-b385-4fe0-8019-8ec9b4462b79] succeeded in 5.005106044001877s: None
+[2019-07-14 05:59:00,762: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:00,763: INFO/MainProcess] Received task: test_task[2143605b-6e5d-451b-911b-e018dddb24fb]
+[2019-07-14 05:59:01,750: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:01,751: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:01,754: INFO/MainProcess] Task test_task[49449af5-c0e5-4726-9038-ee2d6158a732] succeeded in 5.005859730008524s: None
+[2019-07-14 05:59:01,755: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:01,756: INFO/MainProcess] Received task: test_task[24b84679-dfd2-4817-84af-643771e00589]
+[2019-07-14 05:59:02,747: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:02,747: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:02,751: INFO/MainProcess] Task test_task[73f2358b-f0e2-463b-85af-c0545a420714] succeeded in 5.0048609180084895s: None
+[2019-07-14 05:59:02,752: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:02,753: INFO/MainProcess] Received task: test_task[4c58ca13-b8b6-432a-94ba-cf6d404885c0]
+[2019-07-14 05:59:04,765: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:04,766: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:04,769: INFO/MainProcess] Task test_task[1bf83fe5-b960-4673-896f-d0a976f1924d] succeeded in 5.005135618004715s: None
+[2019-07-14 05:59:04,770: INFO/MainProcess] Received task: test_task[fbd301be-2b30-4ebf-814c-27bb73320fc8]
+[2019-07-14 05:59:04,771: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:05,764: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:05,765: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:05,768: INFO/MainProcess] Task test_task[75b7058f-b00b-4643-9751-9ab93e8485fa] succeeded in 5.005109677003929s: None
+[2019-07-14 05:59:05,769: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:05,770: INFO/MainProcess] Received task: test_task[ccf642ff-8da0-4e2c-8119-71f2d46cf34d]
+[2019-07-14 05:59:06,756: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:06,757: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:06,760: INFO/MainProcess] Task test_task[6b201063-d4f6-472f-a3e5-cab46995ad64] succeeded in 5.004271412995877s: None
+[2019-07-14 05:59:06,761: INFO/MainProcess] Received task: test_task[086affdd-4edb-4130-ac5b-71d6e7c388d2]
+[2019-07-14 05:59:06,761: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:07,753: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:07,754: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:07,756: INFO/MainProcess] Task test_task[76de99d3-2754-4e2b-af44-9eeecd835ef6] succeeded in 5.00463124900125s: None
+[2019-07-14 05:59:07,757: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:07,758: INFO/MainProcess] Received task: test_task[cb87e44f-771f-4027-ba86-6f732ae3ba3e]
+[2019-07-14 05:59:09,771: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:09,772: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:09,775: INFO/MainProcess] Task test_task[0e8a74a5-5a29-4515-afff-edc74d9fb0d6] succeeded in 5.004070828988915s: None
+[2019-07-14 05:59:09,775: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:09,776: INFO/MainProcess] Received task: test_task[46b7f075-582e-468b-a3bd-fdd647879fe5]
+[2019-07-14 05:59:10,770: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:10,770: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:10,772: INFO/MainProcess] Task test_task[7086c580-e45c-4f23-a30c-d80ca2afa856] succeeded in 5.003212606010493s: None
+[2019-07-14 05:59:10,772: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:10,773: INFO/MainProcess] Received task: test_task[1e0a61a2-2186-46b7-9a6b-bc7a204558b6]
+[2019-07-14 05:59:11,762: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:11,763: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:11,766: INFO/MainProcess] Task test_task[1d18c575-9dad-4817-b4d4-1a0075b69e4b] succeeded in 5.00432155400631s: None
+[2019-07-14 05:59:11,767: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:11,768: INFO/MainProcess] Received task: test_task[29f08bf9-d729-47cd-a27c-f783321b448f]
+[2019-07-14 05:59:12,757: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:12,758: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:12,760: INFO/MainProcess] Task test_task[c324aa1b-dc0d-406e-af5f-216a90aff88f] succeeded in 5.0032232429948635s: None
+[2019-07-14 05:59:12,761: INFO/MainProcess] Received task: test_task[97a34b68-a486-4d34-b0d8-74b42cdbdbc4]
+[2019-07-14 05:59:12,762: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:14,776: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:14,776: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:14,779: INFO/MainProcess] Task test_task[cde020cd-b414-42bb-9365-4c335b1ab8fe] succeeded in 5.003207945992472s: None
+[2019-07-14 05:59:14,779: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:14,780: INFO/MainProcess] Received task: test_task[b663194e-49bc-460a-a050-c2906d909356]
+[2019-07-14 05:59:15,773: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:15,774: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:15,775: INFO/MainProcess] Task test_task[25651128-d5ba-411b-9a62-c453bc8acdea] succeeded in 5.00286451401189s: None
+[2019-07-14 05:59:15,776: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:15,777: INFO/MainProcess] Received task: test_task[06cf1a50-7855-420f-8587-557b61ee356d]
+[2019-07-14 05:59:16,768: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:16,768: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:16,770: INFO/MainProcess] Task test_task[4a5cc8f1-08e3-441e-ad33-8a1a02bec78f] succeeded in 5.003500907972921s: None
+[2019-07-14 05:59:16,771: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:16,772: INFO/MainProcess] Received task: test_task[7d93c9da-4468-4c44-bbb2-963b1dfba32a]
+[2019-07-14 05:59:17,763: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:17,763: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:17,765: INFO/MainProcess] Task test_task[bd5d37a9-e0da-4138-adac-9f5e61acabc7] succeeded in 5.003774867975153s: None
+[2019-07-14 05:59:17,766: INFO/MainProcess] Received task: test_task[27b5c5de-fd0c-4edf-9b25-fe40150cf6c1]
+[2019-07-14 05:59:17,767: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:19,780: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:19,781: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:19,784: INFO/MainProcess] Task test_task[e51dab11-2054-4ac3-9f69-da3e435508f6] succeeded in 5.004649902984966s: None
+[2019-07-14 05:59:19,785: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:19,786: INFO/MainProcess] Received task: test_task[3ea94259-65d1-46bc-a7a9-a60d268bd68f]
+[2019-07-14 05:59:20,777: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:20,778: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:20,780: INFO/MainProcess] Task test_task[2143605b-6e5d-451b-911b-e018dddb24fb] succeeded in 5.004000429995358s: None
+[2019-07-14 05:59:20,781: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:20,781: INFO/MainProcess] Received task: test_task[d75dd4ab-2e4c-4a5b-8298-b2349dd141cb]
+[2019-07-14 05:59:21,772: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:21,773: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:21,776: INFO/MainProcess] Task test_task[24b84679-dfd2-4817-84af-643771e00589] succeeded in 5.004688287008321s: None
+[2019-07-14 05:59:21,777: INFO/MainProcess] Received task: test_task[63fdad2a-169a-4df7-8a68-e1f71e5805cf]
+[2019-07-14 05:59:21,778: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:22,768: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:22,768: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:22,769: INFO/MainProcess] Task test_task[4c58ca13-b8b6-432a-94ba-cf6d404885c0] succeeded in 5.002721305994783s: None
+[2019-07-14 05:59:22,770: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:22,770: INFO/MainProcess] Received task: test_task[5dc5b304-4b92-4c70-bae9-4f2af8efa76f]
+[2019-07-14 05:59:24,786: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:24,787: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:24,788: INFO/MainProcess] Task test_task[fbd301be-2b30-4ebf-814c-27bb73320fc8] succeeded in 5.002746357989963s: None
+[2019-07-14 05:59:24,789: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:24,789: INFO/MainProcess] Received task: test_task[c66ab3cd-9798-406a-bf85-2e9067d87944]
+[2019-07-14 05:59:25,782: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:25,783: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:25,786: INFO/MainProcess] Task test_task[ccf642ff-8da0-4e2c-8119-71f2d46cf34d] succeeded in 5.004808394005522s: None
+[2019-07-14 05:59:25,786: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:25,787: INFO/MainProcess] Received task: test_task[bd7525c5-1458-4c35-9ca9-87a4279f5caf]
+[2019-07-14 05:59:26,778: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:26,779: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:26,781: INFO/MainProcess] Task test_task[086affdd-4edb-4130-ac5b-71d6e7c388d2] succeeded in 5.003753429977223s: None
+[2019-07-14 05:59:26,782: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:26,783: INFO/MainProcess] Received task: test_task[efc17de3-2428-4c13-ba4f-069865448f10]
+[2019-07-14 05:59:27,772: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:27,772: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:27,775: INFO/MainProcess] Task test_task[cb87e44f-771f-4027-ba86-6f732ae3ba3e] succeeded in 5.004942150990246s: None
+[2019-07-14 05:59:27,776: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:27,777: INFO/MainProcess] Received task: test_task[6faa5ee3-e5d2-449b-a6f8-d73428c74b20]
+[2019-07-14 05:59:29,790: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:29,791: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:29,795: INFO/MainProcess] Task test_task[46b7f075-582e-468b-a3bd-fdd647879fe5] succeeded in 5.006192433007527s: None
+[2019-07-14 05:59:29,795: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:29,796: INFO/MainProcess] Received task: test_task[92453c69-f179-4cb8-8c8b-4628992b83ca]
+[2019-07-14 05:59:30,787: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:30,788: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:30,790: INFO/MainProcess] Task test_task[1e0a61a2-2186-46b7-9a6b-bc7a204558b6] succeeded in 5.003659444977529s: None
+[2019-07-14 05:59:30,791: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:30,791: INFO/MainProcess] Received task: test_task[08b68f48-a4b0-4356-bdff-528ae620405c]
+[2019-07-14 05:59:31,783: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:31,784: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:31,786: INFO/MainProcess] Task test_task[29f08bf9-d729-47cd-a27c-f783321b448f] succeeded in 5.003402273985557s: None
+[2019-07-14 05:59:31,787: INFO/MainProcess] Received task: test_task[f122c7dc-5dab-4d58-92a3-8c34334d40e7]
+[2019-07-14 05:59:31,787: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:32,777: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:32,778: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:32,781: INFO/MainProcess] Task test_task[97a34b68-a486-4d34-b0d8-74b42cdbdbc4] succeeded in 5.004634870012524s: None
+[2019-07-14 05:59:32,782: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:32,783: INFO/MainProcess] Received task: test_task[8292cdcd-1cbc-492e-a4b1-84d8042c62ed]
+[2019-07-14 05:59:34,796: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:34,797: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:34,799: INFO/MainProcess] Task test_task[b663194e-49bc-460a-a050-c2906d909356] succeeded in 5.003864857018925s: None
+[2019-07-14 05:59:34,800: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:34,801: INFO/MainProcess] Received task: test_task[cc1807ec-3b59-460f-8cf9-7b9cdcf0ceed]
+[2019-07-14 05:59:35,792: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:35,793: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:35,796: INFO/MainProcess] Task test_task[06cf1a50-7855-420f-8587-557b61ee356d] succeeded in 5.004877490981016s: None
+[2019-07-14 05:59:35,797: INFO/MainProcess] Received task: test_task[6597e0e3-08aa-47ea-9022-a2a76f15bb6c]
+[2019-07-14 05:59:35,797: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:36,789: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:36,790: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:36,793: INFO/MainProcess] Task test_task[7d93c9da-4468-4c44-bbb2-963b1dfba32a] succeeded in 5.006261311995331s: None
+[2019-07-14 05:59:36,794: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:36,795: INFO/MainProcess] Received task: test_task[6dcb328c-a2c7-4da2-837a-8d5d4c57a625]
+[2019-07-14 05:59:37,783: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:37,784: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:37,789: INFO/MainProcess] Task test_task[27b5c5de-fd0c-4edf-9b25-fe40150cf6c1] succeeded in 5.007624475983903s: None
+[2019-07-14 05:59:37,790: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:37,791: INFO/MainProcess] Received task: test_task[28f3f55f-9a36-4ec1-82e6-76af0ae597ea]
+[2019-07-14 05:59:39,802: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:39,802: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:39,805: INFO/MainProcess] Task test_task[3ea94259-65d1-46bc-a7a9-a60d268bd68f] succeeded in 5.00524647498969s: None
+[2019-07-14 05:59:39,806: INFO/MainProcess] Received task: test_task[3372bbae-81f8-4d69-8110-0a086e78c141]
+[2019-07-14 05:59:39,807: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:40,798: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:40,798: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:40,801: INFO/MainProcess] Task test_task[d75dd4ab-2e4c-4a5b-8298-b2349dd141cb] succeeded in 5.0042199610034s: None
+[2019-07-14 05:59:40,803: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:40,804: INFO/MainProcess] Received task: test_task[5099025a-6c39-4a76-a558-96ea92a3c712]
+[2019-07-14 05:59:41,796: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:41,796: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:41,800: INFO/MainProcess] Task test_task[63fdad2a-169a-4df7-8a68-e1f71e5805cf] succeeded in 5.005230630020378s: None
+[2019-07-14 05:59:41,800: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:41,801: INFO/MainProcess] Received task: test_task[d20f3833-ed96-4cce-ac0a-c5c1f4a76389]
+[2019-07-14 05:59:42,791: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:42,791: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:42,794: INFO/MainProcess] Task test_task[5dc5b304-4b92-4c70-bae9-4f2af8efa76f] succeeded in 5.003844605002087s: None
+[2019-07-14 05:59:42,795: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:42,795: INFO/MainProcess] Received task: test_task[e2e1d3d2-ce4f-404c-950f-cbe02189453a]
+[2019-07-14 05:59:44,808: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:44,808: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:44,810: INFO/MainProcess] Task test_task[c66ab3cd-9798-406a-bf85-2e9067d87944] succeeded in 5.003253564005718s: None
+[2019-07-14 05:59:44,811: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:44,811: INFO/MainProcess] Received task: test_task[5d257b19-4aa1-4408-8d01-2f827d766587]
+[2019-07-14 05:59:45,804: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:45,805: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:45,808: INFO/MainProcess] Task test_task[bd7525c5-1458-4c35-9ca9-87a4279f5caf] succeeded in 5.005185849004192s: None
+[2019-07-14 05:59:45,809: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:45,809: INFO/MainProcess] Received task: test_task[f66c195c-4acb-4564-9ba3-2ba852373784]
+[2019-07-14 05:59:46,802: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:46,803: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:46,805: INFO/MainProcess] Task test_task[efc17de3-2428-4c13-ba4f-069865448f10] succeeded in 5.004761195013998s: None
+[2019-07-14 05:59:46,806: INFO/MainProcess] Received task: test_task[8ae45c8d-3497-4623-bb84-06d44c17ff32]
+[2019-07-14 05:59:46,806: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:47,796: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:47,797: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:47,800: INFO/MainProcess] Task test_task[6faa5ee3-e5d2-449b-a6f8-d73428c74b20] succeeded in 5.004673415998695s: None
+[2019-07-14 05:59:47,800: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:47,801: INFO/MainProcess] Received task: test_task[276d372f-3736-4bbc-8e28-a77b6a0c4bbd]
+[2019-07-14 05:59:49,811: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:49,812: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:49,815: INFO/MainProcess] Task test_task[92453c69-f179-4cb8-8c8b-4628992b83ca] succeeded in 5.00414274999639s: None
+[2019-07-14 05:59:49,816: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:49,817: INFO/MainProcess] Received task: test_task[fd347501-d4d5-4b96-9e76-e550dfbca45d]
+[2019-07-14 05:59:50,809: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:50,810: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:50,812: INFO/MainProcess] Task test_task[08b68f48-a4b0-4356-bdff-528ae620405c] succeeded in 5.003657499997644s: None
+[2019-07-14 05:59:50,813: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:50,815: INFO/MainProcess] Received task: test_task[ca1ce83f-5d6c-4333-9c7f-df539c885f4e]
+[2019-07-14 05:59:51,807: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:51,808: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:51,811: INFO/MainProcess] Task test_task[f122c7dc-5dab-4d58-92a3-8c34334d40e7] succeeded in 5.003981921996456s: None
+[2019-07-14 05:59:51,811: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:51,812: INFO/MainProcess] Received task: test_task[c7afefd0-b7a5-4196-8a86-5388ffd8471b]
+[2019-07-14 05:59:52,801: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:52,801: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:52,803: INFO/MainProcess] Task test_task[8292cdcd-1cbc-492e-a4b1-84d8042c62ed] succeeded in 5.002116632007528s: None
+[2019-07-14 05:59:52,803: INFO/MainProcess] Received task: test_task[537fc055-de8e-4c4f-a10f-8a67a1131cdb]
+[2019-07-14 05:59:52,804: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:54,817: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:54,818: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:54,820: INFO/MainProcess] Task test_task[cc1807ec-3b59-460f-8cf9-7b9cdcf0ceed] succeeded in 5.0036287019902375s: None
+[2019-07-14 05:59:54,821: INFO/MainProcess] Received task: test_task[403038ee-b726-404b-bec9-1f251b0bcf8e]
+[2019-07-14 05:59:54,821: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:55,815: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 05:59:55,816: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 05:59:55,819: INFO/MainProcess] Task test_task[6597e0e3-08aa-47ea-9022-a2a76f15bb6c] succeeded in 5.005596239992883s: None
+[2019-07-14 05:59:55,820: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 05:59:55,821: INFO/MainProcess] Received task: test_task[fdbad5c8-8237-45c7-b60f-ab852f202e79]
+[2019-07-14 05:59:56,813: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 05:59:56,813: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 05:59:56,815: INFO/MainProcess] Task test_task[6dcb328c-a2c7-4da2-837a-8d5d4c57a625] succeeded in 5.003983751987107s: None
+[2019-07-14 05:59:56,816: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 05:59:56,817: INFO/MainProcess] Received task: test_task[ddc30905-2c04-447c-b731-3cc9d0b8dad9]
+[2019-07-14 05:59:57,804: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 05:59:57,805: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 05:59:57,807: INFO/MainProcess] Task test_task[28f3f55f-9a36-4ec1-82e6-76af0ae597ea] succeeded in 5.0027986130153295s: None
+[2019-07-14 05:59:57,807: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 05:59:57,808: INFO/MainProcess] Received task: test_task[e359aa06-2015-4c2d-9e08-31abdaa73396]
+[2019-07-14 05:59:59,821: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 05:59:59,822: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 05:59:59,823: INFO/MainProcess] Task test_task[3372bbae-81f8-4d69-8110-0a086e78c141] succeeded in 5.002143140998669s: None
+[2019-07-14 05:59:59,824: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 05:59:59,824: INFO/MainProcess] Received task: test_task[6d40ba92-6129-4f92-9294-85450988343c]
+[2019-07-14 06:00:00,821: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:00,822: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:00,825: INFO/MainProcess] Task test_task[5099025a-6c39-4a76-a558-96ea92a3c712] succeeded in 5.004739486001199s: None
+[2019-07-14 06:00:00,826: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:00,827: INFO/MainProcess] Received task: test_task[aed564e0-ca73-4b5b-bc7f-fb2c67bf54e7]
+[2019-07-14 06:00:01,817: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:01,817: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:01,821: INFO/MainProcess] Task test_task[d20f3833-ed96-4cce-ac0a-c5c1f4a76389] succeeded in 5.004723739984911s: None
+[2019-07-14 06:00:01,821: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:01,822: INFO/MainProcess] Received task: test_task[19d32356-ac85-46ca-a605-468f0ddb26ff]
+[2019-07-14 06:00:02,808: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:02,809: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:02,811: INFO/MainProcess] Task test_task[e2e1d3d2-ce4f-404c-950f-cbe02189453a] succeeded in 5.003272387984907s: None
+[2019-07-14 06:00:02,811: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:02,812: INFO/MainProcess] Received task: test_task[efe04d8a-ab21-4921-8750-81b9551adeed]
+[2019-07-14 06:00:04,824: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:04,825: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:04,828: INFO/MainProcess] Task test_task[5d257b19-4aa1-4408-8d01-2f827d766587] succeeded in 5.004130715999054s: None
+[2019-07-14 06:00:04,829: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:04,829: INFO/MainProcess] Received task: test_task[e62fa294-195d-439f-8089-2cbf327255e5]
+[2019-07-14 06:00:05,827: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:05,827: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:05,831: INFO/MainProcess] Task test_task[f66c195c-4acb-4564-9ba3-2ba852373784] succeeded in 5.004714735987363s: None
+[2019-07-14 06:00:05,831: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:05,832: INFO/MainProcess] Received task: test_task[650d91ac-aa33-4086-9f46-d8006f380ef3]
+[2019-07-14 06:00:06,822: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:06,822: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:06,824: INFO/MainProcess] Task test_task[8ae45c8d-3497-4623-bb84-06d44c17ff32] succeeded in 5.002386375999777s: None
+[2019-07-14 06:00:06,824: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:06,825: INFO/MainProcess] Received task: test_task[e494fac3-027e-4110-b7a6-abe71e5a97da]
+[2019-07-14 06:00:07,812: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:07,813: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:07,816: INFO/MainProcess] Task test_task[276d372f-3736-4bbc-8e28-a77b6a0c4bbd] succeeded in 5.004437452997081s: None
+[2019-07-14 06:00:07,817: INFO/MainProcess] Received task: test_task[54bb90d5-dc31-4282-a3da-6ad1e30687a7]
+[2019-07-14 06:00:07,818: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:09,830: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:09,830: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:09,832: INFO/MainProcess] Task test_task[fd347501-d4d5-4b96-9e76-e550dfbca45d] succeeded in 5.0035070900048595s: None
+[2019-07-14 06:00:09,833: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:09,834: INFO/MainProcess] Received task: test_task[b004c8ab-02cf-4ca2-b7fe-3eb1dad9ade4]
+[2019-07-14 06:00:10,832: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:10,833: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:10,836: INFO/MainProcess] Task test_task[ca1ce83f-5d6c-4333-9c7f-df539c885f4e] succeeded in 5.004974124982255s: None
+[2019-07-14 06:00:10,837: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:10,838: INFO/MainProcess] Received task: test_task[aa83a61f-056e-40f1-8194-54fc571f1ce6]
+[2019-07-14 06:00:11,825: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:11,826: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:11,829: INFO/MainProcess] Task test_task[c7afefd0-b7a5-4196-8a86-5388ffd8471b] succeeded in 5.004058655991685s: None
+[2019-07-14 06:00:11,830: INFO/MainProcess] Received task: test_task[7cf49188-0638-4718-8645-1a86267424eb]
+[2019-07-14 06:00:11,830: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:12,819: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:12,820: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:12,822: INFO/MainProcess] Task test_task[537fc055-de8e-4c4f-a10f-8a67a1131cdb] succeeded in 5.003878747986164s: None
+[2019-07-14 06:00:12,822: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:12,823: INFO/MainProcess] Received task: test_task[33a0a422-af32-42a2-a2a1-5c2041719e79]
+[2019-07-14 06:00:14,834: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:14,835: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:14,839: INFO/MainProcess] Task test_task[403038ee-b726-404b-bec9-1f251b0bcf8e] succeeded in 5.0058676049811766s: None
+[2019-07-14 06:00:14,840: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:14,841: INFO/MainProcess] Received task: test_task[71bd213e-c67a-4e42-b9bd-0c880ee81711]
+[2019-07-14 06:00:15,838: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:15,839: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:15,842: INFO/MainProcess] Task test_task[fdbad5c8-8237-45c7-b60f-ab852f202e79] succeeded in 5.004824675008422s: None
+[2019-07-14 06:00:15,843: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:15,844: INFO/MainProcess] Received task: test_task[e6e978c3-f9ef-42bb-b62e-b10557ac456c]
+[2019-07-14 06:00:16,831: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:16,832: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:16,834: INFO/MainProcess] Task test_task[ddc30905-2c04-447c-b731-3cc9d0b8dad9] succeeded in 5.004257422988303s: None
+[2019-07-14 06:00:16,835: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:16,836: INFO/MainProcess] Received task: test_task[bd4366f5-5b29-4a70-917e-e1e29c0e6af3]
+[2019-07-14 06:00:17,824: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:17,824: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:17,827: INFO/MainProcess] Task test_task[e359aa06-2015-4c2d-9e08-31abdaa73396] succeeded in 5.0043223059910815s: None
+[2019-07-14 06:00:17,827: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:17,828: INFO/MainProcess] Received task: test_task[0842c143-199d-4508-96a3-17da30424b26]
+[2019-07-14 06:00:19,842: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:19,843: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:19,845: INFO/MainProcess] Task test_task[6d40ba92-6129-4f92-9294-85450988343c] succeeded in 5.005237136996584s: None
+[2019-07-14 06:00:19,846: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:19,847: INFO/MainProcess] Received task: test_task[7948e11b-b173-4aa7-8647-efbf327007ef]
+[2019-07-14 06:00:20,844: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:20,845: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:20,847: INFO/MainProcess] Task test_task[aed564e0-ca73-4b5b-bc7f-fb2c67bf54e7] succeeded in 5.004550012003165s: None
+[2019-07-14 06:00:20,848: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:20,848: INFO/MainProcess] Received task: test_task[a7a91c6e-502f-4422-9dce-5a52e2039012]
+[2019-07-14 06:00:21,836: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:21,837: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:21,839: INFO/MainProcess] Task test_task[19d32356-ac85-46ca-a605-468f0ddb26ff] succeeded in 5.003044773999136s: None
+[2019-07-14 06:00:21,840: INFO/MainProcess] Received task: test_task[627678fc-0cc5-4dae-83ae-ab269f7125ee]
+[2019-07-14 06:00:21,840: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:22,828: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:22,829: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:22,831: INFO/MainProcess] Task test_task[efe04d8a-ab21-4921-8750-81b9551adeed] succeeded in 5.003148766991217s: None
+[2019-07-14 06:00:22,831: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:22,833: INFO/MainProcess] Received task: test_task[8b989811-2aa7-4c31-b63a-7ff7f8430bce]
+[2019-07-14 06:00:24,848: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:24,849: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:24,851: INFO/MainProcess] Task test_task[e62fa294-195d-439f-8089-2cbf327255e5] succeeded in 5.004785519005964s: None
+[2019-07-14 06:00:24,852: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:24,852: INFO/MainProcess] Received task: test_task[992190eb-cbd1-41f7-aea8-04815eaea75e]
+[2019-07-14 06:00:25,849: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:25,850: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:25,852: INFO/MainProcess] Task test_task[650d91ac-aa33-4086-9f46-d8006f380ef3] succeeded in 5.004357322992291s: None
+[2019-07-14 06:00:25,853: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:25,854: INFO/MainProcess] Received task: test_task[16128898-08cc-4934-ad77-a5027d8df1af]
+[2019-07-14 06:00:26,841: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:26,842: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:26,843: INFO/MainProcess] Task test_task[e494fac3-027e-4110-b7a6-abe71e5a97da] succeeded in 5.003390979982214s: None
+[2019-07-14 06:00:26,844: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:26,844: INFO/MainProcess] Received task: test_task[0fb0382a-33d8-49f3-80d9-18a78aa202ac]
+[2019-07-14 06:00:27,832: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:27,833: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:27,837: INFO/MainProcess] Task test_task[54bb90d5-dc31-4282-a3da-6ad1e30687a7] succeeded in 5.005235424992861s: None
+[2019-07-14 06:00:27,837: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:27,838: INFO/MainProcess] Received task: test_task[ec8a72e1-7e90-428a-98f0-5b1a100d9578]
+[2019-07-14 06:00:29,853: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:29,854: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:29,856: INFO/MainProcess] Task test_task[b004c8ab-02cf-4ca2-b7fe-3eb1dad9ade4] succeeded in 5.004634265991626s: None
+[2019-07-14 06:00:29,857: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:29,858: INFO/MainProcess] Received task: test_task[09206672-5474-4fcc-ac0c-3b26820dc38c]
+[2019-07-14 06:00:30,854: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:30,855: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:30,856: INFO/MainProcess] Task test_task[aa83a61f-056e-40f1-8194-54fc571f1ce6] succeeded in 5.003385119023733s: None
+[2019-07-14 06:00:30,857: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:30,858: INFO/MainProcess] Received task: test_task[9013368e-7e75-4a9e-83a6-08cae95170af]
+[2019-07-14 06:00:31,846: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:31,846: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:31,848: INFO/MainProcess] Task test_task[7cf49188-0638-4718-8645-1a86267424eb] succeeded in 5.004443262005225s: None
+[2019-07-14 06:00:31,849: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:31,850: INFO/MainProcess] Received task: test_task[d77cd348-e280-4ae0-a55e-f0186ef85b74]
+[2019-07-14 06:00:32,838: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:32,839: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:32,844: INFO/MainProcess] Task test_task[33a0a422-af32-42a2-a2a1-5c2041719e79] succeeded in 5.006133146991488s: None
+[2019-07-14 06:00:32,844: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:32,845: INFO/MainProcess] Received task: test_task[b4a6ea3f-6f22-4b20-b675-8522e14d652a]
+[2019-07-14 06:00:34,858: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:34,859: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:34,862: INFO/MainProcess] Task test_task[71bd213e-c67a-4e42-b9bd-0c880ee81711] succeeded in 5.004988113971194s: None
+[2019-07-14 06:00:34,863: INFO/MainProcess] Received task: test_task[ffd704d0-ef60-4ef8-8576-13cff4769ed8]
+[2019-07-14 06:00:34,864: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:35,858: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:35,858: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:35,862: INFO/MainProcess] Task test_task[e6e978c3-f9ef-42bb-b62e-b10557ac456c] succeeded in 5.004436096001882s: None
+[2019-07-14 06:00:35,863: INFO/MainProcess] Received task: test_task[f8924e2b-9486-41b6-adac-8f1464dd4cb4]
+[2019-07-14 06:00:35,863: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:36,850: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:36,850: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:36,854: INFO/MainProcess] Task test_task[bd4366f5-5b29-4a70-917e-e1e29c0e6af3] succeeded in 5.004632406984456s: None
+[2019-07-14 06:00:36,854: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:36,855: INFO/MainProcess] Received task: test_task[8e17c88b-19ee-4673-b397-a0fd5fe8da0a]
+[2019-07-14 06:00:37,845: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:37,845: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:37,848: INFO/MainProcess] Task test_task[0842c143-199d-4508-96a3-17da30424b26] succeeded in 5.003944227995817s: None
+[2019-07-14 06:00:37,849: INFO/MainProcess] Received task: test_task[d79bb991-d571-47ca-bc28-bb7be67b59df]
+[2019-07-14 06:00:37,850: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:39,864: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:39,865: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:39,868: INFO/MainProcess] Task test_task[7948e11b-b173-4aa7-8647-efbf327007ef] succeeded in 5.004186524980469s: None
+[2019-07-14 06:00:39,869: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:39,870: INFO/MainProcess] Received task: test_task[03f7c1f3-7423-4b5a-8f57-35f998e128bf]
+[2019-07-14 06:00:40,864: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:40,865: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:40,866: INFO/MainProcess] Task test_task[a7a91c6e-502f-4422-9dce-5a52e2039012] succeeded in 5.002877994993469s: None
+[2019-07-14 06:00:40,867: INFO/MainProcess] Received task: test_task[0fa43026-3744-4d21-ba10-511e4ae1b000]
+[2019-07-14 06:00:40,867: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:41,855: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:41,856: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:41,859: INFO/MainProcess] Task test_task[627678fc-0cc5-4dae-83ae-ab269f7125ee] succeeded in 5.004339719976997s: None
+[2019-07-14 06:00:41,859: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:41,860: INFO/MainProcess] Received task: test_task[8e0bb1a9-6324-40ba-aae3-37d6d2472951]
+[2019-07-14 06:00:42,851: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:42,851: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:42,854: INFO/MainProcess] Task test_task[8b989811-2aa7-4c31-b63a-7ff7f8430bce] succeeded in 5.004675489995861s: None
+[2019-07-14 06:00:42,855: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:42,856: INFO/MainProcess] Received task: test_task[2a695499-7a52-4db3-9e4a-3b17b275bc29]
+[2019-07-14 06:00:44,869: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:44,870: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:44,873: INFO/MainProcess] Task test_task[992190eb-cbd1-41f7-aea8-04815eaea75e] succeeded in 5.004476917005377s: None
+[2019-07-14 06:00:44,874: INFO/MainProcess] Received task: test_task[47e175bc-56a2-4753-a00e-4585cfbd8b94]
+[2019-07-14 06:00:44,875: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:45,868: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:45,869: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:45,870: INFO/MainProcess] Task test_task[16128898-08cc-4934-ad77-a5027d8df1af] succeeded in 5.002559651999036s: None
+[2019-07-14 06:00:45,871: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:45,871: INFO/MainProcess] Received task: test_task[35643b94-72ff-475f-a83a-92e83c9fa705]
+[2019-07-14 06:00:46,860: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:46,861: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:46,863: INFO/MainProcess] Task test_task[0fb0382a-33d8-49f3-80d9-18a78aa202ac] succeeded in 5.00409206902259s: None
+[2019-07-14 06:00:46,864: INFO/MainProcess] Received task: test_task[9534d1e0-0fb8-476d-9b77-09ac0fa3183d]
+[2019-07-14 06:00:46,865: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:47,856: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:47,857: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:47,860: INFO/MainProcess] Task test_task[ec8a72e1-7e90-428a-98f0-5b1a100d9578] succeeded in 5.004747497005155s: None
+[2019-07-14 06:00:47,861: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:47,861: INFO/MainProcess] Received task: test_task[62077c4e-298f-4add-aa2a-f037289f1a9f]
+[2019-07-14 06:00:49,876: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:49,876: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:49,880: INFO/MainProcess] Task test_task[09206672-5474-4fcc-ac0c-3b26820dc38c] succeeded in 5.0050637680105865s: None
+[2019-07-14 06:00:49,880: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:49,881: INFO/MainProcess] Received task: test_task[f792cc97-525a-417a-855b-cbc5885e9041]
+[2019-07-14 06:00:50,872: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:50,872: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:50,874: INFO/MainProcess] Task test_task[9013368e-7e75-4a9e-83a6-08cae95170af] succeeded in 5.003688891010825s: None
+[2019-07-14 06:00:50,875: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:50,876: INFO/MainProcess] Received task: test_task[16be0ab0-8173-4505-8941-265e8399bb5e]
+[2019-07-14 06:00:51,866: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:51,866: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:51,868: INFO/MainProcess] Task test_task[d77cd348-e280-4ae0-a55e-f0186ef85b74] succeeded in 5.003617984999437s: None
+[2019-07-14 06:00:51,869: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:51,870: INFO/MainProcess] Received task: test_task[e039a493-77eb-4936-bcbf-9d624234b4b7]
+[2019-07-14 06:00:52,861: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:52,862: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:52,865: INFO/MainProcess] Task test_task[b4a6ea3f-6f22-4b20-b675-8522e14d652a] succeeded in 5.004002408997621s: None
+[2019-07-14 06:00:52,866: INFO/MainProcess] Received task: test_task[6e35c356-6845-4a28-9753-5319c888cdc9]
+[2019-07-14 06:00:52,866: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:54,881: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:54,882: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:54,885: INFO/MainProcess] Task test_task[ffd704d0-ef60-4ef8-8576-13cff4769ed8] succeeded in 5.0050550129963085s: None
+[2019-07-14 06:00:54,886: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:00:54,887: INFO/MainProcess] Received task: test_task[2c236e2f-b31f-421b-a6d2-4927cfdd6d4c]
+[2019-07-14 06:00:55,876: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:00:55,876: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:00:55,878: INFO/MainProcess] Task test_task[f8924e2b-9486-41b6-adac-8f1464dd4cb4] succeeded in 5.002561506000347s: None
+[2019-07-14 06:00:55,878: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:00:55,879: INFO/MainProcess] Received task: test_task[a66ec1f0-a105-4dce-b067-fdab16e7e531]
+[2019-07-14 06:00:56,870: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:00:56,871: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:00:56,873: INFO/MainProcess] Task test_task[8e17c88b-19ee-4673-b397-a0fd5fe8da0a] succeeded in 5.00344844601932s: None
+[2019-07-14 06:00:56,873: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:00:56,874: INFO/MainProcess] Received task: test_task[6797ffb7-5172-44aa-b6e2-fc9e697a6176]
+[2019-07-14 06:00:57,867: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:00:57,868: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:00:57,872: INFO/MainProcess] Task test_task[d79bb991-d571-47ca-bc28-bb7be67b59df] succeeded in 5.005322468990926s: None
+[2019-07-14 06:00:57,872: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:00:57,873: INFO/MainProcess] Received task: test_task[e37ad0df-1430-44cd-9baa-587cf3e2f7df]
+[2019-07-14 06:00:59,887: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:00:59,887: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:00:59,890: INFO/MainProcess] Task test_task[03f7c1f3-7423-4b5a-8f57-35f998e128bf] succeeded in 5.003697788022691s: None
+[2019-07-14 06:00:59,891: INFO/MainProcess] Received task: test_task[05f20c83-56c0-4b38-886b-1b15a7883b36]
+[2019-07-14 06:00:59,891: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:00,879: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:00,881: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:00,883: INFO/MainProcess] Task test_task[0fa43026-3744-4d21-ba10-511e4ae1b000] succeeded in 5.004628597991541s: None
+[2019-07-14 06:01:00,883: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:00,884: INFO/MainProcess] Received task: test_task[cff5655b-8f9e-476b-8256-57d0364d9dc8]
+[2019-07-14 06:01:01,874: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:01,875: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:01,878: INFO/MainProcess] Task test_task[8e0bb1a9-6324-40ba-aae3-37d6d2472951] succeeded in 5.0049025869811885s: None
+[2019-07-14 06:01:01,880: INFO/MainProcess] Received task: test_task[2476b6cf-d12b-4656-996b-52a107ec6e1c]
+[2019-07-14 06:01:01,881: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:02,874: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:02,875: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:02,877: INFO/MainProcess] Task test_task[2a695499-7a52-4db3-9e4a-3b17b275bc29] succeeded in 5.005166264018044s: None
+[2019-07-14 06:01:02,878: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:02,879: INFO/MainProcess] Received task: test_task[0874bc69-74be-4db3-8502-1e14e9ad60de]
+[2019-07-14 06:01:04,892: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:04,893: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:04,897: INFO/MainProcess] Task test_task[47e175bc-56a2-4753-a00e-4585cfbd8b94] succeeded in 5.005412566009909s: None
+[2019-07-14 06:01:04,897: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:04,898: INFO/MainProcess] Received task: test_task[2321e2b9-f464-4a8c-b41f-27de17b4612a]
+[2019-07-14 06:01:05,885: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:05,886: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:05,889: INFO/MainProcess] Task test_task[35643b94-72ff-475f-a83a-92e83c9fa705] succeeded in 5.005768453993369s: None
+[2019-07-14 06:01:05,890: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:05,890: INFO/MainProcess] Received task: test_task[39f26d34-1119-43b3-a64a-4779c1cfddd8]
+[2019-07-14 06:01:06,882: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:06,882: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:06,885: INFO/MainProcess] Task test_task[9534d1e0-0fb8-476d-9b77-09ac0fa3183d] succeeded in 5.004143108992139s: None
+[2019-07-14 06:01:06,886: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:06,887: INFO/MainProcess] Received task: test_task[86f782f5-1cf2-45db-b5b9-497ec51fcc64]
+[2019-07-14 06:01:07,879: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:07,880: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:07,884: INFO/MainProcess] Task test_task[62077c4e-298f-4add-aa2a-f037289f1a9f] succeeded in 5.006172085006256s: None
+[2019-07-14 06:01:07,886: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:07,886: INFO/MainProcess] Received task: test_task[52a860ca-b117-41ec-89ae-733e817246a5]
+[2019-07-14 06:01:09,899: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:09,899: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:09,903: INFO/MainProcess] Task test_task[f792cc97-525a-417a-855b-cbc5885e9041] succeeded in 5.00511515699327s: None
+[2019-07-14 06:01:09,904: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:09,905: INFO/MainProcess] Received task: test_task[84b16c9f-0358-41b3-bd9c-aeb67e8cee02]
+[2019-07-14 06:01:10,891: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:10,892: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:10,895: INFO/MainProcess] Task test_task[16be0ab0-8173-4505-8941-265e8399bb5e] succeeded in 5.005553962982958s: None
+[2019-07-14 06:01:10,896: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:10,897: INFO/MainProcess] Received task: test_task[d8db0b72-9570-4dd4-8397-448fc6a8a31a]
+[2019-07-14 06:01:11,887: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:11,888: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:11,891: INFO/MainProcess] Task test_task[e039a493-77eb-4936-bcbf-9d624234b4b7] succeeded in 5.005463980982313s: None
+[2019-07-14 06:01:11,892: INFO/MainProcess] Received task: test_task[11a967c5-0ba3-493c-bb10-5902ee205bda]
+[2019-07-14 06:01:11,893: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:12,887: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:12,888: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:12,890: INFO/MainProcess] Task test_task[6e35c356-6845-4a28-9753-5319c888cdc9] succeeded in 5.004407960979734s: None
+[2019-07-14 06:01:12,891: INFO/MainProcess] Received task: test_task[ed9a408b-87a5-4170-9ab7-2a9b780a158f]
+[2019-07-14 06:01:12,891: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:14,904: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:14,905: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:14,908: INFO/MainProcess] Task test_task[2c236e2f-b31f-421b-a6d2-4927cfdd6d4c] succeeded in 5.004835047002416s: None
+[2019-07-14 06:01:14,909: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:14,910: INFO/MainProcess] Received task: test_task[d01b5372-5a0f-44b9-997a-fda4d6bef503]
+[2019-07-14 06:01:15,897: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:15,897: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:15,900: INFO/MainProcess] Task test_task[a66ec1f0-a105-4dce-b067-fdab16e7e531] succeeded in 5.003962679009419s: None
+[2019-07-14 06:01:15,901: INFO/MainProcess] Received task: test_task[9b996de0-88fb-40fc-9bd4-f924d8ff065e]
+[2019-07-14 06:01:15,902: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:16,894: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:16,894: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:16,895: INFO/MainProcess] Task test_task[6797ffb7-5172-44aa-b6e2-fc9e697a6176] succeeded in 5.002371447015321s: None
+[2019-07-14 06:01:16,896: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:16,896: INFO/MainProcess] Received task: test_task[c07c8cce-94a7-4b07-9186-557a8bb8cc4e]
+[2019-07-14 06:01:17,892: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:17,893: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:17,895: INFO/MainProcess] Task test_task[e37ad0df-1430-44cd-9baa-587cf3e2f7df] succeeded in 5.003770720999455s: None
+[2019-07-14 06:01:17,896: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:17,896: INFO/MainProcess] Received task: test_task[6d644fc7-d213-4f9b-9296-4c9e1b6742c6]
+[2019-07-14 06:01:19,911: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:19,911: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:19,914: INFO/MainProcess] Task test_task[05f20c83-56c0-4b38-886b-1b15a7883b36] succeeded in 5.004616960999556s: None
+[2019-07-14 06:01:19,914: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:19,915: INFO/MainProcess] Received task: test_task[59065cd5-bfd4-4093-b6eb-43616d41c8ce]
+[2019-07-14 06:01:20,902: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:20,903: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:20,905: INFO/MainProcess] Task test_task[cff5655b-8f9e-476b-8256-57d0364d9dc8] succeeded in 5.003283619007561s: None
+[2019-07-14 06:01:20,906: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:20,906: INFO/MainProcess] Received task: test_task[1496096f-a3a7-438b-aa4e-d87e4a6bc74d]
+[2019-07-14 06:01:21,897: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:21,898: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:21,901: INFO/MainProcess] Task test_task[2476b6cf-d12b-4656-996b-52a107ec6e1c] succeeded in 5.004865483992035s: None
+[2019-07-14 06:01:21,902: INFO/MainProcess] Received task: test_task[c030fe74-addc-495c-86a8-2cc32c07aec3]
+[2019-07-14 06:01:21,902: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:22,897: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:22,898: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:22,901: INFO/MainProcess] Task test_task[0874bc69-74be-4db3-8502-1e14e9ad60de] succeeded in 5.005137438012753s: None
+[2019-07-14 06:01:22,902: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:22,903: INFO/MainProcess] Received task: test_task[63ae0b62-2173-4199-8152-3857240b2139]
+[2019-07-14 06:01:24,916: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:24,916: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:24,919: INFO/MainProcess] Task test_task[2321e2b9-f464-4a8c-b41f-27de17b4612a] succeeded in 5.004878514009761s: None
+[2019-07-14 06:01:24,920: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:24,921: INFO/MainProcess] Received task: test_task[072402e8-e024-44bb-9030-5f1490a96194]
+[2019-07-14 06:01:25,906: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:25,907: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:25,910: INFO/MainProcess] Task test_task[39f26d34-1119-43b3-a64a-4779c1cfddd8] succeeded in 5.003987074975157s: None
+[2019-07-14 06:01:25,911: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:25,912: INFO/MainProcess] Received task: test_task[96c4c8be-6995-4892-ba6f-5f0c025f9e13]
+[2019-07-14 06:01:26,903: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:26,904: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:26,907: INFO/MainProcess] Task test_task[86f782f5-1cf2-45db-b5b9-497ec51fcc64] succeeded in 5.005180164997s: None
+[2019-07-14 06:01:26,908: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:26,909: INFO/MainProcess] Received task: test_task[dac6e155-9ab8-42e1-9065-a6451142afa8]
+[2019-07-14 06:01:27,904: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:27,907: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:27,912: INFO/MainProcess] Task test_task[52a860ca-b117-41ec-89ae-733e817246a5] succeeded in 5.0100505459995475s: None
+[2019-07-14 06:01:27,913: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:27,914: INFO/MainProcess] Received task: test_task[e3b8af49-49b8-4dfc-9939-b4daace62545]
+[2019-07-14 06:01:29,921: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:29,922: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:29,924: INFO/MainProcess] Task test_task[84b16c9f-0358-41b3-bd9c-aeb67e8cee02] succeeded in 5.003991715988377s: None
+[2019-07-14 06:01:29,925: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:29,925: INFO/MainProcess] Received task: test_task[cfff3fbb-420a-4a48-93f0-35ec197bad40]
+[2019-07-14 06:01:30,912: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:30,913: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:30,916: INFO/MainProcess] Task test_task[d8db0b72-9570-4dd4-8397-448fc6a8a31a] succeeded in 5.005274369003018s: None
+[2019-07-14 06:01:30,917: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:30,918: INFO/MainProcess] Received task: test_task[c027bc47-38ae-447e-bafe-a7500f8f6e63]
+[2019-07-14 06:01:31,909: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:31,910: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:31,912: INFO/MainProcess] Task test_task[11a967c5-0ba3-493c-bb10-5902ee205bda] succeeded in 5.004290643992135s: None
+[2019-07-14 06:01:31,913: INFO/MainProcess] Received task: test_task[2a33d439-c728-49fe-8ca4-28867eacde3d]
+[2019-07-14 06:01:31,914: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:32,915: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:32,915: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:32,918: INFO/MainProcess] Task test_task[ed9a408b-87a5-4170-9ab7-2a9b780a158f] succeeded in 5.0051604920008685s: None
+[2019-07-14 06:01:32,920: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:32,921: INFO/MainProcess] Received task: test_task[32c7952f-8f67-4c3d-bdab-c956791cb077]
+[2019-07-14 06:01:34,926: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:34,926: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:34,929: INFO/MainProcess] Task test_task[d01b5372-5a0f-44b9-997a-fda4d6bef503] succeeded in 5.004618664999725s: None
+[2019-07-14 06:01:34,930: INFO/MainProcess] Received task: test_task[40392d9a-0c29-4263-979c-78705f79d95b]
+[2019-07-14 06:01:34,931: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:35,918: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:35,919: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:35,923: INFO/MainProcess] Task test_task[9b996de0-88fb-40fc-9bd4-f924d8ff065e] succeeded in 5.00555905100191s: None
+[2019-07-14 06:01:35,923: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:35,924: INFO/MainProcess] Received task: test_task[b0a84c3f-ea8e-487c-bc35-c4a3452fc87c]
+[2019-07-14 06:01:36,915: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:36,915: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:36,917: INFO/MainProcess] Task test_task[c07c8cce-94a7-4b07-9186-557a8bb8cc4e] succeeded in 5.003295942005934s: None
+[2019-07-14 06:01:36,918: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:36,918: INFO/MainProcess] Received task: test_task[087d7a53-fcac-40e4-bcf4-b2d6ac46befd]
+[2019-07-14 06:01:37,921: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:37,922: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:37,924: INFO/MainProcess] Task test_task[6d644fc7-d213-4f9b-9296-4c9e1b6742c6] succeeded in 5.004205791017739s: None
+[2019-07-14 06:01:37,925: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:37,925: INFO/MainProcess] Received task: test_task[6bba6d54-d714-4cbd-94e1-8e26f4d84cb4]
+[2019-07-14 06:01:39,932: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:39,932: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:39,934: INFO/MainProcess] Task test_task[59065cd5-bfd4-4093-b6eb-43616d41c8ce] succeeded in 5.003105741983745s: None
+[2019-07-14 06:01:39,934: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:39,935: INFO/MainProcess] Received task: test_task[3ab0567b-2656-4fba-af31-4c7ee0f0448d]
+[2019-07-14 06:01:40,924: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:40,925: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:40,928: INFO/MainProcess] Task test_task[1496096f-a3a7-438b-aa4e-d87e4a6bc74d] succeeded in 5.005050349980593s: None
+[2019-07-14 06:01:40,929: INFO/MainProcess] Received task: test_task[fce2481d-bc87-48d7-9609-d9d6560742cc]
+[2019-07-14 06:01:40,930: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:41,920: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:41,920: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:41,924: INFO/MainProcess] Task test_task[c030fe74-addc-495c-86a8-2cc32c07aec3] succeeded in 5.006667492009001s: None
+[2019-07-14 06:01:41,925: INFO/MainProcess] Received task: test_task[b18a2a71-0f93-454f-b474-6a6941de03e5]
+[2019-07-14 06:01:41,926: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:42,926: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:42,926: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:42,928: INFO/MainProcess] Task test_task[63ae0b62-2173-4199-8152-3857240b2139] succeeded in 5.003232382005081s: None
+[2019-07-14 06:01:42,929: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:42,930: INFO/MainProcess] Received task: test_task[c908d9c2-384b-4e58-b588-1ed9b3c739df]
+[2019-07-14 06:01:44,936: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:44,937: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:44,940: INFO/MainProcess] Task test_task[072402e8-e024-44bb-9030-5f1490a96194] succeeded in 5.005265675019473s: None
+[2019-07-14 06:01:44,941: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:44,941: INFO/MainProcess] Received task: test_task[b8269cc7-42de-4bf4-b002-d8fe11e54003]
+[2019-07-14 06:01:45,931: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:45,931: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:45,934: INFO/MainProcess] Task test_task[96c4c8be-6995-4892-ba6f-5f0c025f9e13] succeeded in 5.0039556749979965s: None
+[2019-07-14 06:01:45,934: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:45,935: INFO/MainProcess] Received task: test_task[a673f76a-b217-40e3-8833-bb9473bd2704]
+[2019-07-14 06:01:46,927: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:46,927: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:46,928: INFO/MainProcess] Task test_task[dac6e155-9ab8-42e1-9065-a6451142afa8] succeeded in 5.002370436995989s: None
+[2019-07-14 06:01:46,929: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:46,929: INFO/MainProcess] Received task: test_task[0f0692f3-7a79-4e12-b4cb-9fe889c9b03d]
+[2019-07-14 06:01:47,930: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:47,930: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:47,931: INFO/MainProcess] Task test_task[e3b8af49-49b8-4dfc-9939-b4daace62545] succeeded in 5.002392885013251s: None
+[2019-07-14 06:01:47,932: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:47,933: INFO/MainProcess] Received task: test_task[c9e3ea25-35d7-4f28-b9e4-9213e7f05c96]
+[2019-07-14 06:01:49,836: INFO/MainProcess] Events of group {task} enabled by remote.
+[2019-07-14 06:01:49,942: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:49,942: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:49,945: INFO/MainProcess] Task test_task[cfff3fbb-420a-4a48-93f0-35ec197bad40] succeeded in 5.004074196011061s: None
+[2019-07-14 06:01:49,947: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:49,949: INFO/MainProcess] Received task: test_task[16957096-3433-4bf7-a74b-d4681ac1b4cb]
+[2019-07-14 06:01:50,935: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:50,936: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:50,940: INFO/MainProcess] Task test_task[c027bc47-38ae-447e-bafe-a7500f8f6e63] succeeded in 5.005329134000931s: None
+[2019-07-14 06:01:50,941: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:50,942: INFO/MainProcess] Received task: test_task[3fcbba5d-56b6-497c-8ca4-eac61742d8a5]
+[2019-07-14 06:01:51,930: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:51,930: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:51,934: INFO/MainProcess] Task test_task[2a33d439-c728-49fe-8ca4-28867eacde3d] succeeded in 5.004490275983699s: None
+[2019-07-14 06:01:51,935: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:51,935: INFO/MainProcess] Received task: test_task[4ee54953-6924-44a4-a79b-1834222fd8fc]
+[2019-07-14 06:01:52,934: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:52,934: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:52,937: INFO/MainProcess] Task test_task[32c7952f-8f67-4c3d-bdab-c956791cb077] succeeded in 5.004608958988683s: None
+[2019-07-14 06:01:52,939: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:52,941: INFO/MainProcess] Received task: test_task[c0a9fc3a-6b18-443e-8a68-8223ccfaaf7f]
+[2019-07-14 06:01:54,948: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:54,949: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:54,952: INFO/MainProcess] Task test_task[40392d9a-0c29-4263-979c-78705f79d95b] succeeded in 5.004542185983155s: None
+[2019-07-14 06:01:54,953: INFO/MainProcess] Received task: test_task[e2867198-8c43-469b-ab53-7a87f2bf489d]
+[2019-07-14 06:01:54,954: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:55,942: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:01:55,943: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:01:55,946: INFO/MainProcess] Task test_task[b0a84c3f-ea8e-487c-bc35-c4a3452fc87c] succeeded in 5.004189071012661s: None
+[2019-07-14 06:01:55,947: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:01:55,947: INFO/MainProcess] Received task: test_task[8164727d-c5ab-4451-91ce-694a8621fc42]
+[2019-07-14 06:01:56,936: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:01:56,937: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:01:56,939: INFO/MainProcess] Task test_task[087d7a53-fcac-40e4-bcf4-b2d6ac46befd] succeeded in 5.003306364000309s: None
+[2019-07-14 06:01:56,940: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:01:56,941: INFO/MainProcess] Received task: test_task[b1975b07-7d08-4292-b094-bc6bc4b3a6fe]
+[2019-07-14 06:01:57,940: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:01:57,940: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:01:57,943: INFO/MainProcess] Task test_task[6bba6d54-d714-4cbd-94e1-8e26f4d84cb4] succeeded in 5.003752927994356s: None
+[2019-07-14 06:01:57,944: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:01:57,945: INFO/MainProcess] Received task: test_task[e7a41093-afc4-4804-b80f-b562784e565d]
+[2019-07-14 06:01:59,955: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:01:59,956: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:01:59,958: INFO/MainProcess] Task test_task[3ab0567b-2656-4fba-af31-4c7ee0f0448d] succeeded in 5.00335250099306s: None
+[2019-07-14 06:01:59,960: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:01:59,961: INFO/MainProcess] Received task: test_task[94dd0696-2dff-4a21-be8a-519fc44a41fa]
+[2019-07-14 06:02:00,947: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:00,948: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:00,951: INFO/MainProcess] Task test_task[fce2481d-bc87-48d7-9609-d9d6560742cc] succeeded in 5.003776174009545s: None
+[2019-07-14 06:02:00,952: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:00,953: INFO/MainProcess] Received task: test_task[93194ec8-908d-4753-8cf7-1eb2e235fe82]
+[2019-07-14 06:02:01,941: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:01,941: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:01,945: INFO/MainProcess] Task test_task[b18a2a71-0f93-454f-b474-6a6941de03e5] succeeded in 5.004395300988108s: None
+[2019-07-14 06:02:01,946: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:01,947: INFO/MainProcess] Received task: test_task[09331f91-1d8e-4b56-bba2-23b531872cd8]
+[2019-07-14 06:02:02,945: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:02,946: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:02,949: INFO/MainProcess] Task test_task[c908d9c2-384b-4e58-b588-1ed9b3c739df] succeeded in 5.003859822987579s: None
+[2019-07-14 06:02:02,950: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:02,950: INFO/MainProcess] Received task: test_task[791bbeca-94c6-4da2-824f-f0b4ea62e413]
+[2019-07-14 06:02:04,961: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:04,961: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:04,963: INFO/MainProcess] Task test_task[b8269cc7-42de-4bf4-b002-d8fe11e54003] succeeded in 5.003437464998569s: None
+[2019-07-14 06:02:04,964: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:04,965: INFO/MainProcess] Received task: test_task[07ac1eaf-eba2-44d8-ba47-8719e7e554e5]
+[2019-07-14 06:02:05,953: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:05,954: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:05,957: INFO/MainProcess] Task test_task[a673f76a-b217-40e3-8833-bb9473bd2704] succeeded in 5.004739861993585s: None
+[2019-07-14 06:02:05,959: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:05,959: INFO/MainProcess] Received task: test_task[cd26d444-78f5-4347-b0f6-0c541835b30f]
+[2019-07-14 06:02:06,948: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:06,949: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:06,952: INFO/MainProcess] Task test_task[0f0692f3-7a79-4e12-b4cb-9fe889c9b03d] succeeded in 5.004581264016451s: None
+[2019-07-14 06:02:06,953: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:06,953: INFO/MainProcess] Received task: test_task[befd65bc-7e90-4599-997f-407f1f9051e3]
+[2019-07-14 06:02:07,952: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:07,952: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:07,955: INFO/MainProcess] Task test_task[c9e3ea25-35d7-4f28-b9e4-9213e7f05c96] succeeded in 5.0045131189981475s: None
+[2019-07-14 06:02:07,957: INFO/MainProcess] Received task: test_task[8dda8694-f19f-42d8-8e78-e5ec81505227]
+[2019-07-14 06:02:07,958: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:09,966: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:09,966: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:09,970: INFO/MainProcess] Task test_task[16957096-3433-4bf7-a74b-d4681ac1b4cb] succeeded in 5.004631663003238s: None
+[2019-07-14 06:02:09,971: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:09,971: INFO/MainProcess] Received task: test_task[445578ca-3f76-4644-b89f-ac3d0a4000f9]
+[2019-07-14 06:02:10,960: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:10,961: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:10,965: INFO/MainProcess] Task test_task[3fcbba5d-56b6-497c-8ca4-eac61742d8a5] succeeded in 5.004983599006664s: None
+[2019-07-14 06:02:10,966: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:10,966: INFO/MainProcess] Received task: test_task[0194d6e0-8847-4088-b245-ea025909fef0]
+[2019-07-14 06:02:11,955: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:11,955: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:11,958: INFO/MainProcess] Task test_task[4ee54953-6924-44a4-a79b-1834222fd8fc] succeeded in 5.004650079004932s: None
+[2019-07-14 06:02:11,960: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:11,960: INFO/MainProcess] Received task: test_task[6fb046b1-6baa-4a1d-8e46-17155f6a4f20]
+[2019-07-14 06:02:12,960: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:12,960: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:12,963: INFO/MainProcess] Task test_task[c0a9fc3a-6b18-443e-8a68-8223ccfaaf7f] succeeded in 5.004604192014085s: None
+[2019-07-14 06:02:12,965: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:12,965: INFO/MainProcess] Received task: test_task[e8770e50-de9e-4db9-8185-138df64b507c]
+[2019-07-14 06:02:14,973: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:14,973: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:14,977: INFO/MainProcess] Task test_task[e2867198-8c43-469b-ab53-7a87f2bf489d] succeeded in 5.00477228598902s: None
+[2019-07-14 06:02:14,978: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:14,978: INFO/MainProcess] Received task: test_task[7d685974-fa00-4733-8e84-9365d8859eae]
+[2019-07-14 06:02:15,968: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:15,968: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:15,972: INFO/MainProcess] Task test_task[8164727d-c5ab-4451-91ce-694a8621fc42] succeeded in 5.005843465012731s: None
+[2019-07-14 06:02:15,973: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:15,973: INFO/MainProcess] Received task: test_task[fa2f5536-f0f2-4658-8a8b-5ae9166b5798]
+[2019-07-14 06:02:16,961: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:16,961: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:16,963: INFO/MainProcess] Task test_task[b1975b07-7d08-4292-b094-bc6bc4b3a6fe] succeeded in 5.003142736997688s: None
+[2019-07-14 06:02:16,965: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:16,966: INFO/MainProcess] Received task: test_task[57321298-eda7-450d-b517-b1ecdf1a54b8]
+[2019-07-14 06:02:17,965: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:17,966: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:17,969: INFO/MainProcess] Task test_task[e7a41093-afc4-4804-b80f-b562784e565d] succeeded in 5.003887931001373s: None
+[2019-07-14 06:02:17,970: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:17,970: INFO/MainProcess] Received task: test_task[54c8b0fe-7158-4b83-b4dd-b79f6718614a]
+[2019-07-14 06:02:19,980: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:19,980: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:19,984: INFO/MainProcess] Task test_task[94dd0696-2dff-4a21-be8a-519fc44a41fa] succeeded in 5.004709408007329s: None
+[2019-07-14 06:02:19,984: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:19,985: INFO/MainProcess] Received task: test_task[13257337-1163-4436-a487-122bd1fa5686]
+[2019-07-14 06:02:20,974: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:20,974: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:20,978: INFO/MainProcess] Task test_task[93194ec8-908d-4753-8cf7-1eb2e235fe82] succeeded in 5.0039207260124385s: None
+[2019-07-14 06:02:20,978: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:20,979: INFO/MainProcess] Received task: test_task[f0bc24d2-7b98-4a28-8d9d-5c2145ab5c0e]
+[2019-07-14 06:02:21,966: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:21,966: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:21,969: INFO/MainProcess] Task test_task[09331f91-1d8e-4b56-bba2-23b531872cd8] succeeded in 5.0034510899859015s: None
+[2019-07-14 06:02:21,970: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:21,971: INFO/MainProcess] Received task: test_task[5e93eed3-f9d8-4e89-a5bf-a3d6cd75d225]
+[2019-07-14 06:02:22,970: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:22,971: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:22,973: INFO/MainProcess] Task test_task[791bbeca-94c6-4da2-824f-f0b4ea62e413] succeeded in 5.0027100820152555s: None
+[2019-07-14 06:02:22,974: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:22,976: INFO/MainProcess] Received task: test_task[e1c44492-8eee-4b26-8e36-c29eba943d6a]
+[2019-07-14 06:02:24,985: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:24,986: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:24,989: INFO/MainProcess] Task test_task[07ac1eaf-eba2-44d8-ba47-8719e7e554e5] succeeded in 5.004324380017351s: None
+[2019-07-14 06:02:24,990: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:24,990: INFO/MainProcess] Received task: test_task[36a329a0-9be1-4896-b324-90a7c9f8f7b3]
+[2019-07-14 06:02:25,980: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:25,981: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:25,982: INFO/MainProcess] Task test_task[cd26d444-78f5-4347-b0f6-0c541835b30f] succeeded in 5.003368141013198s: None
+[2019-07-14 06:02:25,983: INFO/MainProcess] Received task: test_task[670d6f80-ec83-45bd-bdb2-46d54b81c4e1]
+[2019-07-14 06:02:25,984: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:26,972: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:26,973: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:26,976: INFO/MainProcess] Task test_task[befd65bc-7e90-4599-997f-407f1f9051e3] succeeded in 5.005404486990301s: None
+[2019-07-14 06:02:26,977: INFO/MainProcess] Received task: test_task[38fe66c1-f10f-4fd1-be6c-4f097855a00d]
+[2019-07-14 06:02:26,978: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:27,976: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:27,977: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:27,980: INFO/MainProcess] Task test_task[8dda8694-f19f-42d8-8e78-e5ec81505227] succeeded in 5.0048244670033455s: None
+[2019-07-14 06:02:27,981: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:27,982: INFO/MainProcess] Received task: test_task[80580e80-5a49-4d5f-bbec-9c9d13042888]
+[2019-07-14 06:02:29,991: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:29,992: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:29,995: INFO/MainProcess] Task test_task[445578ca-3f76-4644-b89f-ac3d0a4000f9] succeeded in 5.0044049250136595s: None
+[2019-07-14 06:02:29,996: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:29,997: INFO/MainProcess] Received task: test_task[3353ad6d-2f7a-46bd-ba57-2a883f8a9d05]
+[2019-07-14 06:02:30,986: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:30,986: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:30,989: INFO/MainProcess] Task test_task[0194d6e0-8847-4088-b245-ea025909fef0] succeeded in 5.004708629014203s: None
+[2019-07-14 06:02:30,990: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:30,991: INFO/MainProcess] Received task: test_task[ab04e411-672b-457f-a404-a9a96eba9113]
+[2019-07-14 06:02:31,979: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:31,979: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:31,982: INFO/MainProcess] Task test_task[6fb046b1-6baa-4a1d-8e46-17155f6a4f20] succeeded in 5.003014449990587s: None
+[2019-07-14 06:02:31,982: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:31,983: INFO/MainProcess] Received task: test_task[9669c881-333e-4e88-a821-a58ef6721303]
+[2019-07-14 06:02:32,983: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:32,983: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:32,987: INFO/MainProcess] Task test_task[e8770e50-de9e-4db9-8185-138df64b507c] succeeded in 5.004676328011556s: None
+[2019-07-14 06:02:32,988: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:32,989: INFO/MainProcess] Received task: test_task[f01464b2-6ca2-4447-b7db-c1744ac4296e]
+[2019-07-14 06:02:34,997: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:34,998: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:35,001: INFO/MainProcess] Task test_task[7d685974-fa00-4733-8e84-9365d8859eae] succeeded in 5.004035343998112s: None
+[2019-07-14 06:02:35,001: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:35,002: INFO/MainProcess] Received task: test_task[83e95c67-f52f-46dc-bfce-62b5585689c4]
+[2019-07-14 06:02:35,992: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:35,992: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:35,995: INFO/MainProcess] Task test_task[fa2f5536-f0f2-4658-8a8b-5ae9166b5798] succeeded in 5.003998731001047s: None
+[2019-07-14 06:02:35,996: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:35,997: INFO/MainProcess] Received task: test_task[122778f3-0172-4bc7-b25d-60c8f5b49bde]
+[2019-07-14 06:02:36,984: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:36,985: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:36,987: INFO/MainProcess] Task test_task[57321298-eda7-450d-b517-b1ecdf1a54b8] succeeded in 5.0043710300233215s: None
+[2019-07-14 06:02:36,988: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:36,989: INFO/MainProcess] Received task: test_task[903e4fb7-eb28-4aa1-916e-dd14cd0369e8]
+[2019-07-14 06:02:37,989: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:37,990: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:37,993: INFO/MainProcess] Task test_task[54c8b0fe-7158-4b83-b4dd-b79f6718614a] succeeded in 5.003805435000686s: None
+[2019-07-14 06:02:37,994: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:37,996: INFO/MainProcess] Received task: test_task[57a28f79-dbf1-42bd-930c-34a07a78758c]
+[2019-07-14 06:02:40,002: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:40,003: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:40,005: INFO/MainProcess] Task test_task[13257337-1163-4436-a487-122bd1fa5686] succeeded in 5.002694862021599s: None
+[2019-07-14 06:02:40,006: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:40,007: INFO/MainProcess] Received task: test_task[01a6e6b7-c8bf-4f63-a8e2-421553e4bb3d]
+[2019-07-14 06:02:40,997: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:40,998: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:41,001: INFO/MainProcess] Task test_task[f0bc24d2-7b98-4a28-8d9d-5c2145ab5c0e] succeeded in 5.00520162601606s: None
+[2019-07-14 06:02:41,003: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:41,004: INFO/MainProcess] Received task: test_task[95a3b5d6-3ea5-41c6-acfb-0e8eb1ff29e7]
+[2019-07-14 06:02:41,989: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:41,989: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:41,991: INFO/MainProcess] Task test_task[5e93eed3-f9d8-4e89-a5bf-a3d6cd75d225] succeeded in 5.00218647197471s: None
+[2019-07-14 06:02:41,992: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:41,992: INFO/MainProcess] Received task: test_task[e3c5f084-3a7b-4e58-9a91-872f6bb2d2f3]
+[2019-07-14 06:02:42,996: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:42,996: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:42,999: INFO/MainProcess] Task test_task[e1c44492-8eee-4b26-8e36-c29eba943d6a] succeeded in 5.004725456004962s: None
+[2019-07-14 06:02:43,000: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:43,001: INFO/MainProcess] Received task: test_task[ffab0f73-3695-4220-9366-9a254ef300da]
+[2019-07-14 06:02:45,008: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:45,009: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:45,012: INFO/MainProcess] Task test_task[36a329a0-9be1-4896-b324-90a7c9f8f7b3] succeeded in 5.005392252991442s: None
+[2019-07-14 06:02:45,013: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:45,014: INFO/MainProcess] Received task: test_task[b36fe9ad-d35a-446b-b61a-c57c835fbb2e]
+[2019-07-14 06:02:46,003: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:46,004: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:46,006: INFO/MainProcess] Task test_task[670d6f80-ec83-45bd-bdb2-46d54b81c4e1] succeeded in 5.002816260006512s: None
+[2019-07-14 06:02:46,008: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:46,011: INFO/MainProcess] Received task: test_task[7e068d35-dade-440b-b2b4-e3f01fd2988d]
+[2019-07-14 06:02:46,992: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:46,993: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:46,995: INFO/MainProcess] Task test_task[38fe66c1-f10f-4fd1-be6c-4f097855a00d] succeeded in 5.002431976987282s: None
+[2019-07-14 06:02:46,995: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:46,996: INFO/MainProcess] Received task: test_task[0577a5f9-af0d-460f-9ef8-9e1ad1f838d7]
+[2019-07-14 06:02:48,002: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:48,002: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:48,004: INFO/MainProcess] Task test_task[80580e80-5a49-4d5f-bbec-9c9d13042888] succeeded in 5.002973805996589s: None
+[2019-07-14 06:02:48,004: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:48,005: INFO/MainProcess] Received task: test_task[35b4205a-5c74-4f35-9349-f3fd7569a4b8]
+[2019-07-14 06:02:50,014: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:50,015: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:50,018: INFO/MainProcess] Task test_task[3353ad6d-2f7a-46bd-ba57-2a883f8a9d05] succeeded in 5.00449258799199s: None
+[2019-07-14 06:02:50,019: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:50,020: INFO/MainProcess] Received task: test_task[84a298e5-ea90-48d7-b646-7e431a926820]
+[2019-07-14 06:02:51,010: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:51,011: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:51,013: INFO/MainProcess] Task test_task[ab04e411-672b-457f-a404-a9a96eba9113] succeeded in 5.005105413001729s: None
+[2019-07-14 06:02:51,013: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:51,014: INFO/MainProcess] Received task: test_task[4df49a2d-0361-4701-a6ba-7e31445fc272]
+[2019-07-14 06:02:51,996: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:51,996: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:51,999: INFO/MainProcess] Task test_task[9669c881-333e-4e88-a821-a58ef6721303] succeeded in 5.002884295012336s: None
+[2019-07-14 06:02:51,999: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:52,000: INFO/MainProcess] Received task: test_task[da0d3102-af45-4599-ae20-e89305f40ea0]
+[2019-07-14 06:02:53,006: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:53,007: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:53,011: INFO/MainProcess] Task test_task[f01464b2-6ca2-4447-b7db-c1744ac4296e] succeeded in 5.006211723026354s: None
+[2019-07-14 06:02:53,012: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:53,013: INFO/MainProcess] Received task: test_task[724f4212-cfab-4ac5-b475-b491255c83af]
+[2019-07-14 06:02:55,020: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:02:55,021: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:02:55,024: INFO/MainProcess] Task test_task[83e95c67-f52f-46dc-bfce-62b5585689c4] succeeded in 5.004519554000581s: None
+[2019-07-14 06:02:55,025: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:02:55,025: INFO/MainProcess] Received task: test_task[70e85f5e-d376-4f18-b1bb-ee5c59ef9de2]
+[2019-07-14 06:02:56,015: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:02:56,016: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:02:56,019: INFO/MainProcess] Task test_task[122778f3-0172-4bc7-b25d-60c8f5b49bde] succeeded in 5.004808600991964s: None
+[2019-07-14 06:02:56,020: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:02:56,021: INFO/MainProcess] Received task: test_task[a5b9eb44-dc1e-4f41-8852-176efa2b0fc5]
+[2019-07-14 06:02:57,001: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:02:57,001: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:02:57,005: INFO/MainProcess] Task test_task[903e4fb7-eb28-4aa1-916e-dd14cd0369e8] succeeded in 5.00478281697724s: None
+[2019-07-14 06:02:57,006: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:02:57,007: INFO/MainProcess] Received task: test_task[9c9f71cc-4d13-4bbb-abe7-86067b18d640]
+[2019-07-14 06:02:58,013: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:02:58,013: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:02:58,017: INFO/MainProcess] Task test_task[57a28f79-dbf1-42bd-930c-34a07a78758c] succeeded in 5.0042345940019s: None
+[2019-07-14 06:02:58,018: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:02:58,019: INFO/MainProcess] Received task: test_task[9942b219-7401-4268-b666-42e6d384db68]
+[2019-07-14 06:03:00,026: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:00,026: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:00,029: INFO/MainProcess] Task test_task[01a6e6b7-c8bf-4f63-a8e2-421553e4bb3d] succeeded in 5.003451263997704s: None
+[2019-07-14 06:03:00,030: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:00,030: INFO/MainProcess] Received task: test_task[372f1268-ecbd-4eb5-8410-057c87745056]
+[2019-07-14 06:03:01,022: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:01,023: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:01,026: INFO/MainProcess] Task test_task[95a3b5d6-3ea5-41c6-acfb-0e8eb1ff29e7] succeeded in 5.00480492200586s: None
+[2019-07-14 06:03:01,027: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:01,028: INFO/MainProcess] Received task: test_task[a01019d0-795a-499a-bb92-0d29dee35c31]
+[2019-07-14 06:03:02,009: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:02,009: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:02,012: INFO/MainProcess] Task test_task[e3c5f084-3a7b-4e58-9a91-872f6bb2d2f3] succeeded in 5.005284584010951s: None
+[2019-07-14 06:03:02,014: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:02,014: INFO/MainProcess] Received task: test_task[01b7c50c-7813-468b-ab98-c8353e3939e9]
+[2019-07-14 06:03:03,020: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:03,020: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:03,024: INFO/MainProcess] Task test_task[ffab0f73-3695-4220-9366-9a254ef300da] succeeded in 5.004533282015473s: None
+[2019-07-14 06:03:03,025: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:03,025: INFO/MainProcess] Received task: test_task[36fd4e07-4252-43d4-9543-568a3314170d]
+[2019-07-14 06:03:05,031: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:05,032: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:05,035: INFO/MainProcess] Task test_task[b36fe9ad-d35a-446b-b61a-c57c835fbb2e] succeeded in 5.004395197000122s: None
+[2019-07-14 06:03:05,036: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:05,037: INFO/MainProcess] Received task: test_task[73fac4bd-af71-429f-bdae-694b6cf53b06]
+[2019-07-14 06:03:06,029: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:06,029: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:06,033: INFO/MainProcess] Task test_task[7e068d35-dade-440b-b2b4-e3f01fd2988d] succeeded in 5.004769319988554s: None
+[2019-07-14 06:03:06,034: INFO/MainProcess] Received task: test_task[1c09e16d-ac5a-4252-9269-353f8f0ee7e3]
+[2019-07-14 06:03:06,035: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:07,016: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:07,016: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:07,019: INFO/MainProcess] Task test_task[0577a5f9-af0d-460f-9ef8-9e1ad1f838d7] succeeded in 5.004892243974609s: None
+[2019-07-14 06:03:07,021: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:07,021: INFO/MainProcess] Received task: test_task[ded714c2-e025-4988-80bd-d2d7ff846989]
+[2019-07-14 06:03:08,026: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:08,027: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:08,030: INFO/MainProcess] Task test_task[35b4205a-5c74-4f35-9349-f3fd7569a4b8] succeeded in 5.004073859978234s: None
+[2019-07-14 06:03:08,031: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:08,032: INFO/MainProcess] Received task: test_task[13448cc6-b984-447b-aa69-4416e8906710]
+[2019-07-14 06:03:10,038: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:10,038: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:10,042: INFO/MainProcess] Task test_task[84a298e5-ea90-48d7-b646-7e431a926820] succeeded in 5.00446831897716s: None
+[2019-07-14 06:03:10,043: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:10,043: INFO/MainProcess] Received task: test_task[83327c1f-944f-4ba4-9075-2dacab5d66dd]
+[2019-07-14 06:03:11,037: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:11,037: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:11,041: INFO/MainProcess] Task test_task[4df49a2d-0361-4701-a6ba-7e31445fc272] succeeded in 5.005023284000345s: None
+[2019-07-14 06:03:11,042: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:11,043: INFO/MainProcess] Received task: test_task[fbad0447-9a01-4bb1-830f-fc4da7bde284]
+[2019-07-14 06:03:12,022: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:12,023: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:12,026: INFO/MainProcess] Task test_task[da0d3102-af45-4599-ae20-e89305f40ea0] succeeded in 5.004549567995127s: None
+[2019-07-14 06:03:12,028: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:12,028: INFO/MainProcess] Received task: test_task[a99bc480-8cbd-4da3-b62d-e1cc0301a89b]
+[2019-07-14 06:03:13,032: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:13,032: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:13,036: INFO/MainProcess] Task test_task[724f4212-cfab-4ac5-b475-b491255c83af] succeeded in 5.003677789994981s: None
+[2019-07-14 06:03:13,037: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:13,037: INFO/MainProcess] Received task: test_task[192e92ac-c7d6-441d-b962-46fde13288d6]
+[2019-07-14 06:03:15,043: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:15,044: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:15,047: INFO/MainProcess] Task test_task[70e85f5e-d376-4f18-b1bb-ee5c59ef9de2] succeeded in 5.003737156017451s: None
+[2019-07-14 06:03:15,048: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:15,049: INFO/MainProcess] Received task: test_task[0930bd00-3711-437b-aa26-2230e6b5e5e4]
+[2019-07-14 06:03:16,043: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:16,044: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:16,047: INFO/MainProcess] Task test_task[a5b9eb44-dc1e-4f41-8852-176efa2b0fc5] succeeded in 5.003806713997619s: None
+[2019-07-14 06:03:16,048: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:16,048: INFO/MainProcess] Received task: test_task[1027690f-5630-4c3d-b073-269e1721e631]
+[2019-07-14 06:03:17,029: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:17,030: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:17,033: INFO/MainProcess] Task test_task[9c9f71cc-4d13-4bbb-abe7-86067b18d640] succeeded in 5.004801272996701s: None
+[2019-07-14 06:03:17,035: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:17,036: INFO/MainProcess] Received task: test_task[c7872aa0-1a75-4686-948f-a6c9d1fdbbe0]
+[2019-07-14 06:03:18,039: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:18,039: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:18,043: INFO/MainProcess] Task test_task[9942b219-7401-4268-b666-42e6d384db68] succeeded in 5.004908898001304s: None
+[2019-07-14 06:03:18,044: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:18,045: INFO/MainProcess] Received task: test_task[fdec6238-3959-4536-8a31-2b5558b47492]
+[2019-07-14 06:03:20,050: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:20,051: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:20,054: INFO/MainProcess] Task test_task[372f1268-ecbd-4eb5-8410-057c87745056] succeeded in 5.004725415026769s: None
+[2019-07-14 06:03:20,055: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:20,055: INFO/MainProcess] Received task: test_task[6f4d6e31-d4f4-4dac-b6ff-3a56e200f258]
+[2019-07-14 06:03:21,050: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:21,050: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:21,054: INFO/MainProcess] Task test_task[a01019d0-795a-499a-bb92-0d29dee35c31] succeeded in 5.004579897999065s: None
+[2019-07-14 06:03:21,055: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:21,055: INFO/MainProcess] Received task: test_task[ad269ed0-9cf6-4ff1-898c-c560d9b0f1fc]
+[2019-07-14 06:03:22,036: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:22,036: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:22,040: INFO/MainProcess] Task test_task[01b7c50c-7813-468b-ab98-c8353e3939e9] succeeded in 5.004015640995931s: None
+[2019-07-14 06:03:22,041: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:22,041: INFO/MainProcess] Received task: test_task[c9582b03-d046-4130-8491-717361f4dc54]
+[2019-07-14 06:03:23,046: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:23,046: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:23,050: INFO/MainProcess] Task test_task[36fd4e07-4252-43d4-9543-568a3314170d] succeeded in 5.004686219996074s: None
+[2019-07-14 06:03:23,051: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:23,053: INFO/MainProcess] Received task: test_task[fe9180b1-0c2a-4152-92d4-6adb675038e9]
+[2019-07-14 06:03:25,056: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:25,056: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:25,060: INFO/MainProcess] Task test_task[73fac4bd-af71-429f-bdae-694b6cf53b06] succeeded in 5.00362374499673s: None
+[2019-07-14 06:03:25,061: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:25,062: INFO/MainProcess] Received task: test_task[f70d54f4-43dd-43e2-abd3-f7c4e4133a62]
+[2019-07-14 06:03:26,056: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:26,056: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:26,057: INFO/MainProcess] Task test_task[1c09e16d-ac5a-4252-9269-353f8f0ee7e3] succeeded in 5.002297811006429s: None
+[2019-07-14 06:03:26,058: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:26,059: INFO/MainProcess] Received task: test_task[43123cf2-84b0-4a92-9b6e-845f1c380ce0]
+[2019-07-14 06:03:27,042: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:27,043: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:27,046: INFO/MainProcess] Task test_task[ded714c2-e025-4988-80bd-d2d7ff846989] succeeded in 5.004696580988821s: None
+[2019-07-14 06:03:27,047: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:27,048: INFO/MainProcess] Received task: test_task[f2f5d389-d6a9-4788-b141-a4e4cc365f63]
+[2019-07-14 06:03:28,054: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:28,054: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:28,058: INFO/MainProcess] Task test_task[13448cc6-b984-447b-aa69-4416e8906710] succeeded in 5.005531464004889s: None
+[2019-07-14 06:03:28,059: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:28,059: INFO/MainProcess] Received task: test_task[b089de0c-6e9d-4cf9-8a79-771b405d1aad]
+[2019-07-14 06:03:30,063: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:30,063: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:30,066: INFO/MainProcess] Task test_task[83327c1f-944f-4ba4-9075-2dacab5d66dd] succeeded in 5.004655527998693s: None
+[2019-07-14 06:03:30,068: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:30,068: INFO/MainProcess] Received task: test_task[e4f46601-bbec-4948-89b3-ad13e743722a]
+[2019-07-14 06:03:31,060: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:31,060: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:31,064: INFO/MainProcess] Task test_task[fbad0447-9a01-4bb1-830f-fc4da7bde284] succeeded in 5.0047112140164245s: None
+[2019-07-14 06:03:31,065: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:31,065: INFO/MainProcess] Received task: test_task[e84ffb61-2dcc-48df-8a33-902d0e063b87]
+[2019-07-14 06:03:32,049: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:32,050: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:32,053: INFO/MainProcess] Task test_task[a99bc480-8cbd-4da3-b62d-e1cc0301a89b] succeeded in 5.00473570698523s: None
+[2019-07-14 06:03:32,055: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:32,055: INFO/MainProcess] Received task: test_task[f8cd625f-1063-4005-a156-8f5d22967a2e]
+[2019-07-14 06:03:33,060: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:33,061: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:33,065: INFO/MainProcess] Task test_task[192e92ac-c7d6-441d-b962-46fde13288d6] succeeded in 5.0046751640038565s: None
+[2019-07-14 06:03:33,066: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:33,066: INFO/MainProcess] Received task: test_task[538cd873-5443-4597-af68-0aa86564be42]
+[2019-07-14 06:03:35,069: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:35,070: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:35,073: INFO/MainProcess] Task test_task[0930bd00-3711-437b-aa26-2230e6b5e5e4] succeeded in 5.004547332006041s: None
+[2019-07-14 06:03:35,074: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:35,075: INFO/MainProcess] Received task: test_task[d9b3203c-0792-48e3-b634-1c7dcc1a8772]
+[2019-07-14 06:03:36,066: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:36,066: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:36,069: INFO/MainProcess] Task test_task[1027690f-5630-4c3d-b073-269e1721e631] succeeded in 5.003428711002925s: None
+[2019-07-14 06:03:36,070: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:36,070: INFO/MainProcess] Received task: test_task[d09cc22d-75f4-4c7b-863c-9ed318b787f5]
+[2019-07-14 06:03:37,056: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:37,057: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:37,060: INFO/MainProcess] Task test_task[c7872aa0-1a75-4686-948f-a6c9d1fdbbe0] succeeded in 5.0046172060247045s: None
+[2019-07-14 06:03:37,061: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:37,062: INFO/MainProcess] Received task: test_task[e02d05cc-509c-4f33-92e9-9aa9d8fbd8fc]
+[2019-07-14 06:03:38,067: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:38,067: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:38,069: INFO/MainProcess] Task test_task[fdec6238-3959-4536-8a31-2b5558b47492] succeeded in 5.002772596984869s: None
+[2019-07-14 06:03:38,070: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:38,071: INFO/MainProcess] Received task: test_task[b31634d7-687e-437b-9aad-159913c01e09]
+[2019-07-14 06:03:40,076: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:40,077: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:40,080: INFO/MainProcess] Task test_task[6f4d6e31-d4f4-4dac-b6ff-3a56e200f258] succeeded in 5.005009319982491s: None
+[2019-07-14 06:03:40,082: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:40,082: INFO/MainProcess] Received task: test_task[4c0ff23a-b6d3-48c4-aee7-a98dd73bdee5]
+[2019-07-14 06:03:41,072: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:41,072: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:41,076: INFO/MainProcess] Task test_task[ad269ed0-9cf6-4ff1-898c-c560d9b0f1fc] succeeded in 5.005093148996821s: None
+[2019-07-14 06:03:41,077: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:41,077: INFO/MainProcess] Received task: test_task[ad5ee909-8fad-4145-8e54-422b24d66029]
+[2019-07-14 06:03:42,062: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:42,063: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:42,067: INFO/MainProcess] Task test_task[c9582b03-d046-4130-8491-717361f4dc54] succeeded in 5.004347736015916s: None
+[2019-07-14 06:03:42,068: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:42,069: INFO/MainProcess] Received task: test_task[0226bb7c-a9dd-428b-8e5c-a409736f0350]
+[2019-07-14 06:03:43,071: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:43,072: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:43,076: INFO/MainProcess] Task test_task[fe9180b1-0c2a-4152-92d4-6adb675038e9] succeeded in 5.004879243002506s: None
+[2019-07-14 06:03:43,076: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:43,077: INFO/MainProcess] Received task: test_task[0a81d2c7-dab5-45c0-a546-7ef184813e8e]
+[2019-07-14 06:03:45,083: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:45,084: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:45,088: INFO/MainProcess] Task test_task[f70d54f4-43dd-43e2-abd3-f7c4e4133a62] succeeded in 5.005524256994249s: None
+[2019-07-14 06:03:45,089: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:45,089: INFO/MainProcess] Received task: test_task[c159dfaa-95fc-4b0d-aef8-578bf6c2a0bd]
+[2019-07-14 06:03:46,078: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:46,079: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:46,081: INFO/MainProcess] Task test_task[43123cf2-84b0-4a92-9b6e-845f1c380ce0] succeeded in 5.004058485996211s: None
+[2019-07-14 06:03:46,082: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:46,083: INFO/MainProcess] Received task: test_task[96a938f0-ad69-4b95-84a4-04552f06199a]
+[2019-07-14 06:03:47,070: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:47,071: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:47,074: INFO/MainProcess] Task test_task[f2f5d389-d6a9-4788-b141-a4e4cc365f63] succeeded in 5.005510012008017s: None
+[2019-07-14 06:03:47,075: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:47,076: INFO/MainProcess] Received task: test_task[3c7ab018-5eef-4620-8c46-c99f919035ee]
+[2019-07-14 06:03:48,078: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:48,080: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:48,092: INFO/MainProcess] Task test_task[b089de0c-6e9d-4cf9-8a79-771b405d1aad] succeeded in 5.013339769997401s: None
+[2019-07-14 06:03:48,093: INFO/MainProcess] Received task: test_task[e1ba814a-c66a-43dd-9959-816b6b7371a9]
+[2019-07-14 06:03:48,094: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:50,090: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:50,090: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:50,094: INFO/MainProcess] Task test_task[e4f46601-bbec-4948-89b3-ad13e743722a] succeeded in 5.004206632991554s: None
+[2019-07-14 06:03:50,095: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:50,095: INFO/MainProcess] Received task: test_task[b708c219-ee6d-4d1b-96b8-e8f058059e9a]
+[2019-07-14 06:03:51,084: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:51,085: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:51,088: INFO/MainProcess] Task test_task[e84ffb61-2dcc-48df-8a33-902d0e063b87] succeeded in 5.004686981992563s: None
+[2019-07-14 06:03:51,089: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:51,090: INFO/MainProcess] Received task: test_task[b8611de0-d5d5-463e-8cb6-c27310967c4b]
+[2019-07-14 06:03:52,077: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:52,078: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:52,081: INFO/MainProcess] Task test_task[f8cd625f-1063-4005-a156-8f5d22967a2e] succeeded in 5.005152500001714s: None
+[2019-07-14 06:03:52,082: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:52,083: INFO/MainProcess] Received task: test_task[2f0bb67d-4f60-4bab-a6ec-9438d46f6cbb]
+[2019-07-14 06:03:53,095: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:53,096: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:53,099: INFO/MainProcess] Task test_task[538cd873-5443-4597-af68-0aa86564be42] succeeded in 5.004468458995689s: None
+[2019-07-14 06:03:53,099: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:53,100: INFO/MainProcess] Received task: test_task[a966ed58-d0a7-4660-9ae2-07cebfa9739b]
+[2019-07-14 06:03:55,097: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:03:55,097: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:03:55,101: INFO/MainProcess] Task test_task[d9b3203c-0792-48e3-b634-1c7dcc1a8772] succeeded in 5.004796686000191s: None
+[2019-07-14 06:03:55,102: WARNING/Worker-2] >>>>>>>>>> start task
+[2019-07-14 06:03:55,102: INFO/MainProcess] Received task: test_task[5420c970-afee-4887-8eaa-ea4a66d0603d]
+[2019-07-14 06:03:56,090: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:03:56,091: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:03:56,094: INFO/MainProcess] Task test_task[d09cc22d-75f4-4c7b-863c-9ed318b787f5] succeeded in 5.004692374001024s: None
+[2019-07-14 06:03:56,096: WARNING/Worker-1] >>>>>>>>>> start task
+[2019-07-14 06:03:56,096: INFO/MainProcess] Received task: test_task[0796b6f9-ebd8-4df1-a14d-96c0d423eca2]
+[2019-07-14 06:03:57,084: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:03:57,085: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:03:57,088: INFO/MainProcess] Task test_task[e02d05cc-509c-4f33-92e9-9aa9d8fbd8fc] succeeded in 5.0048050330078695s: None
+[2019-07-14 06:03:57,089: WARNING/Worker-3] >>>>>>>>>> start task
+[2019-07-14 06:03:57,090: INFO/MainProcess] Received task: test_task[0566ea1e-6e2c-439d-b54e-9f62b0fcd877]
+[2019-07-14 06:03:58,101: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:03:58,102: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:03:58,106: INFO/MainProcess] Task test_task[b31634d7-687e-437b-9aad-159913c01e09] succeeded in 5.005307764979079s: None
+[2019-07-14 06:03:58,107: WARNING/Worker-4] >>>>>>>>>> start task
+[2019-07-14 06:03:58,107: INFO/MainProcess] Received task: test_task[725ba6e7-5cc1-43ff-8b75-cd3e5ee98251]
+[2019-07-14 06:04:00,104: WARNING/Worker-2] args=(), kwargs={}
+[2019-07-14 06:04:00,104: WARNING/Worker-2] >>>>>>>>>> end task
+[2019-07-14 06:04:00,108: INFO/MainProcess] Task test_task[4c0ff23a-b6d3-48c4-aee7-a98dd73bdee5] succeeded in 5.004696599993622s: None
+[2019-07-14 06:04:00,109: INFO/MainProcess] Received task: test_task[19502d02-348d-4563-8131-2aaae02587fb]
+[2019-07-14 06:04:01,097: WARNING/Worker-1] args=(), kwargs={}
+[2019-07-14 06:04:01,098: WARNING/Worker-1] >>>>>>>>>> end task
+[2019-07-14 06:04:01,101: INFO/MainProcess] Task test_task[ad5ee909-8fad-4145-8e54-422b24d66029] succeeded in 5.004687634005677s: None
+[2019-07-14 06:04:01,103: INFO/MainProcess] Received task: test_task[2d29f09c-962a-45b0-bada-eabb2b969a81]
+[2019-07-14 06:04:01,252: WARNING/Worker-5] >>>>>>>>>> start task
+[2019-07-14 06:04:02,090: WARNING/Worker-3] args=(), kwargs={}
+[2019-07-14 06:04:02,091: WARNING/Worker-3] >>>>>>>>>> end task
+[2019-07-14 06:04:02,096: INFO/MainProcess] Task test_task[0226bb7c-a9dd-428b-8e5c-a409736f0350] succeeded in 5.0048619970039s: None
+[2019-07-14 06:04:02,098: INFO/MainProcess] Received task: test_task[add824c4-f218-42d0-9cff-9808c99dcfa6]
+[2019-07-14 06:04:02,163: WARNING/Worker-6] >>>>>>>>>> start task
+[2019-07-14 06:04:03,108: WARNING/Worker-4] args=(), kwargs={}
+[2019-07-14 06:04:03,109: WARNING/Worker-4] >>>>>>>>>> end task
+[2019-07-14 06:04:03,113: INFO/MainProcess] Task test_task[0a81d2c7-dab5-45c0-a546-7ef184813e8e] succeeded in 5.005718753003748s: None
+[2019-07-14 06:04:03,116: INFO/MainProcess] Received task: test_task[c984cb19-366e-45d5-848d-b6865855fd53]
+[2019-07-14 06:04:03,116: WARNING/Worker-7] >>>>>>>>>> start task
+[2019-07-14 06:04:06,254: WARNING/Worker-5] args=(), kwargs={}
+[2019-07-14 06:04:06,255: WARNING/Worker-5] >>>>>>>>>> end task
+[2019-07-14 06:04:06,262: WARNING/Worker-5] >>>>>>>>>> start task
+[2019-07-14 06:04:06,263: INFO/MainProcess] Task test_task[e1ba814a-c66a-43dd-9959-816b6b7371a9] succeeded in 5.011520469997777s: None
+[2019-07-14 06:04:06,266: INFO/MainProcess] Received task: test_task[6c2913c0-c5cb-4025-b68b-fc8e801914a6]
+[2019-07-14 06:04:06,267: WARNING/Worker-8] >>>>>>>>>> start task
+[2019-07-14 06:04:07,165: WARNING/Worker-6] args=(), kwargs={}
+[2019-07-14 06:04:07,165: WARNING/Worker-6] >>>>>>>>>> end task
+[2019-07-14 06:04:07,172: WARNING/Worker-6] >>>>>>>>>> start task
+[2019-07-14 06:04:07,173: INFO/MainProcess] Task test_task[b8611de0-d5d5-463e-8cb6-c27310967c4b] succeeded in 5.010184498998569s: None
+[2019-07-14 06:04:07,174: INFO/MainProcess] Received task: test_task[5696ba58-bf2a-42d2-bf66-a58de23c0151]
+[2019-07-14 06:04:08,119: WARNING/Worker-7] args=(), kwargs={}
+[2019-07-14 06:04:08,120: WARNING/Worker-7] >>>>>>>>>> end task
+[2019-07-14 06:04:08,127: WARNING/Worker-7] >>>>>>>>>> start task
+[2019-07-14 06:04:08,128: INFO/MainProcess] Task test_task[2f0bb67d-4f60-4bab-a6ec-9438d46f6cbb] succeeded in 5.01223829301307s: None
+[2019-07-14 06:04:08,129: INFO/MainProcess] Received task: test_task[ede48f5b-1664-48bb-aa75-918542cb536d]
+[2019-07-14 06:04:11,263: WARNING/Worker-5] args=(), kwargs={}
+[2019-07-14 06:04:11,263: WARNING/Worker-5] >>>>>>>>>> end task
+[2019-07-14 06:04:11,265: WARNING/Worker-5] >>>>>>>>>> start task
+[2019-07-14 06:04:11,266: INFO/MainProcess] Task test_task[c159dfaa-95fc-4b0d-aef8-578bf6c2a0bd] succeeded in 5.003671332000522s: None
+[2019-07-14 06:04:11,268: INFO/MainProcess] Received task: test_task[02fec90b-43fd-49a7-a597-c30ce998cea1]
+[2019-07-14 06:04:11,268: WARNING/Worker-8] args=(), kwargs={}
+[2019-07-14 06:04:11,269: WARNING/Worker-8] >>>>>>>>>> end task
+[2019-07-14 06:04:11,274: INFO/MainProcess] Task test_task[5420c970-afee-4887-8eaa-ea4a66d0603d] succeeded in 5.007051305001369s: None
+[2019-07-14 06:04:11,275: WARNING/Worker-8] >>>>>>>>>> start task
+[2019-07-14 06:04:11,276: INFO/MainProcess] Received task: test_task[a9663d07-1235-49fe-b885-70fd6f1f9221]
+[2019-07-14 06:04:12,173: WARNING/Worker-6] args=(), kwargs={}
+[2019-07-14 06:04:12,174: WARNING/Worker-6] >>>>>>>>>> end task
+[2019-07-14 06:04:12,176: WARNING/Worker-6] >>>>>>>>>> start task
+[2019-07-14 06:04:12,177: INFO/MainProcess] Task test_task[96a938f0-ad69-4b95-84a4-04552f06199a] succeeded in 5.004639780992875s: None
+[2019-07-14 06:04:12,180: INFO/MainProcess] Received task: test_task[6357be62-12fb-446d-abf8-f82ed32a9159]
+[2019-07-14 06:04:13,129: WARNING/Worker-7] args=(), kwargs={}
+[2019-07-14 06:04:13,129: WARNING/Worker-7] >>>>>>>>>> end task
+[2019-07-14 06:04:13,131: WARNING/Worker-7] >>>>>>>>>> start task
+[2019-07-14 06:04:13,133: INFO/MainProcess] Task test_task[3c7ab018-5eef-4620-8c46-c99f919035ee] succeeded in 5.005243133986369s: None
+[2019-07-14 06:04:13,136: INFO/MainProcess] Received task: test_task[a7253360-4097-4e2a-960a-c085c7105d1b]
+[2019-07-14 06:04:16,266: WARNING/Worker-5] args=(), kwargs={}
+[2019-07-14 06:04:16,266: WARNING/Worker-5] >>>>>>>>>> end task
+[2019-07-14 06:04:16,267: WARNING/Worker-5] >>>>>>>>>> start task
+[2019-07-14 06:04:16,276: WARNING/Worker-8] args=(), kwargs={}
+[2019-07-14 06:04:16,277: WARNING/Worker-8] >>>>>>>>>> end task
+
+worker: Warm shutdown (MainProcess)
+[2019-07-14 06:04:16,682: INFO/MainProcess] Task test_task[19502d02-348d-4563-8131-2aaae02587fb] succeeded in 5.406485423998674s: None
+[2019-07-14 06:04:17,177: WARNING/Worker-6] args=(), kwargs={}
+[2019-07-14 06:04:17,178: WARNING/Worker-6] >>>>>>>>>> end task
+[2019-07-14 06:04:17,180: WARNING/Worker-6] >>>>>>>>>> start task
+[2019-07-14 06:04:17,717: INFO/MainProcess] Task test_task[b708c219-ee6d-4d1b-96b8-e8f058059e9a] succeeded in 6.450903673976427s: None
+[2019-07-14 06:04:17,718: INFO/MainProcess] Task test_task[0566ea1e-6e2c-439d-b54e-9f62b0fcd877] succeeded in 5.542222329997458s: None
+[2019-07-14 06:04:18,133: WARNING/Worker-7] args=(), kwargs={}
+[2019-07-14 06:04:18,134: WARNING/Worker-7] >>>>>>>>>> end task
+[2019-07-14 06:04:18,225: INFO/MainProcess] Task test_task[725ba6e7-5cc1-43ff-8b75-cd3e5ee98251] succeeded in 5.0935830540256575s: None
+[2019-07-14 06:04:21,268: WARNING/Worker-5] args=(), kwargs={}
+[2019-07-14 06:04:21,268: WARNING/Worker-5] >>>>>>>>>> end task
+[2019-07-14 06:04:21,270: WARNING/Worker-5] >>>>>>>>>> start task
+[2019-07-14 06:04:22,182: WARNING/Worker-6] args=(), kwargs={}
+[2019-07-14 06:04:22,182: WARNING/Worker-6] >>>>>>>>>> end task
+[2019-07-14 06:04:22,274: INFO/MainProcess] Task test_task[a966ed58-d0a7-4660-9ae2-07cebfa9739b] succeeded in 6.005975644016871s: None
+[2019-07-14 06:04:22,276: INFO/MainProcess] Task test_task[add824c4-f218-42d0-9cff-9808c99dcfa6] succeeded in 5.095472064014757s: None
+[2019-07-14 06:04:26,272: WARNING/Worker-5] args=(), kwargs={}
+[2019-07-14 06:04:26,272: WARNING/Worker-5] >>>>>>>>>> end task
+[2019-07-14 06:04:26,274: WARNING/Worker-5] >>>>>>>>>> start task

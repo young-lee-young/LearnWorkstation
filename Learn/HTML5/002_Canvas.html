@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--canvas是HTML5中新添加的元素-->
+    <!-- 创建一个canvas -->
+    <!-- 用style属性加边框 -->
+    <canvas id="myCanvas" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <!-- 画矩形 -->
+    <script>
+        // 找到画布对象
+        var c=document.getElementById('myCanvas');
+        // 创建context对象
+        var ctx=c.getContext('2d');
+        // 上色
+        ctx.fillStyle='#FF0000';
+        // 画矩形，起始点和长宽
+        ctx.fillRect(0,0,150,75);
+    </script>
+
+    <!-- 画线 -->
+    <canvas id="myCanvas2" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c2=document.getElementById('myCanvas2');
+        var ctx2=c2.getContext('2d');
+        // 起始点和结束点
+        ctx2.moveTo(0,50);
+        ctx2.lineTo(200,200);
+        ctx2.stroke();
+    </script>
+
+    <!-- 画圆 -->
+    <canvas id="myCanvas3" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c3=document.getElementById('myCanvas3');
+        var ctx3=c3.getContext('2d');
+        ctx3.beginPath();
+        // 圆心横坐标，圆形纵坐标，直径，
+        ctx3.arc(100,50,40,0,2*Math.PI);
+        ctx3.stroke();
+    </script>
+
+    <!-- 绘制文本 -->
+    <canvas id="myCanvas4" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c4=document.getElementById('myCanvas4');
+        var ctx4=c4.getContext('2d');
+        ctx4.font='30px Arial';
+        // 内容和坐标
+        ctx4.fillText('你好',10,50)
+    </script>
+
+    <!-- 绘制空心文本 -->
+    <canvas id="myCanvas5" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c5=document.getElementById('myCanvas5');
+        var ctx5=c5.getContext('2d');
+        ctx5.font='30px Arial';
+        // 内容和坐标
+        ctx5.strokeText('你好',10,50)
+    </script>
+
+    <!-- 线性渐变 -->
+    <canvas id="myCanvas6" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c6=document.getElementById('myCanvas6');
+        var ctx6=c6.getContext('2d');
+        // 创建线性渐变，gradient梯度
+        var grd=ctx6.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,'red');
+        grd.addColorStop(1,'white');
+
+        ctx6.fillStyle=grd;
+        ctx6.fillRect(10,10,150,80);
+    </script>
+
+    <!-- 径向渐变 -->
+    <canvas id="myCanvas7" width="300" height="200" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c7=document.getElementById('myCanvas7');
+        var ctx7=c7.getContext('2d');
+        // 创建径向渐变，开始圆圆心横纵坐标，半径，结束圆圆心横纵坐标，半径
+        var grd2=ctx7.createRadialGradient(70,50,5,90,60,100);
+        grd2.addColorStop(0,'red');
+        grd2.addColorStop(1,'white');
+        ctx7.fillStyle=grd2;
+        ctx7.fillRect(10,10,150,80);
+    </script>
+
+    <!-- 画图像 -->
+    <img id='photo' src='img.jpg' alt='photo'>
+    <canvas id="myCanvas8" width="600" height="400" style="border: 1px solid #000000;"></canvas>
+    <script>
+        var c8=document.getElementById('myCanvas8');
+        var ctx8=c8.getContext('2d');
+        var photo=document.getElementById('photo');
+        photo.onload = function(){
+            ctx8.drawImage(photo,10,10)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--数据类型有string、number、boolean、object、function-->
+    <!--对象类型有Object、Date、Array-->
+    <!--不包含任何值的数据类型有null、undefined-->
+
+
+    <!--数组定义-->
+    <script>
+        var num_array = new Array();
+        num_array[0] = 1;
+        num_array[1] = 2;
+        num_array[3] = 3;
+        var name_array = new Array('lee', 'zhang', 'liu');
+        var address_array = ['beijing', 'shanghai', 'hebei'];
+    </script>
+
+
+    <!--对象定义-->
+    <p id="demo"></p>
+    <script>
+        var person = {name: 'lee', age: 21, address: 'beijing'};
+        // 对象里面有函数
+        var person_fun = {
+            firstname: 'lee',
+            lastname: 'young',
+            fullname: function () {
+                return this.firstname + " " + this.lastname;
+            }
+        };
+        document.getElementById('demo').innerHTML = person_fun.fullname();
+    </script>
+
+
+    <!--声明变量类型-->
+    <script>
+        var string_type = new String();
+        var num_type = new Number();
+        var boolean_type = new Boolean();
+        var array_type = new Array();
+        var object_type = new Object();
+    </script>
+
+
+    <script>
+        typeof 3.14;    //返回的是number
+        typeof NaN; //返回的是number
+        typeof [1, 2, 3, 4];    //返回的是object
+        typeof null;    //返回的是object
+        typeof function () {}   //返回的是function
+    </script>
+</body>
+</html>

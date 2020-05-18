@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--常见的HTML事件-->
+    <!--onchange, HTML元素改变-->
+    <!--onclick, 用户点击HTML-->
+    <!--onmouseover, 用户在一个HTML元素上移动鼠标-->
+    <!--onmouseout, 用户在一个HTML元素上移开鼠标-->
+    <!--onkeydown, 用户按下键盘按键-->
+    <!--onload, 浏览器已完成页面加载-->
+
+
+    <!--使用索引来访问字符串的字符-->
+
+
+    <script>
+        var string_name = 'leeyoung';
+        var object_name = new String('leeyoung');   //不要用这种形式
+        function string_type() {
+            return typeof string_name;    //返回的是string
+        }
+        function object_type() {
+            return typeof object_name;   //返回的是object
+        }
+        function isequal() {
+            return string_name===object_name;   //绝对相等，类型和值都相等
+        }
+        function string_len() {
+            return string_name.length;
+        }
+        function string_constructor() {
+            return string_name.constructor;
+        }
+    </script>
+    <button type="button" onclick="alert(string_type())">字符串类型</button>
+    <button type="button" onclick="alert(object_type())">对象类型</button>
+    <button type="button" onclick="alert(isequal())">是否绝对相等</button>
+    <button type="button" onclick="alert(string_len())">字符串长度</button>
+    <button type="button" onclick="alert(string_constructor())">constructor属性</button>
+</body>
+</html>
