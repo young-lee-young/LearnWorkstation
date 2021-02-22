@@ -37,7 +37,7 @@ mongoimport -h 地址 --port 端口 -u 用户名 -p 密码 --upsert 保存文件
 
 ### 插入数据
 
-```
+```bash
 client = pymongo.MongoClient('localhost')
 db = client['databasename']
 db.authenticate('用户名', '密码')
