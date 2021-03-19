@@ -96,14 +96,12 @@ linux命令
 僵尸进程和孤儿进程
 
 二分搜索树前、中、后序遍历非递归实现
-优先队列
 
 
 
 ### 数据结构复杂度分析
 
 渐近时间复杂度（n趋近于正无穷时时间复杂度）
-均摊时间复杂度
 复杂度震荡
 
 
@@ -111,4 +109,3 @@ linux命令
 HDD（Hard Disk Drive，硬盘驱动器） -> SSD（Solid State Drive，固态驱动器） -> rSSD
 
 RDMA（Remote Direct Memory Access，远程直接数据存取）：两台计算机通信，一个主机内存直接访问另一个主机内存
-

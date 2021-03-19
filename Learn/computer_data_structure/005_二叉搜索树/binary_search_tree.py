@@ -124,7 +124,7 @@ class BinarySearchTree:
             self._postorder_traversal(node.right)
             print(node.data)
 
-    # 层序遍历
+    # 层序遍历，使用队列实现
     def sequence_traversal(self):
         queue = deque()
         queue.append(self.root)
