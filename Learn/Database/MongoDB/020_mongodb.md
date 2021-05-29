@@ -112,11 +112,6 @@ userAdminAnyDatabase角色任何数据库用户的管理权限(和userAdmin相�
 dbAdminAnyDatabase角色任何数据库的管理权限(dbAdmin相似
 
 
-* 数据库类:
-显示所有数据库:
-show dbs
-创建数据库:
-use 数据库名  # 使用数据库后要插入一条语句，该数据库才会被存储，否则不会存储
 显示当前数据库:
 db或者db.getName()
 显示数据库的状态:

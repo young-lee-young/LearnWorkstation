@@ -109,3 +109,74 @@ linux命令
 HDD（Hard Disk Drive，硬盘驱动器） -> SSD（Solid State Drive，固态驱动器） -> rSSD
 
 RDMA（Remote Direct Memory Access，远程直接数据存取）：两台计算机通信，一个主机内存直接访问另一个主机内存
+
+
+### Ubuntu20.04安装X11
+
+```bash
+# 安装
+sudo apt-get install x11vnc
+
+# 设置密码
+x11vnc -storepasswd
+
+# 启动
+x11vnc -forever -shared -rfbauth ~/.vnc/passwd
+```
+
+
+### Ubuntu20.04安装VMware
+
+```bash
+# 添加可执行权限
+sudo chmod +x VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
+
+# 安装
+sudo ./VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
+
+# vmware启动所需包
+sudo apt-get install gcc
+sudo apt-get install build-essential
+
+# 安装wireshark
+sudo apt-get install wireshark
+```
+
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=static
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEM_MODE=stable-privacy
+NAME=ens33
+UUID=560df6da-b1ce-4b76-84cb-2064bd9c5c1e
+DEVICE=ens33
+ONBOOT=yes
+IPADDR=192.168.1.10
+GATEWAY=192.168.1.10
+NETMASK=255.255.255.0
+DNS1=114.114.114.114
+
+配置：
+master：4核8G 磁盘200G
+192.168.1.10
+
+worker1：16核32G 磁盘200G
+192.168.1.20
+
+worker2：16核32G 磁盘200G
+192.168.1.30
+
+```bash
+# 安装docker
+yum install docker
+
+# 关闭selinux
+vim /etc/selinux/config
+# SELINUX=disabled
+```

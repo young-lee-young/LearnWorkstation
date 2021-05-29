@@ -3,6 +3,7 @@
 -----------
 
 ### 环境安装
+
 安装Python3相关依赖库：sudo apt-get install python3-dev build-essential libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev zlib1g-dev
 安装Python3：sudo apt-get install python3
 安装pip：sudo apt-get install python3-pip
