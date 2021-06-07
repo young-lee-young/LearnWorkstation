@@ -16,7 +16,6 @@ print(type(fig1))
 # <class 'matplotlib.figure.Figure'>
 
 
-
 fig2 = plt.figure(num='九个子图',figsize=(16,9))
 ax1_1 = fig2.add_subplot(3,3,1)   # 添加子图,子图是3*3格式的,一共九个单元格,取第一个
 print(ax1_1)

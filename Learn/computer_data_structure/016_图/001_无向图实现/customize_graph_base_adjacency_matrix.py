@@ -21,9 +21,9 @@ class AdjacencyMatrix:
     def generate(self):
         self.vertices = self.matrix[0][0]
         self.edge = self.matrix[0][1]
-
         # 初始化邻接矩阵
         self.adjacency_matrix = [[0 for col in range(self.vertices)] for row in range(self.vertices)]
+
         for i, j in self.matrix[1:]:
             # 检查顶点合法性
             self.validate_vertex(i)
