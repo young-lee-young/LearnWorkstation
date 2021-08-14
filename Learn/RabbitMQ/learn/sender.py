@@ -7,7 +7,7 @@ import logging
 import pika
 import sys
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(filename)s line:%(lineno)d %(levelname)s content: %(message)s', filename='./sender.log')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(filename)s line:%(lineno)d %(levelname)s content: %(message)s', filename='sender.log')
 logger = logging.getLogger(__name__)
 
 
