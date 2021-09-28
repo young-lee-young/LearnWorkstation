@@ -2,44 +2,29 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
+	"runtime"
+	"time"
 )
 
-// 定义结构
-type User struct {
-	Id string
-	Name string
-	Age int
-}
-
-// 添加方法，调用方和方法是不同的对象
-func (user User) String() string {
-	fmt.Printf("Address is %x\n", unsafe.Pointer(&user.Name))
-	return fmt.Sprintf("ID: %s, Name: %s, Age: %d", user.Id, user.Name, user.Age)
-}
-
-// 添加方法，调用方和方法是相同的对象
-func (user *User) StringPoint() string {
-	fmt.Printf("Address is %x\n", unsafe.Pointer(&user.Name))
-	return fmt.Sprintf("ID: %s, Name: %s, Age: %d", user.Id, user.Name, user.Age)
+func cal() {
+	for i := 0; i < 1000000; i++ {
+		fmt.Println("bbbbbbbbb")
+		runtime.Gosched()
+	}
 }
 
 func main() {
-	// 创建实例
-	user1 := User{"1", "leeyoung", 10}
-	user2 := &User{Name: "zhaomeng", Age: 20}
+	runtime.GOMAXPROCS(1)
 
-	// new返回的是指针
-	user3 := new(User)
-	user3.Id = "3"
-	user3.Name = "xuwei"
-	user3.Age = 30
+	currentTime := time.Now()
+	fmt.Println(currentTime)
 
-	//通过实例访问方法
-	fmt.Printf("Address is %x\n", unsafe.Pointer(&user1.Name))
-	fmt.Println(user1.String())
+	go cal()
+	for i := 0; i < 1000000; i++ {
+		fmt.Println("aaaaaaaaaaaaa")
+		runtime.Gosched()
+	}
 
-	// 通过指针访问方法
-	fmt.Printf("Address is %x\n", unsafe.Pointer(&user2.Name))
-	fmt.Println(user2.StringPoint())
+	currentTime = time.Now()
+	fmt.Println(currentTime)
 }
