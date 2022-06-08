@@ -1,5 +1,6 @@
 # labels
 
+
 ### 查看pod
 
 ```bash
@@ -9,6 +10,7 @@ kubectl get pods --show-labels
 # 显示某个标签
 kubectl get pods -L env
 ```
+
 
 ### 添加修改标签
 
