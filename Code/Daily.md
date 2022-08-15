@@ -2,24 +2,7 @@
 
 3. MySQL数据库进阶（）
 5. Docker进阶（完成）
-7. Nginx（）
-8. Apache
 4. Git进阶（）
-
-
-
-
-### 慕课
-
-* 云计算&大数据（）
-
-1. Docker入门
-
-* 运维&测试
-1. Jenkins
-2. Python自动化运维篇
-
-
 
 
 ### 问题
@@ -33,8 +16,6 @@
 show | match 8.8.8.8 | display set
 
 
-
-
 ### 单位换算
 
 ```
@@ -42,7 +23,6 @@ show | match 8.8.8.8 | display set
 
 内存、流量换算单位K(Kilo)：1024，M(Mega)：1024 * 1024，G：1024 * 1024 * 1024
 ```
-
 
 
 ### 网络
@@ -54,7 +34,6 @@ TCP数据包限制为64KB，65535字节
 MTU：1500字节
 
 超时重传：
-
 
 
 ### linux目录结构
@@ -76,9 +55,7 @@ MTU：1500字节
 /etc/init.d
 
 
-
-
-redis
+### redis
 
 1. 五种类型数据底层实现
 2. redis事物
@@ -87,16 +64,12 @@ redis
 5. 线程模型
 6. pipeline
 
-协程
-异步（asyncio）、并发库（gevent，猴子补丁）
-
 
 垃圾回收
 linux命令
 僵尸进程和孤儿进程
 
 二分搜索树前、中、后序遍历非递归实现
-
 
 
 ### 数据结构复杂度分析
@@ -122,61 +95,4 @@ x11vnc -storepasswd
 
 # 启动
 x11vnc -forever -shared -rfbauth ~/.vnc/passwd
-```
-
-
-### Ubuntu20.04安装VMware
-
-```bash
-# 添加可执行权限
-sudo chmod +x VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
-
-# 安装
-sudo ./VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
-
-# vmware启动所需包
-sudo apt-get install gcc
-sudo apt-get install build-essential
-
-# 安装wireshark
-sudo apt-get install wireshark
-```
-
-TYPE=Ethernet
-PROXY_METHOD=none
-BROWSER_ONLY=no
-BOOTPROTO=static
-DEFROUTE=yes
-IPV4_FAILURE_FATAL=no
-IPV6INIT=yes
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_FAILURE_FATAL=no
-IPV6_ADDR_GEM_MODE=stable-privacy
-NAME=ens33
-UUID=560df6da-b1ce-4b76-84cb-2064bd9c5c1e
-DEVICE=ens33
-ONBOOT=yes
-IPADDR=192.168.1.10
-GATEWAY=192.168.1.10
-NETMASK=255.255.255.0
-DNS1=114.114.114.114
-
-配置：
-master：4核8G 磁盘200G
-192.168.1.10
-
-worker1：16核32G 磁盘200G
-192.168.1.20
-
-worker2：16核32G 磁盘200G
-192.168.1.30
-
-```bash
-# 安装docker
-yum install docker
-
-# 关闭selinux
-vim /etc/selinux/config
-# SELINUX=disabled
 ```
