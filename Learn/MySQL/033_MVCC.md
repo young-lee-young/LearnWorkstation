@@ -1,6 +1,8 @@
 # MVCC（Multiversion Concurrency Control，多版本并发控制）
 
 
+### 实现
+
 MVCC实现主要由3部分实现，分别为：隐藏字段、UndoLog、ReadView
 
 
@@ -10,23 +12,27 @@ MVCC实现主要由3部分实现，分别为：隐藏字段、UndoLog、ReadView
 
 读取的是数据记录的可见版本
 
+不需要加锁，属于乐观锁的一种
 
 * 当前读
+
+读取数据的当前版本，并加锁；若当前版本已经被加锁且不兼容，则阻塞等待
 
 以下为当前读
 
 ```mysql
-SELECT ... FOR UPDATE;
-
-SELECT ... LOCK IN SHARE MODE;
-
 INSERT ...; 
+
+# 加 X 锁
+SELECT ... FOR UPDATE;
 
 UPDATE ...;
 
 DELETE ...;
-```
 
+# 加 S 锁
+SELECT ... LOCK IN SHARE MODE;
+```
 
 
 ### 隐藏字段
@@ -36,13 +42,6 @@ DB_TRX_ID（6字节）：创建这条记录或最后一次修改该记录的事�
 DB_ROLL_PTR（7字节）：回滚指针，指向这条记录的上一个版本，用于配合 UndoLog，指向上一个旧版本
 
 DB_ROW_ID（6字节）：隐藏主键，如果数据表没有主键，InnoDB会自动生成一个6字节的ROW_ID
-
-
-
-### UndoLog
-
-保存版本链
-
 
 
 ### ReadView
