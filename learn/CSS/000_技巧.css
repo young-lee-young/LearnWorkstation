@@ -1,5 +1,0 @@
-/*图片水平居中*/
-img {display: block; margin: 0 auto;}
-
-/*图片撑破div*/
-div {overflow: hidden;}
