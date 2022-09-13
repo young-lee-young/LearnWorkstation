@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var watch = setInterval(function(){watchStart()}, 1000);
+        function watchStart() {
+            var date = new Date();
+            var time = date.toLocaleTimeString();
+            document.getElementById('demo').innerHTML = time;
+        }
+        function watchEnd() {
+            clearInterval(watch);
+        }
+    </script>
+    <p id="demo">钟表</p>
+    <button type="button" onclick="watchEnd()">停止钟表</button>
+
+
+    <script>
+        var name = setTimeout(function(){nameStart()}, 5000);
+        function nameStart() {
+            document.getElementById('demo2').innerHTML = 'leeyoung';
+        }
+        function nameEnd() {
+            clearTimeout(name);
+        }
+    </script>
+    <p id="demo2">5秒后显示名字</p>
+    <button onclick="nameEnd()">阻止事件的执行</button>
+</body>
+</html>

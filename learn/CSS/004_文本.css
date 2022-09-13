@@ -1,0 +1,55 @@
+
+/*字体颜色*/
+p {color: blue;}
+
+
+/*字体对齐方式*/
+h1 {text-align: center;}
+p.date {text-align: right;}
+每一行宽度相等，左右和外边距对齐
+p.main {text-align: justify;}
+
+
+/*装饰文字*/
+a {text-decoration: none;}
+/*横线在字上面*/
+a {text-decoration: overline;}
+/*横线穿过字*/
+a {text-decoration: line-through;}
+/*横线在字下面*/
+a {text-decoration: underline;}
+
+
+/*文本转换*/
+p.uppercase {text-transform: uppercase;}
+p.lowercase {text-transform: lowercase;}
+/*首字母大写*/
+p.capitalize {text-transform: capitalize;}
+
+
+/*文本缩进*/
+p {text-indent: 50px;}
+
+
+/*文本间隔*/
+/*单词之间的间隔*/
+p {word-spacing: 30px;}
+p {letter-spacing: 3px;}
+
+
+/*行之间的距离*/
+p.small {line-height: 70%;}
+p.big {line-height: 200%;}
+
+
+/*文本方向*/
+p {direction: rtl;}
+
+
+/*图片和同一行的文本对齐，默认是下对齐*/
+img.top {vertical-align: text-top;}
+img.bottom {vertical-align: text-bottom;}
+
+
+/*文字阴影，左右偏移量，上下偏移量，模糊像素，颜色*/
+p {text-shadow: 2px 2px 2px #ff0000;}

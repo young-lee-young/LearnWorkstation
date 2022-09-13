@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--向元素添加事件句柄-->
+    <button id="myButton">请点击</button>
+    <button onclick="removeListener()">移除事件句柄</button>
+    <script>
+        var element = document.getElementById('myButton');
+        element.addEventListener('click', funcClick);
+        element.addEventListener('mouseover', funcMouseOver);
+        // 传递参数
+        element.addEventListener('mouseout', function(){funcMouseOut('#000');});
+        function funcClick() {
+            alert('您点击了按钮');
+        }
+        function funcMouseOver() {
+            element.style.color = '#ff00ff';
+        }
+        function funcMouseOut(color) {
+            element.style.color = color;
+        }
+        function removeListener() {
+            // 移除事件句柄
+            element.removeEventListener('mouseover', funcMouseOver);
+        }
+
+
+        // 事件冒泡与事件捕获
+        // 冒泡中，内部元素会先被触发，然后外部元素触发，最后一个参数false
+        // 捕获中，外部元素会先被触发，然后内部元素触发，最后一个参数true
+    </script>
+
+
+
+
+</body>
+</html>

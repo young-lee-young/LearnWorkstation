@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--try, catch语句-->
+    <script>
+        var txt='';
+        function message() {
+            try {
+                errfunction('welcome!');
+            } catch (err) {
+                txt = '有错误' + err.message + '\n';
+                alert(txt);
+            }
+        }
+    </script>
+    <input type="button" value="查看消息" onclick="message()"/>
+
+
+    <!--throw语句-->
+    <p>输入5到10之间的数字</p>
+    <input id="demo" type="text">
+    <button type="button" onclick="myfunction()">测试输入</button>
+    <p id="message"></p>
+    <script>
+        function myfunction() {
+            var message, num;
+            message = document.getElementById('message');
+            message.innerHTML = '';
+            num = document.getElementById('demo').value;
+            try {
+                if (num == '') throw '值为空';
+                if (isNaN(num)) throw '不是数字';
+                num = Number(num);
+                if (num < 5) throw '太小';
+                if (num > 10) throw '太大';
+            } catch (err) {
+                message.innerHTML = '错误' + err;
+            }
+        }
+    </script>
+</body>
+</html>

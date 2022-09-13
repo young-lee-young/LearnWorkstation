@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 数字转换为字符串
+        String(2)
+        (2).toString()
+
+
+        // 布尔值转换为字符串
+        String(false)
+        true.toString()
+
+
+        // 日期转换为字符串
+        // Date()返回字符串
+        String(new Date())
+        date = new Date()
+        date.toString()
+
+
+        // 字符串转换为数字
+        Number('3.14')
+        Number('')  //返回0
+        Number('99 88') //返回NaN
+
+
+        // 一元运算符，将变量转换为数字
+        var num_string = '5';
+        var num = + num_string;    //num是一个数字
+        var name = 'leeyoung';
+        var num2 = + name;  //num2是NaN
+
+
+        // 布尔值转换为数字
+        Number(false)   //返回0, true返回的是1
+
+
+        // 日期转换为数字
+        date = new Date();
+        Number(date)
+        date2 = new Date();
+        date2.getTime()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--定义语言-->
+<html lang="en">
+<head>
+    <!--定义编码方式-->
+    <meta charset="UTF-8">
+    <!--定义网页头-->
+    <title>Title</title>
+</head>
+<body>
+
+<!--表单用于收集不同类型的用户输入-->
+    <form>
+        <!-- 类型是文本 -->
+        user: <input type="text", name="用户名"><br>
+        <!-- 类型是密码 -->
+        password: <input type="password" name="密码"><br>
+        <!-- 类型是单选按钮 -->
+        <input type="radio" name="sex" value="male">男性<br>
+        <input type="radio" name="sex" value="female">女性<br>
+        <!-- 类型是复选框 -->
+        <input type="checkbox" name="like" value="read">阅读<br>
+        <input type="checkbox" name="like" value="listen">听歌<br>
+        <input type="checkbox" name="like" value="sport">运动<br>
+        <!-- 类型是下拉列表 -->
+        <select name="class">
+            <option value="dayi">大一</option>
+            <option value="daer">大二</option>
+            <option value="dasan">大三</option>
+            <option value="dasi">大四</option>
+        </select><br>
+        <!-- 类型是预选下拉列表 -->
+        <select name="atschool">
+            <option value="lixiao">离校</option>
+            <option value="zaixiao" selected>在校</option>
+        </select><br>
+        <!-- 类型是提交按钮 -->
+        <input type="submit" name="提交">
+    </form>
+
+    <!-- 文本域 -->
+    <textarea rows="10" cols="30">
+        简介
+    </textarea>
+    <input type="button" value="ok">
+
+    <!--带外边框-->
+    <!--action定义一个动作，method定义一个方法，点击按钮后将表单的数据提交到动作指定的地址-->
+    <!--fieldset定义边框，legend定义边框标题-->
+    <form action="" method="post">
+        <fieldset>
+            <legend>外框标题</legend>
+            email: <input type="text" name="email">
+            content: <input type="text" name="content">
+            <input type="submit", name="submit">
+        </fieldset>
+    </form>
+</body>
+</html>

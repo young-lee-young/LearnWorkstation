@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--创建直接实例-->
+    <script>
+        // 创建新对象
+        me = new Object();
+        // 添加属性
+        me.name = 'leeyoung';
+        me.age = 20;
+        // 或者直接 me = {name: 'leeyoung', age: 20};
+        document.write(me.name + ' ' + me.age);
+    </script>
+
+
+    <script>
+        function newperson(name, age) {
+            // this指向的是我们正在执行函数本身
+            this.name = name;
+            this.age = age;
+            // 把方法添加到JavaScript对象
+            this.changeName = changeName;
+            function changeName(newname) {
+                this.name = newname;
+            }
+        }
+        var me = new newperson('leeyoung', 20);
+        // 属性添加到JavaScript对象
+        me.address = 'beijing';
+
+        me.changeName('liyoung');
+        document.write(me.name + ' ' + me.age + ' ' + me.address);
+
+
+        // 循环遍历对象属性
+        var x;
+        var txt = '';
+        var classmate = new newperson('zhao', 21);
+        for (x in classmate) {
+            txt = txt + classmate[x];
+        }
+        document.write(txt);
+    </script>
+</body>
+</html>
