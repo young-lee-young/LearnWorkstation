@@ -5,11 +5,11 @@ import (
 )
 
 /**
-	链表反转 LeetCode No206
- */
+链表反转 LeetCode No206
+*/
 func main() {
 	linkList := link.LinkedList{}
-	for i := 0; i < 10; i ++ {
+	for i := 0; i < 10; i++ {
 		linkList.Append(i)
 	}
 	linkList.ShowList()
@@ -31,7 +31,7 @@ func main() {
 }
 
 func reverseLinkList(head *link.Node) *link.Node {
-	if head.Next == nil {
+	if head == nil || head.Next == nil {
 		return head
 	}
 
@@ -46,14 +46,16 @@ func reverseLinkList(head *link.Node) *link.Node {
 		current = temp
 	}
 
+	// ⚠️ 整理需要注意
 	head.Next = nil
+
 	head = pre
 	return head
 }
 
 /**
-	递归反转链表
- */
+递归反转链表
+*/
 func recursionReverseLinkList(node *link.Node) *link.Node {
 	if node == nil || node.Next == nil {
 		return node
@@ -65,8 +67,8 @@ func recursionReverseLinkList(node *link.Node) *link.Node {
 }
 
 /**
-	头插法反转链表
- */
+头插法反转链表
+*/
 func HeadInsert(node *link.Node) *link.Node {
 	newHead := &link.Node{}
 	for node != nil {

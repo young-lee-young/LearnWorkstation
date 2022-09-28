@@ -1,16 +1,16 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
-	queue2 "practice/base/queue"
 	"fmt"
+	queue2 "practice/base/queue"
+	tree2 "practice/base/tree"
 )
 
 /**
-	二叉树层次遍历 LeetCode No102
+二叉树层次遍历 LeetCode No102
 
-	解题思路：使用队列层次遍历
- */
+解题思路：使用队列层次遍历
+*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
@@ -30,8 +30,13 @@ func solution(root *tree2.Node) [][]int {
 	for !queue.IsEmpty() {
 		temp := make([]int, 0)
 		queueLen := queue.GetLength()
-		for i := 0; i < queueLen; i ++ {
+		for i := 0; i < queueLen; i++ {
 			node := queue.Dequeue().(*tree2.Node)
+
+			// ⚠️ 这里要注意，需要判断空
+			if node == nil {
+				break
+			}
 			temp = append(temp, node.Data)
 			if node.Left != nil {
 				queue.Enqueue(node.Left)
@@ -40,7 +45,12 @@ func solution(root *tree2.Node) [][]int {
 				queue.Enqueue(node.Right)
 			}
 		}
-		result = append(result, temp)
+
+		// ⚠️ 空的地址不要加进来
+		if len(temp) != 0 {
+			result = append(result, temp)
+		}
 	}
+
 	return result
 }

@@ -3,22 +3,22 @@ package main
 import "fmt"
 
 /**
-	LRU Cache
- */
+LRU Cache LeetCode No146
+*/
 
- type Node struct {
- 	Pre *Node
- 	Next *Node
- 	key interface{}
- 	Value interface{}
- }
+type Node struct {
+	Pre   *Node
+	Next  *Node
+	key   interface{}
+	Value interface{}
+}
 
 type LRUCache struct {
 	Capacity int
-	Length int
-	Head *Node
-	Tail *Node
-	HashMap map[interface{}]*Node
+	Length   int
+	Head     *Node
+	Tail     *Node
+	HashMap  map[interface{}]*Node
 }
 
 func (cache *LRUCache) Get(key int) interface{} {
@@ -38,13 +38,13 @@ func (cache *LRUCache) Put(key int, value interface{}) {
 			delete(cache.HashMap, cache.Tail.key)
 			cache.RemoveTail()
 		} else {
-			cache.Length ++
+			cache.Length++
 		}
 		nodeNew := &Node{
-			Pre:nil,
-			Next:nil,
-			key:key,
-			Value:value,
+			Pre:   nil,
+			Next:  nil,
+			key:   key,
+			Value: value,
 		}
 		cache.HashMap[key] = nodeNew
 		cache.InsertToHead(nodeNew)
@@ -82,11 +82,11 @@ func (cache *LRUCache) RemoveTail() {
 
 func main() {
 	cache := LRUCache{
-		Capacity:2,
-		Length:0,
-		Head:nil,
-		Tail:nil,
-		HashMap:make(map[interface{}]*Node, 2),
+		Capacity: 2,
+		Length:   0,
+		Head:     nil,
+		Tail:     nil,
+		HashMap:  make(map[interface{}]*Node, 2),
 	}
 	cache.Put(1, 1)
 	cache.Put(2, 2)

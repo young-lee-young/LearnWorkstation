@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 /**
-	x平方根 LeetCode No69
+x平方根 LeetCode No69
 
-	标签：二分搜索
- */
+标签：二分搜索
+*/
 func main() {
 	num := 8
 	result := solution(num)
@@ -18,9 +18,8 @@ func solution(num int) int {
 	end := num
 
 	for start < end {
-		mid := start + (end - start + 1) / 2
-		fmt.Println(start, end, mid)
-		if mid * mid > num {
+		mid := start + (end-start+1)/2
+		if mid*mid > num {
 			end = mid - 1
 		} else {
 			start = mid
