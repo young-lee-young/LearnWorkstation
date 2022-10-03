@@ -5,6 +5,9 @@ import (
 	"strconv"
 )
 
+/**
+字符串压缩
+*/
 func main() {
 	str := "aabcccccaaa"
 	ret := solution(str)
