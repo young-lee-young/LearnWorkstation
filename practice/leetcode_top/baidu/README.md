@@ -18,5 +18,5 @@
 ✅ 016 有效的括号 LeetCode No20
 ✅ 017 x的平方根 LeetCode No69
 ✅ 018 序列化和反序列化二叉搜索树 LeetCode No449
-⭕️ 019 从前序与中序遍历序列构造二叉树 LeetCode No105
+✅ 019 从前序与中序遍历序列构造二叉树 LeetCode No105
 ⭕️ 020 数组中的第 K 个最大元素 LeetCode No215

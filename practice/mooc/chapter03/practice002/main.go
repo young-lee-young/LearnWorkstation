@@ -3,29 +3,29 @@ package main
 import "fmt"
 
 /**
-	有序数组中删除重复元素 LeetCode No26
+数组中删除给定的值 LeetCode No27
 
-	标签：快慢指针
+标签：快慢指针
 */
 func main() {
-	nums := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
+	nums := []int{0, 1, 2, 2, 3, 0, 4, 2}
+	val := 2
 
-	result := solution(nums)
+	result := solution(nums, val)
 	fmt.Println(result)
 }
 
-func solution(nums []int) int {
+func solution(nums []int, val int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
 	}
 
 	slow := 0
 	for fast := 0; fast < len(nums); fast++ {
-		if nums[fast] != nums[slow] {
-			slow++
+		if nums[fast] != val {
 			nums[slow] = nums[fast]
-			fmt.Println(nums)
+			slow++
 		}
 	}
-	return slow + 1
+	return slow
 }

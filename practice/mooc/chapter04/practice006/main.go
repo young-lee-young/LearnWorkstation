@@ -1,72 +1,44 @@
-/**
- * @Time:    2021/7/3 15:16 
- * @Author:  leeyoung
- * @File:    main.go
- * @Content: 
- */
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
 
 /**
-	四数之和 LeetCode No18
+同构字符串 LeetCode No205
 
-	标签：对撞指针
- */
+标签：查找表
+*/
 func main() {
-	nums := []int{-5, -4, -3, -2, -1, 0, 0, 1, 2, 3, 4, 5}
-	target := 0
-	result := solution(nums, target)
+	//str1 := "paper"
+	//str2 := "title"
+	str1 := "badc"
+	str2 := "baba"
+	result := solution(str1, str2)
 	fmt.Println(result)
 }
 
-func solution(nums []int, target int) [][]int {
-	result := [][]int{}
-	numsLen := len(nums)
-
-	if numsLen < 4 {
-		return result
+func solution(str1 string, str2 string) bool {
+	if len(str1) != len(str2) {
+		return false
 	}
 
-	sort.Ints(nums)
+	byte1Map := make(map[byte]byte, 0)
+	byte2Map := make(map[byte]byte, 0)
 
-	for i := 0; i < numsLen - 3; i ++ {
-		// 跳过重复值
-		if i > 0 && nums[i] == nums[i - 1] {
-			continue
-		}
-		for j := i + 1; j < numsLen- 2; j ++ {
-			// 跳过重复值
-			if j > i + 1 && nums[j] == nums[j - 1] {
-				continue
+	for i := 0; i < len(str1); i++ {
+		if value, ok := byte1Map[str1[i]]; ok {
+			if str2[i] != value {
+				return false
 			}
-
-			L := j + 1
-			R := numsLen - 1
-			for L < R {
-				sum := nums[i] + nums[j] + nums[L] + nums[R]
-				// 等于目标值
-				if sum == target {
-					result = append(result, []int{nums[i], nums[j], nums[L], nums[R]})
-					//去除重复值
-					for L < R && nums[L] == nums[L + 1] {
-						L = L + 1
-					}
-					for L < R && nums[R] == nums[R - 1] {
-						R = R - 1
-					}
-					L = L + 1
-					R = R - 1
-				} else if sum > target {
-					R = R - 1
-				} else {
-					L = L + 1
+		} else {
+			if value, ok := byte2Map[str2[i]]; ok {
+				if str1[i] != value {
+					return false
 				}
 			}
+
+			byte1Map[str1[i]] = str2[i]
+			byte2Map[str2[i]] = str1[i]
 		}
 	}
-	return result
+	return true
 }

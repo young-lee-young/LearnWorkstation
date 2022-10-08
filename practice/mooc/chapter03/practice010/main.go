@@ -1,9 +1,9 @@
 package main
 
 /**
-	返回字符串 LeetCode No344
+反转字符串 LeetCode No344
 
-	标签：对撞指针
+标签：对撞指针
 */
 func main() {
 	s := []byte{'h', 'e', 'l', 'l', 'o'}

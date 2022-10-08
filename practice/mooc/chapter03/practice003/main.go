@@ -3,12 +3,13 @@ package main
 import "fmt"
 
 /**
-	删除数组中重复元素，每个元素最多存在2个 LeetCode No80
+有序数组中删除重复元素 LeetCode No26
 
-	标签：快慢指针
+标签：快慢指针
 */
 func main() {
-	nums := []int{1, 1, 1, 2, 2, 3}
+	nums := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
+
 	result := solution(nums)
 	fmt.Println(result)
 }
@@ -20,10 +21,11 @@ func solution(nums []int) int {
 
 	slow := 0
 	for fast := 0; fast < len(nums); fast++ {
-		if slow < 2 || nums[fast] != nums[slow-2] {
-			nums[slow] = nums[fast]
+		if nums[fast] != nums[slow] {
 			slow++
+			nums[slow] = nums[fast]
+			fmt.Println(nums)
 		}
 	}
-	return slow
+	return slow + 1
 }
