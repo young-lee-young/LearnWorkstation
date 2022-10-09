@@ -6,7 +6,10 @@
  */
 package main
 
-import "practice/utils/compare"
+import (
+	"fmt"
+	"practice/utils/compare"
+)
 
 /**
 最短连续子数组和大于等于给定值 LeetCode No209
@@ -14,10 +17,13 @@ import "practice/utils/compare"
 标签：滑动窗口
 */
 func main() {
-
+	target := 7
+	nums := []int{2, 3, 1, 2, 4, 3}
+	ret := solution(target, nums)
+	fmt.Println("ret:", ret)
 }
 
-func solution(nums []int, target int) int {
+func solution(target int, nums []int) int {
 	// nums[left ... right]为滑动窗口
 	left := 0
 	right := -1
@@ -44,5 +50,6 @@ func solution(nums []int, target int) int {
 	if result == len(nums)+1 {
 		return 0
 	}
+
 	return result
 }

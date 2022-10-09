@@ -12,7 +12,6 @@ func main() {
 	str := "aabcccccaaa"
 	ret := solution(str)
 	fmt.Println("ret:", ret)
-
 }
 
 func solution(str string) string {
