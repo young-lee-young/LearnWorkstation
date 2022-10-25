@@ -14,9 +14,20 @@ func changeName(p Person) {
 }
 
 func main() {
+
 	nums := []int{1, 2, 3}
 
 	nums = append(nums, []int{4, 5, 6, 7, 8, 9}...)
 
 	fmt.Println("nums", nums, len(nums), cap(nums))
+
+	a := &Person{
+		firstName: "lee",
+		lastName:  "young",
+	}
+	hello(a)
+}
+
+func hello(v interface{}) {
+	fmt.Println("v:", v)
 }

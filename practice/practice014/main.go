@@ -1,16 +1,16 @@
 package main
 
 import (
-	"strings"
-	"strconv"
 	"fmt"
+	"strconv"
+	"strings"
 )
 
 /**
-	电话号码的字母组合 LeetCode No17
+电话号码的字母组合 LeetCode No017
 
-	标签：回溯
- */
+标签：回溯
+*/
 func main() {
 	numStr := "23"
 	numSlice := strings.Split(numStr, "")

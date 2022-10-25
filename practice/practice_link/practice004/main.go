@@ -5,18 +5,18 @@ import (
 )
 
 /**
-	有序链表中删除重复节点 LeetCode No83
- */
+有序链表中删除重复节点 LeetCode No083
+*/
 func main() {
 	i := 0
 	linkList := link.LinkedList{}
 	for i < 20 {
-		if i % 2 == 0 {
+		if i%2 == 0 {
 			linkList.Append(i)
 		} else {
 			linkList.Append(i - 1)
 		}
-		i ++
+		i++
 	}
 	linkList.ShowList()
 

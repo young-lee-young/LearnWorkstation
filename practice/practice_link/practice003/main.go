@@ -3,15 +3,15 @@ package main
 import "practice/base/link"
 
 /**
-	合并两个有序链表 LeetCode No21
- */
+合并两个有序链表 LeetCode No021
+*/
 func main() {
 	linkList1 := link.LinkedList{}
 	linkList2 := link.LinkedList{}
 
 	count := 0
 	for count < 20 {
-		if count % 2 == 0 {
+		if count%2 == 0 {
 			linkList1.Append(count)
 		} else {
 			linkList2.Append(count)
