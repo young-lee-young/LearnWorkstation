@@ -1,3 +1,8 @@
+### 简介
+
+慕课网Moody老师[《高并发、高性能、高可用 MySQL 实战》课程](https://coding.imooc.com/class/515.html)
+
+
 ### 目录
 
 001 - 009：基础
