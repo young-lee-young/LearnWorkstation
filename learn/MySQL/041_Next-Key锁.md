@@ -11,7 +11,7 @@
 2. 查找过程中扫描过的范围才加锁
 3. **唯一索引等值查询**，没有间隙锁，只加行锁
 4. 索引等值查询最右一个扫描到的不满足条件值不加行锁
-5. 索引覆盖且只加 S 锁时，不锁主键索引
+5. 索引覆盖且只加 S锁 时，不锁主键索引
 
 
 ### Next-Key Lock 实践
@@ -20,9 +20,9 @@
 
 ```mysql
 CREATE TABLE `t3` (
-    `id` INT(11) NOT NULL,
-    `c` INT(11) DEFAULT NULL,
-    `d` INT(11) DEFAULT NULL,
+    `id` INT(8) NOT NULL,
+    `c` INT(8) DEFAULT NULL,
+    `d` INT(8) DEFAULT NULL,
     PRIMARY KEY (`id`),
     KEY `c` (`c`)
 ) ENGINE=INNODB;
