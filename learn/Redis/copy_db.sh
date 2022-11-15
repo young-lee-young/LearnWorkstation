@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # set connection data accordingly
 # 复制数据
 source_host=
