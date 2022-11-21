@@ -2,20 +2,26 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
+	"time"
 )
 
-type s1 struct {
-	num1 int32
-	num2 int32
+type Person struct {
+	salary int
+	level  int
 }
 
-type s2 struct {
-	num1 int16
-	num2 int32
+func (p *Person) promote() {
+	p.salary += 1
+	p.level += 1
 }
 
 func main() {
-	a := int64(0)
-	fmt.Println(unsafe.Alignof(a))
+	p := Person{salary: 0, level: 0}
+
+	for i := 0; i < 200; i++ {
+		go p.promote()
+	}
+
+	time.Sleep(time.Second * 5)
+	fmt.Println(p.salary, p.level)
 }

@@ -1,4 +1,3 @@
-
 ### Go并发问题
 
 * 问题：并发赋值有并发安全问题
@@ -22,14 +21,13 @@ func main() {
 		go add(&a)
 	}
 
-	time.Sleep(time.Second)
+	time.Sleep(time.Second * 1)
 	fmt.Println(a)
 }
 ```
 
-* 解决
 
-使用 atomic 解决
+* 解决：使用 atomic 解决
 
 ```go
 package main
@@ -40,6 +38,7 @@ import (
 	"time"
 )
 
+// sync/atomic/doc.go/AddInt32，汇编语言实现
 func add(p *int32) {
 	atomic.AddInt32(p, 1)
 }
@@ -51,10 +50,17 @@ func main() {
 		go add(&a)
 	}
 
-	time.Sleep(time.Second)
+	time.Sleep(time.Second * 1)
 	fmt.Println(a)
 }
 ```
+
+
+* atomic 操作
+
+1. 是一种硬件层面加锁机制
+2. 保证操作一个变量的时候，其他协程、线程无法访问
+3. 只能用于简单变量的简单操作
 
 
 ### CAS：compare and swap
