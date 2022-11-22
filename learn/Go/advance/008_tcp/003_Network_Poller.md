@@ -1,20 +1,25 @@
-### NetWork Poller
+### pollDesc
 
-* pollCache（runtime/netpoll.go/pollCache）
+* pollCache
 
 ```go
+// runtime/netpoll.go/pollCache
 package runtime
 
 // 实际是 pollDesc 的链表头
 type pollCache struct {
-	lock  mutex // 用来锁整个链表
+	lock  mutex     // 用来锁整个链表
 	first *pollDesc
 }
 ```
 
-* pollDesc（runtime/netpoll.go/pollDesc）
+
+* pollDesc 结构体
+
+pollDesc 指针是 Socket 相关详细信息，pollDesc 中记录了哪个协程休眠在等待此 Socket
 
 ```go
+// runtime/netpoll.go/pollDesc 
 package runtime
 
 const (
@@ -22,34 +27,28 @@ const (
 	pdWait  uintptr = 2
 )
 
+// 新增监听 Socket
+// Network poller descriptor.
 // 描述 Socket，并记录 Socket 和协程对应关系
 type pollDesc struct {
-	// 指向下一个 pollDesc
-	link *pollDesc // in pollcache, protected by pollcache.lock
-	fd   uintptr   // Socket 的文件描述符
-
-	atomicInfo atomic.Uint32
-
-	rg atomic.Uintptr // pdReady, pdWait, G waiting for read or nil
-	wg atomic.Uintptr // pdReady, pdWait, G waiting for write or nil
+	link *pollDesc // in pollcache, protected by pollcache.lock，指向下一个 pollDesc
 
 	lock    mutex // protects the following fields
-	closing bool
-	user    uint32    // user settable cookie
-	rseq    uintptr   // protects from stale read timers
-	rt      timer     // read deadline timer (set if rt.f != nil)
-	rd      int64     // read deadline (a nanotime in the future, -1 when expired)
-	wseq    uintptr   // protects from stale write timers
-	wt      timer     // write deadline timer
-	wd      int64     // write deadline (a nanotime in the future, -1 when expired)
-	self    *pollDesc // storage for indirect interface. See (*pollDesc).makeArg.
+	fd      uintptr // Socket 文件描述
+	
+	rg      uintptr // pdReady, pdWait, G waiting for read or nil
+	wg      uintptr // pdReady, pdWait, G waiting for write or nil
 }
 ```
 
 
-### NetWork Poller 初始化（runtime/netpoll.go/poll_runtime_pollServerInit()）
+### NetWork Poller 初始化
+
+1. poll_runtime_pollServerInit
+2. 调用 netpollinit
 
 ```go
+// runtime/netpoll.go/poll_runtime_pollServerInit
 package runtime
 
 func poll_runtime_pollServerInit() {
@@ -69,20 +68,34 @@ func netpollGenericInit() {
 ```
 
 
-### Network Poller 新增监听 Socket（runtime/netpoll.go/poll_runtime_pollOpen()）
+### Network Poller 新增监听 Socket
+
+1. poll_runtime_pollOpen
+2. 在 pollCache 链表中分配一个新的 pollDesc
+3. 初始化 pollDesc（rg、wg 为 0）
+4. 调用 netpollopen
 
 ```go
+// runtime/netpoll.go/poll_runtime_pollOpen
 package runtime
 
-// 新增监听 Socket
 // fd：Socket 的文件描述符
 func poll_runtime_pollOpen(fd uintptr) (*pollDesc, int) {
-	// 分配 pollDesc
+	// 分配新的 pollDesc
 	pd := pollcache.alloc()
+
+	// 初始化 pollDesc
+	lock(&pd.lock) pd.rg = 0
+	pd.wg = 0
+    unlock(&pd.lock)
 
 	// 向 epoll 新增一个事件
 	errno := netpollopen(fd, pd)
 
 	return pd, 0
+}
+
+func (c *pollCache) alloc() *pollDesc { 
+
 }
 ```

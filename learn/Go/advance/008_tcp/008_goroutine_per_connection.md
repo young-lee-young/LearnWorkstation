@@ -1,3 +1,6 @@
+### 阻塞模型和多路复用结合
+
+```go
 package main
 
 import (
@@ -38,3 +41,4 @@ func main() {
 		go handleConnection(conn)
 	}
 }
+```
