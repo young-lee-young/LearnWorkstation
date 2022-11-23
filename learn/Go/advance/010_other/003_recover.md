@@ -28,10 +28,12 @@ func main() {
 }
 ```
 
+* 源码
+
 ```go
+// runtime/panic.go/gopanic
 package runtime
 
-// runtime/panic.go/gopanic()
 func gopanic(e any) {
 	gp := getg()
 
@@ -45,6 +47,15 @@ func gopanic(e any) {
 
 
 ### panic + defer + recover
+
+* 原理
+
+1. 如果涉及 recover，defer 会使用堆上分配（deferpool）
+2. 遇到 panic，panic 会从 deferpool 取出 defer 语句执行
+3. defer 中调用 recover，可以终止 panic 过程（上一级的协程不会崩溃）
+
+
+* 示例
 
 ```go
 package main
@@ -71,10 +82,12 @@ func main() {
 }
 ```
 
+* 源码
+
 ```go
+// runtime/panic.go/gopanic
 package runtime
 
-// runtime/panic.go/gopanic()
 func gopanic(e any) {
 	gp := getg()
 

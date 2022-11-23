@@ -1,40 +1,12 @@
 package main
 
-import (
-	"net"
-	"fmt"
-)
-
-func handleConnection(conn net.Conn) {
-	defer conn.Close()
-	var body [100]byte
-
-	for true {
-		_, err := conn.Read(body[:])
-		if err != nil {
-			break
-		}
-		fmt.Printf("receive: %s\n", string(body[:]))
-
-		_, err = conn.Write(body[:])
-		if err != nil {
-			break
-		}
-	}
+/*
+int sum(int a, int b) {
+	return a + b;
 }
+*/
+import "C"
 
 func main() {
-	listener, err := net.Listen("tcp", "0.0.0.0:8888")
-	if err != nil {
-		panic(err)
-	}
-
-	for {
-		conn, err := listener.Accept()
-		if err != nil {
-			panic(err)
-		}
-
-		go handleConnection(conn)
-	}
+	println(C.sum(1, 1))
 }

@@ -1,6 +1,9 @@
 ### defer 实现
 
+实现的两种方法：
+
 1. 协程记录 defer 信息，函数退出时调用
+
 2. 将 defer 代码直接编译进函数尾
 
 
@@ -8,9 +11,10 @@
 
 * 堆上分配（1.12 之前）
 
-在堆上开辟一个 sched.deferpool，遇到 defer 语句，将信息放入 deferpool，函数返回时，从 deferpool 取出执行
+在**堆上**开辟一个 sched.deferpool，遇到 defer 语句，将信息放入 deferpool，函数返回时，从 deferpool 取出执行
 
 ```go
+// runtime/runtime2.go
 package runtime
 
 // 协程结构体（runtime/runtime2.go/g）
@@ -27,24 +31,14 @@ type p struct {
 
 // defer 结构体（runtime/runtime2.go/_defer）
 type _defer struct {
-	started bool
-	heap    bool
-
-	openDefer bool
 	sp        uintptr
 	pc        uintptr
 	fn        func()
-	_panic    *_panic
-	link      *_defer
-
-	fd   unsafe.Pointer
-	varp uintptr
-
-	framepc uintptr
 }
 ```
 
 ```go
+// runtime/panic.go/deferreturn
 package runtime
 
 // 函数返回是调用 deferreturn
@@ -61,6 +55,7 @@ func deferreturn() {
 	}
 }
 ```
+
 
 * 栈上分配（1.13 之后）
 

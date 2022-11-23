@@ -37,4 +37,4 @@
 
 😩 Kubernetes
 
-😩 Go
+😄 Go

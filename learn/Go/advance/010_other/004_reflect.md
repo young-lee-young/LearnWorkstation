@@ -1,3 +1,10 @@
+### 需求
+
+1. 获取对象的类型
+2. 对任意类型变量赋值
+3. 调用任意方法
+
+
 ### 反射
 
 ```go
@@ -18,6 +25,9 @@ func main() {
 	// 反射出值
 	v := reflect.ValueOf(s)
 	fmt.Println(v)
+	
+	s2 := v.Interface().(string)
+	fmt.Println(s2)
 }
 ```
 
