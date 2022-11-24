@@ -5,9 +5,12 @@ import (
 	"time"
 )
 
+// 缓存，解决性能问题
 var hashMap map[uint64]uint64
 
 /**
+	🥇标准实现
+
 	斐波那契数列 LeetCode No509
 
 	标签：动态规划
@@ -35,12 +38,14 @@ func solution(n uint64) uint64 {
 		} else {
 			sum1 = solution(n - 1)
 		}
+
 		var sum2 uint64
 		if val, ok := hashMap[n - 2]; ok {
 			sum2 = val
 		} else {
 			sum2 = solution(n - 2)
 		}
+
 		sum := sum1 + sum2
 		hashMap[n] = sum
 		return sum

@@ -12,7 +12,7 @@ import (
 )
 
 /**
-四数之和 LeetCode No18
+四数之和 LeetCode No018
 
 标签：对撞指针
 */

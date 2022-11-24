@@ -9,8 +9,8 @@ func SelectionSort(nums []int) []int {
 	count := len(nums)
 
 	for i := 0; i < count - 1; i ++ {
+		// 找到 [i, n) 区间最小值索引
 		minIndex := i
-		// 找到最小值索引
 		for j := i + 1; j < count; j ++ {
 			if nums[j] < nums[minIndex] {
 				minIndex = j

@@ -12,7 +12,7 @@ import (
 )
 
 /**
-三数之和 LeetCode No15
+三数之和 LeetCode No015
 
 标签：对撞指针
 */
