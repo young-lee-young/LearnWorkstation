@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-删除数组中重复元素，每个元素最多存在2个 LeetCode No80
+删除数组中重复元素，每个元素最多存在2个 LeetCode No080
 
 标签：快慢指针
 */

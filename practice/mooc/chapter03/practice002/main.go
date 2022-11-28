@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-数组中删除给定的值 LeetCode No27
+数组中删除给定的值 LeetCode No027
 
 标签：快慢指针
 */

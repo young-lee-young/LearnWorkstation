@@ -4,6 +4,8 @@
  * @File:    main.go
  * @Content:
 
+	🥇标准实现
+
 	LeetCode No704 二分查找
 
  */
