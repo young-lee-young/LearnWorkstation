@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-	重复数字的全排列 LeetCode No47
+	重复数字的全排列 LeetCode No047
 
 	标签：回溯法 + 剪枝
  */

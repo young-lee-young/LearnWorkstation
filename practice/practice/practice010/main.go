@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-	不重复数字全排列 LeetCode No46
+	不重复数字全排列 LeetCode No046
 
 	标签：回溯法标准方式
  */

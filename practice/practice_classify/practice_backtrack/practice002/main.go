@@ -1,7 +1,9 @@
 /**
-LeetCode No216
+组合总和Ⅲ LeetCode No216
 
 标签：回溯
+
+特点：不含重复元素，元素只能使用一次
 */
 package main
 
@@ -25,16 +27,11 @@ func main() {
 func backtrack(nums []int, n int, k int, start int, path []int) {
 	// 递归函数结束条件
 	if len(path) == k {
-		if Sum(path) == n {
+		if sum(path) == n {
 			temp := make([]int, k)
 			copy(temp, path)
 			ret = append(ret, temp)
 		}
-		return
-	}
-
-	// 剪枝操作
-	if Sum(path) >= n {
 		return
 	}
 
@@ -43,16 +40,21 @@ func backtrack(nums []int, n int, k int, start int, path []int) {
 		// 处理节点
 		path = append(path, nums[i])
 
+		// TODO 剪枝操作
+
+		// 递归函数
+		// ⚠️注意：不含重复元素，元素只能使用一次，体现在 i + 1
 		backtrack(nums, n, k, i+1, path)
 
+		// 回溯
 		path = path[:len(path)-1]
 	}
 }
 
-func Sum(nums []int) int {
-	sum := 0
+func sum(nums []int) int {
+	s := 0
 	for _, v := range nums {
-		sum += v
+		s += v
 	}
-	return sum
+	return s
 }
