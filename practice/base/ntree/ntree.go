@@ -23,7 +23,7 @@ type NTree struct {
 }
 
 /**
-	生成N叉数
+	生成 N 叉树
  */
 func (ntree *NTree) Generate(maxHeight int, width int) {
 	rand.Seed(time.Now().UnixNano())
@@ -32,7 +32,7 @@ func (ntree *NTree) Generate(maxHeight int, width int) {
 }
 
 /**
-	层序遍历N叉数
+	层序遍历 N 叉树
  */
 func (ntree *NTree) ShowTree(width int) {
 	queue := queue2.Queue{}

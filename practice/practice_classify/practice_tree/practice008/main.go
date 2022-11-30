@@ -1,41 +1,72 @@
+/**
+ * @Time:    2022/11/29 19:04 
+ * @Author:  leeyoung
+ * @File:    main.go
+ * @Content:
+
+	LeetCode No107 二叉树的层序遍历Ⅱ
+ */
 package main
 
 import (
 	tree2 "practice/base/tree"
-	"math/rand"
-	"time"
 	"fmt"
+	queue2 "practice/base/queue"
 )
 
-/**
-	树最大路径，Leetcode No543
- */
 func main() {
 	tree := tree2.Tree{}
-	rand.Seed(time.Now().Unix())
-	i := 0
-	for i < 10 {
-		num := rand.Intn(100)
-		tree.Insert(num)
-		i ++
-	}
+	tree.GenerateTree()
 	root := tree.Root
-	maxDepth := getDeep(root)
-	tree.PreorderTraversal()
-	fmt.Println("max depth : -----------", maxDepth)
+	ret := solution(root)
+	fmt.Println("ret:", ret)
 }
 
-func getDeep(node *tree2.Node) int {
-	if node == nil {
-		return 0
+func solution(root *tree2.Node) [][]int {
+	ret := make([][]int, 0)
+	if root == nil {
+		return ret
 	}
-	leftDepth := getDeep(node.Left)
-	rightDepth := getDeep(node.Right)
-	var max int
-	if leftDepth > rightDepth {
-		max = leftDepth
-	} else {
-		max = rightDepth
+
+	queue := queue2.Queue{}
+	queue.Enqueue(root)
+
+	for !queue.IsEmpty() {
+		temp := make([]int, 0)
+		queueLen := queue.GetLength()
+
+		for i := 0; i < queueLen; i ++ {
+			node := queue.Dequeue().(*tree2.Node)
+
+			if node == nil {
+				break
+			}
+
+			temp = append(temp, node.Data)
+
+			if node.Left != nil {
+				queue.Enqueue(node.Left)
+			}
+			if node.Right != nil {
+				queue.Enqueue(node.Right)
+			}
+		}
+
+		if len(temp) != 0 {
+			ret = append(ret, temp)
+		}
 	}
-	return max + 1
+
+	// 翻转数组
+	reverse(ret)
+
+	return ret
+}
+
+func reverse(a [][]int) {
+	l, r := 0, len(a)-1
+	for l < r {
+		a[l], a[r] = a[r], a[l]
+		l, r = l+1, r-1
+	}
 }

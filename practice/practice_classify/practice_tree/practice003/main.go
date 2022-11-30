@@ -1,40 +1,41 @@
+/**
+ * @Time:    2022/11/29 17:46 
+ * @Author:  leeyoung
+ * @File:    main.go
+ * @Content:
+
+	LeetCode No094 二叉树的中序遍历
+
+ */
 package main
 
-import (
-	tree2 "practice/base/tree"
-	"practice/base/stack"
-	"fmt"
-)
+import "fmt"
 
-/**
-	非递归后续遍历二叉树 LeetCode No145
+var ret []int
 
-	解题思路：使用双栈
- */
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 func main() {
-	tree := tree2.Tree{}
-	tree.GenerateTree()
-	root := tree.Root
-	tree.PostorderTraversal()
+	ret = []int{}
 
-	fmt.Println("-----------")
-	stack1 := stack.Stack{}
-	stack2 := stack.Stack{}
-	current := root
-	stack1.Push(current)
+	root := &TreeNode{}
 
-	for !stack1.IsEmpty() {
-		current = stack1.Pop().(*tree2.Node)
-		stack2.Push(current)
-		if current.Left != nil {
-			stack1.Push(current.Left)
-		}
-		if current.Right != nil {
-			stack1.Push(current.Right)
-		}
+	recursion(root)
+
+	fmt.Println("ret:", ret)
+}
+
+func recursion(node *TreeNode) {
+	// 递归终止条件
+	if node == nil {
+		return
 	}
 
-	for !stack2.IsEmpty() {
-		fmt.Println(stack2.Pop().(*tree2.Node).Data)
-	}
+	recursion(node.Left)
+	ret = append(ret, node.Val)
+	recursion(node.Right)
 }

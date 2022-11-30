@@ -4,6 +4,8 @@ import "fmt"
 
 /**
 	有序数组的两个数的和等于给定元素 LeetCode No167
+
+	标签：双指针
  */
 func main() {
 	sum := 9

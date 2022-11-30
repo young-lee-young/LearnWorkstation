@@ -1,43 +1,39 @@
 package main
 
-import "fmt"
+import (
+	tree2 "practice/base/tree"
+	"practice/base/stack"
+	"fmt"
+)
 
 /**
-	N叉树层序遍历 LeetCode No429
+	LeetCode No145 二叉树的后序遍历（非递归实现）
 
-	标签：使用队列
+	解题思路：使用双栈
  */
-
-type Node struct {
-	Val int
-	Children []*Node
-}
-
 func main() {
-	root := &Node{
-		Val: 5,
-	}
+	tree := tree2.Tree{}
+	tree.GenerateTree()
+	root := tree.Root
+	tree.PostorderTraversal()
 
-	result := make([][]int, 0)
-	if root == nil {
-		return
-	}
-	// 使用slice模仿队列
-	queue := make([]*Node, 0)
-	queue = append(queue, root)
+	stack1 := stack.Stack{}
+	stack2 := stack.Stack{}
+	current := root
+	stack1.Push(current)
 
-	for len(queue) != 0 {
-		count := len(queue)
-		numSlice := make([]int, 0)
-		var newQueue []*Node
-		for i := 0; i < count; i ++ {
-			for j := 0; j < len(queue[i].Children); j ++ {
-				newQueue = append(newQueue, queue[i].Children[j])
-			}
-			numSlice = append(numSlice, queue[i].Val)
+	for !stack1.IsEmpty() {
+		current = stack1.Pop().(*tree2.Node)
+		stack2.Push(current)
+		if current.Left != nil {
+			stack1.Push(current.Left)
 		}
-		result = append(result, numSlice)
-		queue = newQueue
+		if current.Right != nil {
+			stack1.Push(current.Right)
+		}
 	}
-	fmt.Println(result)
+
+	for !stack2.IsEmpty() {
+		fmt.Println(stack2.Pop().(*tree2.Node).Data)
+	}
 }

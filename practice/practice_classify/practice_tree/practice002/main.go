@@ -1,32 +1,40 @@
 package main
 
 import (
-	"fmt"
-	stack2 "practice/base/stack"
 	tree2 "practice/base/tree"
+	stack2 "practice/base/stack"
+	"fmt"
 )
 
 /**
-非递归实现二叉树中序遍历 LeetCode No94
+	LeetCode No144 二叉树的前序遍历（非递归实现）
 
-解题思路：使用栈
-*/
+	解题思路：使用栈
+
+	前序遍历：中 左 右
+ */
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
 	root := tree.Root
-	tree.InorderTraversal()
+	tree.PreorderTraversal()
 
 	stack := stack2.Stack{}
-	current := root
-	for !stack.IsEmpty() || current != nil {
-		if current != nil {
-			stack.Push(current)
-			current = current.Left
-		} else {
-			current = stack.Pop().(*tree2.Node)
-			fmt.Println(current.Data)
-			current = current.Right
+	stack.Push(root)
+
+	for !stack.IsEmpty() {
+		node := stack.Pop().(*tree2.Node)
+
+		fmt.Println(node.Data)
+
+		// 将右子树入栈
+		if node.Right != nil {
+			stack.Push(node.Right)
+		}
+
+		// 将左子树入栈
+		if node.Left != nil {
+			stack.Push(node.Left)
 		}
 	}
 }

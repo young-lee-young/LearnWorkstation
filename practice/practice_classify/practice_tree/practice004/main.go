@@ -1,50 +1,32 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	stack2 "practice/base/stack"
+	tree2 "practice/base/tree"
 )
 
 /**
-	树的高度 LeetCode No104
+	LeetCode No094 二叉树的中序遍历（非递归实现）
 
-	标签：递归
- */
+	解题思路：使用栈
+*/
 func main() {
-	//tree := tree2.Tree{}
-	//rand.Seed(time.Now().Unix())
-	//i := 0
-	//for i < 10 {
-	//	num := rand.Intn(100)
-	//	tree.Insert(num)
-	//	i ++
-	//}
-	//root := tree.Root
-
 	tree := tree2.Tree{}
-	tree.Insert(3)
-	tree.Insert(2)
-	tree.Insert(4)
+	tree.GenerateTree()
 	root := tree.Root
+	tree.InorderTraversal()
 
-	var deep int
-	if root == nil {
-		deep = 1
-	} else {
-		deep = maxDeep(tree.Root)
-	}
-	fmt.Println(deep)
-}
-
-func maxDeep(node *tree2.Node) int {
-	if node == nil {
-		return 0
-	}
-	leftDeep := maxDeep(node.Left)
-	rightDeep := maxDeep(node.Right)
-	if leftDeep > rightDeep {
-		return leftDeep + 1
-	} else {
-		return rightDeep + 1
+	stack := stack2.Stack{}
+	current := root
+	for !stack.IsEmpty() || current != nil {
+		if current != nil {
+			stack.Push(current)
+			current = current.Left
+		} else {
+			current = stack.Pop().(*tree2.Node)
+			fmt.Println(current.Data)
+			current = current.Right
+		}
 	}
 }

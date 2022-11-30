@@ -1,50 +1,56 @@
 package main
 
 import (
-	"math/rand"
-	"time"
-	tree2 "practice/base/tree"
-	"math"
 	"fmt"
+	queue2 "practice/base/queue"
+	tree2 "practice/base/tree"
 )
 
-var result bool
-
 /**
-	判断是否是平衡树，左右子树高度差小于1 LeetCode No110
+	LeetCode No102 二叉树的层序遍历
 
-
- */
+	解题思路：使用队列层序遍历
+*/
 func main() {
-	rand.Seed(time.Now().Unix())
-
-	tree := &tree2.Tree{}
-	i := 0
-	for i < 10 {
-		num := rand.Intn(100)
-		tree.Insert(num)
-		i ++
-	}
-
-	result = true
-	getDeep(tree.Root)
+	tree := tree2.Tree{}
+	tree.GenerateTree()
+	root := tree.Root
+	result := solution(root)
 	fmt.Println(result)
 }
 
-func getDeep(node *tree2.Node) int {
-	if node == nil {
-		return 0
+func solution(root *tree2.Node) [][]int {
+	result := make([][]int, 0)
+	if root == nil {
+		return result
 	}
-	leftDeep := getDeep(node.Left)
-	rightDeep := getDeep(node.Right)
-	absDeep := int(math.Abs(float64(leftDeep - rightDeep)))
-	if absDeep > 1 {
-		result = false
+	queue := queue2.Queue{}
+	queue.Enqueue(root)
+
+	for !queue.IsEmpty() {
+		temp := make([]int, 0)
+		queueLen := queue.GetLength()
+		for i := 0; i < queueLen; i++ {
+			node := queue.Dequeue().(*tree2.Node)
+
+			// ⚠️ 这里要注意，需要判断空
+			if node == nil {
+				break
+			}
+			temp = append(temp, node.Data)
+			if node.Left != nil {
+				queue.Enqueue(node.Left)
+			}
+			if node.Right != nil {
+				queue.Enqueue(node.Right)
+			}
+		}
+
+		// ⚠️ 空的地址不要加进来
+		if len(temp) != 0 {
+			result = append(result, temp)
+		}
 	}
 
-	if leftDeep > rightDeep {
-		return leftDeep + 1
-	} else {
-		return rightDeep + 1
-	}
+	return result
 }

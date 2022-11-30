@@ -1,33 +1,41 @@
+/**
+ * @Time:    2022/11/29 17:56 
+ * @Author:  leeyoung
+ * @File:    main.go
+ * @Content:
+
+	LeetCode No145 二叉树的后序遍历
+
+ */
 package main
 
-import (
-	"practice/base/ntree"
-	"fmt"
-)
+import "fmt"
 
-/**
-	N叉树前序遍历 LeetCode No589
+var ret []int
 
-	解题思路：
- */
-func main() {
-	tree := ntree.NTree{}
-	tree.Generate(5, 3)
-	root := tree.Root
-	tree.ShowTree(3)
-
-	result := solution(root)
-	fmt.Println(result)
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func solution(node *ntree.Node) []int {
+func main() {
+	ret = []int{}
+
+	root := &TreeNode{}
+
+	recursion(root)
+
+	fmt.Println("ret:", ret)
+}
+
+func recursion(node *TreeNode) {
+	// 递归终止条件
 	if node == nil {
-		return []int{}
+		return
 	}
-	var result []int
-	result = append(result, node.Data)
-	for _, subNode := range node.Children {
-		result = append(result, solution(subNode)...)
-	}
-	return result
+
+	recursion(node.Left)
+	recursion(node.Right)
+	ret = append(ret, node.Val)
 }
