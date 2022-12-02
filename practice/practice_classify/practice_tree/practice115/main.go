@@ -1,15 +1,15 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	tree2 "practice/base/tree"
 )
 
 /**
-	树最小深度 LeetCode No111
+树最小深度 LeetCode No111
 
-	标签：递归
- */
+标签：递归
+*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()

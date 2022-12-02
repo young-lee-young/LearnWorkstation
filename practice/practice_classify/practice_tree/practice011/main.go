@@ -1,27 +1,43 @@
 package main
 
-import (
-	tree2 "practice/base/tree"
-	"fmt"
-)
+import "fmt"
 
 /**
-	判断树路径和是否等于一个数 LeetCode No112
- */
-func main() {
-	tree := tree2.Tree{}
-	tree.GenerateTree()
-	root := tree.Root
-	result := solution(root, 98)
-	fmt.Println(result)
+N叉树层序遍历 LeetCode No429
+
+标签：使用队列
+*/
+
+type Node struct {
+	Val      int
+	Children []*Node
 }
 
-func solution(node *tree2.Node, sum int) bool {
-	if node == nil {
-		return false
+func main() {
+	root := &Node{
+		Val: 5,
 	}
-	if node.Left == nil && node.Right == nil && node.Data == sum {
-		return true
+
+	result := make([][]int, 0)
+	if root == nil {
+		return
 	}
-	return solution(node.Left, sum - node.Data) || solution(node.Right, sum - node.Data)
+	// 使用slice模仿队列
+	queue := make([]*Node, 0)
+	queue = append(queue, root)
+
+	for len(queue) != 0 {
+		count := len(queue)
+		numSlice := make([]int, 0)
+		var newQueue []*Node
+		for i := 0; i < count; i++ {
+			for j := 0; j < len(queue[i].Children); j++ {
+				newQueue = append(newQueue, queue[i].Children[j])
+			}
+			numSlice = append(numSlice, queue[i].Val)
+		}
+		result = append(result, numSlice)
+		queue = newQueue
+	}
+	fmt.Println(result)
 }

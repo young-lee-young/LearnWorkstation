@@ -1,17 +1,19 @@
 /**
- * @Time:    2022/11/29 19:04 
+ * @Time:    2022/11/29 19:04
  * @Author:  leeyoung
  * @File:    main.go
  * @Content:
 
 	LeetCode No107 二叉树的层序遍历Ⅱ
- */
+
+	解题思路：使用队列层序遍历，最后结果集数组翻转
+*/
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
 	queue2 "practice/base/queue"
+	tree2 "practice/base/tree"
 )
 
 func main() {
@@ -35,7 +37,7 @@ func solution(root *tree2.Node) [][]int {
 		temp := make([]int, 0)
 		queueLen := queue.GetLength()
 
-		for i := 0; i < queueLen; i ++ {
+		for i := 0; i < queueLen; i++ {
 			node := queue.Dequeue().(*tree2.Node)
 
 			if node == nil {

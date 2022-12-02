@@ -1,23 +1,23 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	tree2 "practice/base/tree"
 )
 
 /**
-    判断对称 LeetCode No101
- */
+  判断对称 LeetCode No101
+*/
 func main() {
-    tree := tree2.Tree{}
+	tree := tree2.Tree{}
 	tree.GenerateTree()
-    root := tree.Root
-    if root == nil {
-    	fmt.Println(true)
-    	return
+	root := tree.Root
+	if root == nil {
+		fmt.Println(true)
+		return
 	}
 	result := isSymmetric(root.Left, root.Right)
-    fmt.Println(result)
+	fmt.Println(result)
 }
 
 func isSymmetric(node1 *tree2.Node, node2 *tree2.Node) bool {

@@ -1,41 +1,49 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	"math"
+	queue2 "practice/base/queue"
+	tree2 "practice/base/tree"
 )
 
 /**
-	路径长度等于给定值的路径总数 LeetCode No437
- */
+二叉树每层中的最大值 LeetCode No515
+
+使用队列层次遍历
+*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
 	root := tree.Root
-	sum := 63
-
-	result := pathSum(root, sum)
+	result := solution(root)
 	fmt.Println(result)
 }
 
-func pathSum(node *tree2.Node, sum int) int {
-	if node == nil {
-		return 0
+func solution(root *tree2.Node) []int {
+	result := make([]int, 0)
+	if root == nil {
+		return result
 	}
-	// 以当前节点为根节点进行处理
-	result := pathSumWithRoot(node, sum) + pathSum(node.Left, sum) + pathSum(node.Right, sum)
-	return result
-}
+	queue := queue2.Queue{}
+	queue.Enqueue(root)
 
-//
-func pathSumWithRoot(node *tree2.Node, sum int) int {
-	if node == nil {
-		return 0
+	for !queue.IsEmpty() {
+		max := math.MinInt64
+		queueLen := queue.GetLength()
+		for i := 0; i < queueLen; i++ {
+			node := queue.Dequeue().(*tree2.Node)
+			if node.Data > max {
+				max = node.Data
+			}
+			if node.Left != nil {
+				queue.Enqueue(node.Left)
+			}
+			if node.Right != nil {
+				queue.Enqueue(node.Right)
+			}
+		}
+		result = append(result, max)
 	}
-	result := 0
-	if node.Data == sum {
-		result ++
-	}
-	result += pathSumWithRoot(node.Left, sum - node.Data) + pathSumWithRoot(node.Right, sum - node.Data)
 	return result
 }

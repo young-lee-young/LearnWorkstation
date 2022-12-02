@@ -1,15 +1,15 @@
 package main
 
 import (
-	tree2 "practice/base/tree"
-	queue2 "practice/base/queue"
 	"fmt"
+	queue2 "practice/base/queue"
+	tree2 "practice/base/tree"
 	"strconv"
 )
 
 /**
-	二叉树每层平均数 LeetCode No637
- */
+LeetCode No637 二叉树的层平均值
+*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
@@ -25,7 +25,7 @@ func solution(root *tree2.Node) {
 	for !queue.IsEmpty() {
 		sum := 0
 		count := queue.GetLength()
-		for i := 0; i < count; i ++ {
+		for i := 0; i < count; i++ {
 			node := queue.Dequeue().(*tree2.Node)
 			sum += node.Data
 			if node.Left != nil {
