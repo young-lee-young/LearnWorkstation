@@ -1,34 +1,55 @@
+/**
+ * @Time:    2022/12/7 22:43 
+ * @Author:  leeyoung
+ * @File:    main.go
+ * @Content:
+
+	LeetCode No257 二叉树的所有路径
+ */
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	"strings"
+	"strconv"
 )
 
-/**
-	二叉树最左后一层最左边值 LeetCode 513
- */
-func main() {
-	tree := tree2.Tree{}
-	tree.GenerateTree()
-	root := tree.Root
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
-	currentSlice := []*tree2.Node{root}
-	for len(currentSlice) != 0 {
-		nextSlice := []*tree2.Node{}
-		for i := 0; i < len(currentSlice); i ++ {
-			if currentSlice[i].Left != nil {
-				nextSlice = append(nextSlice, currentSlice[i].Left)
-			}
-			if currentSlice[i].Right != nil {
-				nextSlice = append(nextSlice, currentSlice[i].Right)
-			}
-		}
-		if len(nextSlice) == 0 {
-			break
-		}
-		currentSlice = nextSlice
-		fmt.Println(len(currentSlice))
+var ret []string
+
+func main() {
+	root := &TreeNode{}
+
+	ret = []string{}
+
+	path := []string{}
+
+	solution(root, path)
+
+	fmt.Println("ret:", ret)
+}
+
+func solution(node *TreeNode, nums []string) {
+	nums = append(nums, strconv.Itoa(node.Val))
+
+	// 递归终止条件
+	if node.Left == nil && node.Right == nil {
+		temp := strings.Join(nums, "->")
+		ret = append(ret, temp)
+		return
 	}
-	fmt.Println(currentSlice[0].Data)
+
+	// 单层递归逻辑
+	if node.Left != nil {
+		solution(node.Left, nums)
+	}
+
+	if node.Right != nil {
+		solution(node.Right, nums)
+	}
 }

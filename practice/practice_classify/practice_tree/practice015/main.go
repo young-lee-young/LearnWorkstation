@@ -5,7 +5,9 @@ import (
 )
 
 /**
-	翻转二叉树 LeetCode No226
+	LeetCode No226 翻转二叉树
+
+	解题思路：递归，前序遍历或后序遍历
  */
 func main() {
 	tree := tree2.Tree{}
@@ -18,11 +20,15 @@ func main() {
 }
 
 func solution(node *tree2.Node) *tree2.Node {
+	// 递归终止条件
 	if node == nil {
 		return nil
 	}
-	leftTree := node.Left
-	node.Left = solution(node.Right)
-	node.Right = solution(leftTree)
+
+	// 单层递归逻辑，前序遍历
+	node.Left, node.Right = node.Right, node.Left	// 中
+	solution(node.Left) 						  	// 左
+	solution(node.Right)						  	// 右
+
 	return node
 }

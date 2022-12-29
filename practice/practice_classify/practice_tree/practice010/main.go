@@ -9,6 +9,8 @@ import (
 
 /**
 LeetCode No637 二叉树的层平均值
+
+解体思路：二叉树的层序遍历
 */
 func main() {
 	tree := tree2.Tree{}

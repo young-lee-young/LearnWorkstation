@@ -26,16 +26,21 @@ func solution(nodeOne *tree2.Node, nodeTwo *tree2.Node) *tree2.Node {
 	if nodeOne == nil && nodeTwo == nil {
 		return  nil
 	}
+
 	if nodeOne == nil {
 		return nodeTwo
 	}
+
 	if nodeTwo == nil {
 		return nodeOne
 	}
+
 	newNode := &tree2.Node{
 		Data: nodeOne.Data + nodeTwo.Data,
 	}
+
 	newNode.Left = solution(nodeOne.Left, nodeTwo.Left)
 	newNode.Right = solution(nodeOne.Right, nodeTwo.Right)
+
 	return newNode
 }

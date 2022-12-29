@@ -5,7 +5,7 @@ import "fmt"
 /**
 N叉树层序遍历 LeetCode No429
 
-标签：使用队列
+解题思路：使用队列层序遍历
 */
 
 type Node struct {

@@ -6,30 +6,40 @@ import (
 )
 
 /**
-	统计左叶子节点的和 LeetCode No404
- */
+	LeetCode No101 对称二叉树
+
+	解题思路：递归，后序遍历
+*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
 	root := tree.Root
 
-	result := solution(root)
-	fmt.Println(result)
+	ret := solution(root)
+	fmt.Println("ret:", ret)
 }
 
-func solution(node *tree2.Node) int {
-	if node == nil {
-		return 0
+func solution(root *tree2.Node) bool {
+	if root == nil {
+		return true
 	}
-	if isLeaf(node.Left) {
-		return node.Left.Data + solution(node.Right)
-	}
-	return solution(node.Left) + solution(node.Right)
+	return isSymmetric(root.Left, root.Right)
 }
 
-func isLeaf(node *tree2.Node) bool {
-	if node == nil {
+func isSymmetric(left *tree2.Node, right *tree2.Node) bool {
+	// 递归终止条件
+	if left == nil && right == nil {
+		return true
+	}
+	if left == nil || right == nil {
 		return false
 	}
-	return node.Left == nil && node.Right == nil
+	if left.Data != right.Data {
+		return false
+	}
+
+	// 单层递归逻辑，后序遍历
+	outside := isSymmetric(left.Left, right.Right)	// 左
+	inside := isSymmetric(left.Right, right.Left)	// 右
+	return outside && inside						// 中
 }

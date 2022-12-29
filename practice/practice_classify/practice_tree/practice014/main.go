@@ -1,8 +1,15 @@
 /**
-LeetCode No116 填充每个节点的下一个右侧节点指针
+ * @Time:    2022/12/5 11:34 
+ * @Author:  leeyoung
+ * @File:    main.go
+ * @Content:
 
-解题思路：二叉树层序遍历
-*/
+	LeetCode No117 填充每个节点的下一个右侧节点指针Ⅱ
+
+	解题思路：二叉树层次遍历
+
+	⚠️注意：本题与 LeetCode No116 题区别为，本题为普通二叉树，No116 题为完全二叉树；但是代码都是相同的
+ */
 package main
 
 type Node struct {
