@@ -4,7 +4,7 @@
 
 发现工作了3年时间，自己的水平确实没有明显的提升，反而计算机基础知识都忘的差不多了，心血来潮，准备把计算机基础知识补一下
 
-###            
+###             
 
 * 万丈高楼平地起 勿在浮沙筑高台
 
@@ -24,7 +24,7 @@
 
 [哈尔滨工业大学李治军老师《操作系统》课程](https://www.bilibili.com/video/BV1d4411v7u7)
 [南京大学蒋炎岩老师《操作系统》课程 2020](https://www.bilibili.com/video/BV1N741177F5)
-[宋宝华老师Linux的任督二脉——进程调度和内存管理](https://www.bilibili.com/video/BV1V7411f7oG)
+[宋宝华老师《Linux的任督二脉——进程调度和内存管理》](https://www.bilibili.com/video/BV1V7411f7oG)
 
 😩 分布式系统
 
