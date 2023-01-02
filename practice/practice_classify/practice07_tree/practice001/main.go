@@ -30,7 +30,7 @@ func main() {
 }
 
 func recursion(node *TreeNode) {
-	// 递归结束条件
+	// 递归终止条件
 	if node == nil {
 		return
 	}

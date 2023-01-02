@@ -5,6 +5,8 @@
  * @Content:
 
 	LeetCode No530 二叉搜索树的最小绝对差
+
+	解题思路：最小绝对差一定是相邻的两个数的差，使用中序遍历使二叉树有序
  */
 package main
 
@@ -21,6 +23,8 @@ type TreeNode struct {
 
 var ret int
 
+var pre *TreeNode
+
 func main() {
 	node1 := &TreeNode{Val: 1, Left: nil, Right: nil}
 	node3 := &TreeNode{Val: 3, Left: nil, Right: nil}
@@ -30,29 +34,34 @@ func main() {
 
 	ret = math.MaxInt64
 
-	solution(node4.Left, node4.Val)
+	pre = nil
 
-	solution(node4.Right, node4.Val)
+	solution(node4)
 
 	fmt.Println("ret:", ret)
 }
 
-func solution(node *TreeNode, parentValue int) {
-	if node == nil {
+func solution(cur *TreeNode) {
+	// 递归终止条件
+	if cur == nil {
 		return
 	}
 
-	v := int(math.Abs(float64(node.Val - parentValue)))
+	// 单层递归逻辑，中序遍历
+	solution(cur.Left) // 左
 
-	if v < ret {
-		ret = v
+	if pre != nil { // 中
+		ret = min(ret, cur.Val-pre.Val)
 	}
 
-	if node.Left != nil {
-		solution(node.Left, node.Val)
-	}
+	pre = cur
 
-	if node.Right != nil {
-		solution(node.Right, node.Val)
+	solution(cur.Right) // 右
+}
+
+func min(a int, b int) int {
+	if a <= b {
+		return a
 	}
+	return b
 }
