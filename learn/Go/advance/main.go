@@ -1,12 +1,15 @@
 package main
 
-/*
-int sum(int a, int b) {
-	return a + b;
-}
-*/
-import "C"
+import "fmt"
 
 func main() {
-	println(C.sum(1, 1))
+	do()
+}
+
+func do() {
+	fmt.Println("hello world")
+
+	fmt.Println("hello world 2")
+
+	fmt.Println("hello world 3")
 }

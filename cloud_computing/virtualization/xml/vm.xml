@@ -1,0 +1,61 @@
+<!-- 标准xml文件 -->
+<domain type='kvm'>
+    <name>lee</name>
+    <uuid>78a43623-e435-4009-a072-c3d624ba3166</uuid>
+    <title>this is a short description</title>
+    <!-- 内存大小 -->
+    <memory unit='GiB'>8</memory>
+    <!-- CPU个数 -->
+    <vcpu placement='static'>4</vcpu>
+    <!-- 操作系统 -->
+    <os>
+        <!-- arch指定虚拟机CPU架构，machine指定机器类型，hvm表明该OS被设计为直接运行在裸金属上面，需要全虚拟化 -->
+        <type arch='x86_64' machine='pc'>hvm</type>
+        <!-- 可以为fd、hd、cdrom、network -->
+        <boot dev='hd'></boot>
+        <boot dev='cdrom'></boot>
+        <bootmenu enable='yes'></bootmenu>
+    </os>
+    <features>
+        <acpi></acpi>
+        <apic></apic>
+        <pae></pae>
+    </features>
+    <clock offset='utc'>
+        <timer name='pit' tickpolicy='delay'></timer>
+    </clock>
+    <on_poweroff>destroy</on_poweroff>
+    <on_reboot>restart</on_reboot>
+    <on_crash>restart</on_crash>
+    <cpu mode='host-passthrough'></cpu>
+    <devices>
+        <serial type='pty'>
+            <target port='0'></target>
+        </serial>
+        <console type='pty'>
+            <target type='serial' port='0'></target>
+        </console>
+        <input type='tablet' bus='usb'/>
+        <input type='mouse' bus='ps2'/>
+        <graphics type='vnc' port='-1' autoport='yes'></graphics>
+        <video>
+            <model type='cirrus' vram='9216' heads='1'></model>
+        </video>
+        <memballoon model='virtio'></memballoon>
+        <disk type='file' device='disk'>
+            <driver name='qemu' type='qcow2' cache='writethrough' io='native'/>
+            <source file='/root/lee/vm.img'/>
+            <target dev='vda' bus='virtio'/>
+            <serial>UCLOUD_DISK_VDA</serial>
+        </disk>
+        <disk type='file' device='cdrom'>
+            <source file='/root/cjey/CentOS-7-x86_64-Minimal-1810.iso'/>
+            <target dev='hdd' bus='ide'/>
+            <readonly/>
+        </disk>
+        <interface type="network">
+            <source network="net.demo"/>
+            <mac address='00:00:00:00:00:11'/>
+        </interface>
+    </devices>
+</domain>
