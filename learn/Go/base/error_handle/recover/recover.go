@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func tryRecover()  {
+func tryRecover() {
 	defer func() {
 		r := recover()
 		if err, ok := r.(error); ok {

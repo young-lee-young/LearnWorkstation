@@ -1,13 +1,13 @@
+/**
+LeetCode No671 二叉树中第二小的节点
+*/
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	tree2 "practice/base/tree"
 )
 
-/**
-	二叉树中第二小的节点 LeetCode No671
- */
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()

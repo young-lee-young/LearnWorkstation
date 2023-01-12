@@ -1,15 +1,15 @@
+/**
+LeetCode No297 二叉树序列化和反序列化
+*/
 package main
 
 import (
-	tree2 "practice/base/tree"
 	"fmt"
+	tree2 "practice/base/tree"
 	"strconv"
 	"strings"
 )
 
-/**
-	二叉树序列化和反序列化 LeetCode No297
- */
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()
@@ -37,7 +37,7 @@ func deserialize(nodeSlice *[]string) *tree2.Node {
 	}
 	node := (*nodeSlice)[0]
 	*nodeSlice = (*nodeSlice)[1:]
-	node = strings.Replace(node," ", "", -1)
+	node = strings.Replace(node, " ", "", -1)
 	if node == "#" {
 		return nil
 	}

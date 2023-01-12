@@ -1,3 +1,6 @@
+/**
+LeetCode No437 路径长度等于给定值的路径总数
+*/
 package main
 
 import (
@@ -5,9 +8,6 @@ import (
 	tree2 "practice/base/tree"
 )
 
-/**
-路径长度等于给定值的路径总数 LeetCode No437
-*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()

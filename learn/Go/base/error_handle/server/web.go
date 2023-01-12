@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
 	"errhandle/server/filelist"
-	"os"
 	"log"
+	"net/http"
+	"os"
 )
 
 type appHandler func(writer http.ResponseWriter, request *http.Request) error

@@ -1,3 +1,6 @@
+/**
+LeetCode No572 判断是否是子树
+*/
 package main
 
 import (
@@ -5,9 +8,6 @@ import (
 	tree2 "practice/base/tree"
 )
 
-/**
-判断是否是子树 LeetCode No572
-*/
 func main() {
 	tree := tree2.Tree{}
 	tree.GenerateTree()

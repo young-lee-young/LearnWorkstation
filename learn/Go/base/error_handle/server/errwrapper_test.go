@@ -1,19 +1,19 @@
 package main
 
 import (
-	"testing"
-	"net/http"
-	"net/http/httptest"
-	"io/ioutil"
-	"strings"
-	"os"
 	"errors"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"strings"
+	"testing"
 )
 
 /**
-	http测试
- */
+http测试
+*/
 func errPanic(writer http.ResponseWriter, request *http.Request) error {
 	panic(123)
 }

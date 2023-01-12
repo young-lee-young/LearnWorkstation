@@ -1,8 +1,7 @@
-# MacOS Docker研究
+# MacOS Docker 研究
 
 
-
-* docker宿主机
+* Mac Docker 宿主机
 
 ```bash
 # 进入虚拟机
@@ -19,15 +18,6 @@ screen -r
 ```
 
 
+### Docker for mac 网络
 
-### 底层
-
-namespace：命名空间，权限隔离控制
-
-control groups：控制组，资源分配
-
-
-
-docker for mac网络
-
-* com.docker.hyperkit进程来启动虚拟机
+com.docker.hyperkit 进程来启动虚拟机
