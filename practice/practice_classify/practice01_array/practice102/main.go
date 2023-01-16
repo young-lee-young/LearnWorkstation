@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 /**
-	有序数组的两个数的和等于给定元素 LeetCode No167
+LeetCode No167 有序数组的两个数的和等于给定元素
 
-	标签：双指针
- */
+标签：双指针
+*/
 func main() {
 	sum := 9
 	//numList := [7]int{1, 2, 5, 7, 9, 11, 13}
@@ -22,9 +22,9 @@ func main() {
 			return
 		}
 		if sumTemp > sum {
-			j --
+			j--
 		} else {
-			i ++
+			i++
 		}
 	}
 }

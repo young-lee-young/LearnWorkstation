@@ -1,48 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 /**
-	无序数组两数之和返回下标 LeetCode No001
+LeetCode No242 有效的字母异位词（字母个数相同，位置不同）
 
-	解题思路：利用map，键为值、值索引
-
-	标签：哈希表
-
-	时间复杂度：O(n)
-
-	空间复杂度：O(n)
- */
+解题思路：键存字符 值为个数
+*/
 func main() {
-	numArray := []int{2, 7, 11, 15}
-	sum := 9
+	s1 := "leeyoung"
+	s2 := "younglee"
 
-	hashMap := make(map[int]int)
-	for i := 0; i < len(numArray); i ++ {
-		num := sum - numArray[i]
-		if value, ok := hashMap[num]; ok {
-			fmt.Println(value, i)
-			break
-		}
-		hashMap[numArray[i]] = i
-	}
+	ret := solution(s1, s2)
+
+	fmt.Println("ret:", ret)
 }
 
-/**
-	第二种方法：先排序 + 双指针
-
-	时间复杂度：O(nlogn)
-
-	空间复杂度：O(1)
- */
-
-/**
-问题1：如果输入数据已经排序，哪个算法（哈希表 VS 双指针）更好？
-
-双指针更好，时间复杂度为 O(n)，空间复杂度为 O(1)
-
-
-问题2：如果需要返回所找的两个数在数组中的下标，哪个算法（哈希表 VS 双指针）更新？
-
-哈希表更好
- */
+func solution(s1 string, s2 string) bool {
+	hashMap1 := make(map[string]int)
+	hashMap2 := make(map[string]int)
+	for _, value := range s1 {
+		hashMap1[string(value)]++
+	}
+	for _, value := range s2 {
+		hashMap2[string(value)]++
+	}
+	// ⚠️这里的判断
+	return reflect.DeepEqual(hashMap1, hashMap2)
+}

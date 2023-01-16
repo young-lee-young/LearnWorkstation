@@ -1,30 +1,21 @@
+/**
+LeetCode No454 四数相加Ⅱ
+*/
 package main
 
 import "fmt"
 
-/**
-	最长和谐序列 LeetCode No594
-
-	解题思路：
- */
 func main() {
-	numArray := [...]int{1,3,2,2,5,2,3,7}
-	hashMap := make(map[int]int)
+	nums1 := []int{1, 2}
+	nums2 := []int{-2, -1}
+	nums3 := []int{-1, 2}
+	nums4 := []int{0, 2}
 
-	// 把所有元素放到map里，元素是键，个数为值
-	for _, num := range numArray {
-		hashMap[num] ++
-	}
+	ret := solution(nums1, nums2, nums3, nums4)
 
-	result := 0
-	// 循环map，如果 x + 1也在map里，统计这两个的数量和，取大的
-	for key, value := range hashMap {
-		if _, ok := hashMap[key + 1]; ok {
-			count := value + hashMap[key + 1]
-			if count > result {
-				result = count
-			}
-		}
-	}
-	fmt.Println(result)
+	fmt.Println("ret:", ret)
+}
+
+func solution(nums1 []int, nums2 []int, nums3 []int, nums4 []int) int {
+
 }

@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 /**
-	两个数组交集 LeetCode No349
+LeetCode No349 两个数组的交集
 
-	标签：集合
- */
+标签：集合
+*/
 func main() {
 	num1 := []int{}
 	num2 := []int{}

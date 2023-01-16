@@ -1,34 +1,44 @@
+/**
+LeetCode No383 赎金信
+*/
 package main
 
 import "fmt"
 
-/**
-	最长连续序列 LeetCode No128
-
-	解题思路：
- */
 func main() {
-	numArray := []int{100,4,200,1,3,2}
+	ransomNote := "aa"
 
-	hashMap := make(map[int]int)
-	for _, num := range numArray {
-		hashMap[num] = 0
+	magazine := "aab"
+
+	ret := solution(ransomNote, magazine)
+
+	fmt.Println("ret:", ret)
+}
+
+func solution(ransomNote string, magazine string) bool {
+	charMap := make(map[int32]int)
+
+	for _, char := range magazine {
+		if _, ok := charMap[char]; ok {
+			charMap[char]++
+			continue
+		}
+		charMap[char] = 1
 	}
 
-	result := 0
-	for key, _ := range hashMap {
-		count := 0
-		for {
-			if _, ok := hashMap[key]; ok {
-				count ++
-				key ++
-				continue
-			}
-			break
+	for _, char := range ransomNote {
+		if _, ok := charMap[char]; !ok {
+			return false
 		}
-		if count > result {
-			result = count
+
+		count := charMap[char]
+
+		if count <= 0 {
+			return false
 		}
+
+		charMap[char]--
 	}
-	fmt.Println(result)
+
+	return true
 }

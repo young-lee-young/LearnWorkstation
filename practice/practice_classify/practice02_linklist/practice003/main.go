@@ -5,7 +5,7 @@ import (
 )
 
 /**
-链表反转 LeetCode No206
+LeetCode No206 反转链表
 */
 func main() {
 	linkList := link.LinkedList{}

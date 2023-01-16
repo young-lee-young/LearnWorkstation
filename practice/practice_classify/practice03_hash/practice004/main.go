@@ -1,34 +1,26 @@
 package main
 
-import "fmt"
-
 /**
-	字母异位词分组 LeetCode No49
+LeetCode No001 无序数组两数之和返回下标
 
-	解题思路：
- */
+解题思路：利用map，键为值、值索引
+
+标签：哈希表
+
+时间复杂度：O(n)
+
+空间复杂度：O(n)
+*/
 func main() {
-	array := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+	numArray := []int{2, 7, 11, 15}
+	sum := 9
 
-	hashMap := map[string][]string{}
-	for _, value := range array {
-		// 将每个单词放到26位数组里，值为次数
-		charSlice := [26]int{}
-		for _, char := range value {
-			charSlice[char - 'a'] ++
+	hashMap := make(map[int]int)
+	for i := 0; i < len(numArray); i++ {
+		num := sum - numArray[i]
+		if _, ok := hashMap[num]; ok {
+			break
 		}
-		// 将次数拼接成字符串，作为map的键，单词作为值
-		var key string
-		for _, num := range charSlice {
-			key += string(num)
-		}
-		hashMap[key] = append(hashMap[key], value)
+		hashMap[numArray[i]] = i
 	}
-
-	// 键map值append到切片中
-	result := make([][]string, 0)
-	for _, value := range hashMap {
-		result = append(result, value)
-	}
-	fmt.Println(result)
 }

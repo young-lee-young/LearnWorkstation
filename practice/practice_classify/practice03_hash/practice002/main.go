@@ -1,21 +1,38 @@
+/**
+LeetCode No349 两个数组的交集
+
+标签：集合
+*/
 package main
 
 import "fmt"
 
-/**
-	判断数组是否有重复元素 LeetCode No217
-
-	解决思路：用map存元素
- */
 func main() {
-	numArray := [...]int{1,2,3,1}
-	hashMap := make(map[int]int)
+	num1 := []int{}
+	num2 := []int{}
 
-	for _, num := range numArray {
-		if _, ok := hashMap[num]; ok {
-			fmt.Println(num)
-			return
-		}
-		hashMap[num] = num
+	ret := solution(num1, num2)
+
+	fmt.Println("ret:", ret)
+}
+
+func solution(num1 []int, num2 []int) []int {
+	// 用map实现set
+	mapSet := make(map[int]int)
+
+	// num1去重
+	for _, num := range num1 {
+		mapSet[num] = num
 	}
+
+	result := make([]int, 0)
+	for _, num := range num2 {
+		// 当前数字在num1里存在，放到结果集里
+		if _, ok := mapSet[num]; ok {
+			result = append(result, num)
+			// 将当前值从set里删除，防止添加到result里重复元素
+			delete(mapSet, num)
+		}
+	}
+	return result
 }
