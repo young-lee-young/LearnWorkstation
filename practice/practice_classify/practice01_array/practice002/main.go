@@ -19,8 +19,6 @@ func main() {
 
 	ret := solution(nums, val)
 
-	fmt.Println(nums)
-
 	fmt.Println("ret:", ret)
 }
 
