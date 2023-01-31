@@ -1,7 +1,24 @@
-# Kubernets基础
+# Kubernetes 基础
 
 
-### 基本命令
+### 组件
+
+* master（控制节点）
+
+kube-api-server：API 请求服务
+
+scheduler：调度
+
+kube-controller-manager：容器编排（编排：处理容器之间的各种关系）
+
+整个集群的持久化数据，保存在 etcd 中
+
+* node（计算节点）
+
+kubelet：和容器运行时交互，通过 CRI（container runtime interface）远程过程调用
+
+
+### 基础命令
 
 ```bash
 # 查看kubectl版本
@@ -15,7 +32,7 @@ kubectl api-versions
 ```
 
 
-### 配置dashboard
+### 配置 dashboard
 
 ```bash
 # 查看当前运行上下文

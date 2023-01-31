@@ -1,10 +1,10 @@
 # labels
 
 
-### 查看pod
+### 查看 pod 显示 labels
 
 ```bash
-# 显示labels
+# 显示 labels
 kubectl get pods --show-labels
 
 # 显示某个标签
@@ -12,7 +12,7 @@ kubectl get pods -L env
 ```
 
 
-### 添加修改标签
+### 添加、修改标签
 
 ```bash
 # 添加新标签
@@ -23,19 +23,19 @@ kubectl label pod $pod_name 标签名=标签值 --overwirte
 ```
 
 
-### 使用标签过滤pod
+### 使用标签过滤 pod
 
 ```bash
-# 包含 env 标签的pod
+# 查看包含 env 标签的 pod
 kubectl get pods -l env
 
-# 不包含 env 标签的pod
+# 不包含 env 标签的 pod
 kubectl get pods -l '!env'
 
-# env = dev的pod
+# env = dev 的 pod
 kubectl get pods -l env=dev
 
-# env != dev的pod
+# env != dev 的 pod
 kubectl get pods -l env!=dev
 
 # env in (dev, pro)
