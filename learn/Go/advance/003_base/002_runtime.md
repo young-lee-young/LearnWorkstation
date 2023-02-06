@@ -23,4 +23,4 @@ Runtime 就是程序的运行环境
 * 其他特点
 
 1. 有一定屏蔽系统调用能力
-2. Go 的一些关键字是 Runtime 下的函数（如 'go关键字' 在编译时转为对 runtime 包 newproc 的调用）
+2. Go 的一些关键字是 Runtime 下的函数（如 'go 关键字' 在编译时转为对 runtime 包 newproc 的调用）

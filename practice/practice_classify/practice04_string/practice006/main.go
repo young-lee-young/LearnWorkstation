@@ -1,5 +1,5 @@
 /**
- * @Time:    2023/1/29 12:22 
+ * @Time:    2023/1/29 12:22
  * @Author:  leeyoung
  * @File:    main.go
  * @Content:
@@ -7,7 +7,7 @@
 LeetCode No028 找出字符串中第一个匹配项的下标
 
 解题思路：KMP 算法
- */
+*/
 package main
 
 import (
@@ -25,19 +25,19 @@ func main() {
 }
 
 func solution(haystack string, needle string) int {
-	next := getNext(needle)
+	next := GetNext(needle)
 
 	j := 0
 
 	n := len(needle)
 
-	for i := 0; i < len(haystack); i ++ {
+	for i := 0; i < len(haystack); i++ {
 		for j > 0 && haystack[i] != needle[j] {
 			j = next[j-1]
 		}
 
 		if haystack[i] == needle[j] {
-			j ++
+			j++
 		}
 
 		if j == n {
@@ -58,21 +58,21 @@ func solution(haystack string, needle string) int {
 
 i 指针：后缀末尾位置
 j 指针：前缀末尾位置，也代表 [0, i] 最长相等前后缀长度
- */
-func getNext(needle string) []int {
+*/
+func GetNext(needle string) []int {
 	next := make([]int, len(needle))
 
 	j := 0
 
 	next[0] = j
 
-	for i := 1; i < len(needle); i ++ {
+	for i := 1; i < len(needle); i++ {
 		for j > 0 && needle[i] != needle[j] {
 			j = next[j-1]
 		}
 
 		if needle[i] == needle[j] {
-			j ++
+			j++
 		}
 
 		next[i] = j
