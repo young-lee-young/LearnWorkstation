@@ -1,5 +1,4 @@
-# namespace
-
+# Namespace
 
 
 ### 基础
@@ -7,45 +6,36 @@
 * 作用:虚拟集群
 
 
-### 基本命令
+### 基础命令
 
-* 创建namespace
+* 创建 namespace
 
 ```bash
-kubectl create namespace test-lee
+kubectl create namespace $namespace_name
 
-kubectl create -f $file_path
+kubectl create -f $yaml_file_path
 ```
 
-
-
-* 查看所有namespace
+* 查看所有 namespace
 
 ```bash
 kubectl get namespaces
 ```
 
-
-
-* 查看namespace
+* 查看 namespace
 
 ```bash
 kubectl get namespace $namespace_name
 ```
 
-
-
-* 查看namespace详情
+* 查看 namespace 详情
 
 ```bash
 kubectl describe namespace $namespace_name
 ```
 
-
-
-* 删除namespace
+* 删除 namespace
 
 ```bash
 kubectl delete namespace $namespace_name
 ```
-
