@@ -15,10 +15,21 @@ import (
 	"time"
 )
 
+var wg sync.WaitGroup
+
 func main() {
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go hello()
+	}
 
-	m := make(map[float64]int)
+	wg.Wait()
+}
 
+func hello() {
+	fmt.Println("hello world")
+	time.Sleep(time.Second * 5)
+	wg.Done()
 }
 
 func stopServer() {
