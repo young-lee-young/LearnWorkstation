@@ -16,18 +16,18 @@ package runtime
 
 type hchan struct {
 	// 1. 环形缓存区：环形缓存可以大幅降低 GC 的开销
-	qcount   uint           // total data in the queue，缓存区数据个数
-	dataqsiz uint           // size of the circular queue，缓存区大小
+	qcount   uint           // total data in the queue，chan 数据个数
+	dataqsiz uint           // size of the circular queue，chan 底层循环数组的长度
 	buf      unsafe.Pointer // points to an array of dataqsiz elements，缓存区
-	elemsize uint16         // closed   uint32
+	elemsize uint16         // chan 中元素大小
 	closed   uint32         // channel 状态值，0 为开启，1 为关闭
-	elemtype *_type         // element type
+	elemtype *_type         // element type，chan 中元素类型
 	
 	// 2. 发送、接收 goroutine 队列
-	sendx    uint   // send index，指向当前发送的协程
-	recvx    uint   // receive index，指向当前接收协程
-	recvq    waitq  // list of recv waiters
-	sendq    waitq  // list of send waiters
+	sendx    uint   // send index，已发送元素在循环数组中的索引
+	recvx    uint   // receive index，已接收元素在循环数组中的索引
+	recvq    waitq  // list of recv waiters，等待接收的协程队列
+	sendq    waitq  // list of send waiters，等待发送的协程队列
 
     // 3. 互斥锁
 	// lock protects all fields in hchan, as well as several
@@ -55,4 +55,15 @@ type waitq struct {
 
 * 互斥锁
 
-互斥锁并不是排队发送、接收数据，而是保护的 hchan 结构体本身
+注意⚠️：互斥锁并不是排队发送、接收数据，而是保护的 hchan 结构体本身
+
+
+### 创建
+
+```go
+// runtime/chan.go/makechan
+
+func makechan(t *chantype, size int) *hchan {
+    
+}
+```

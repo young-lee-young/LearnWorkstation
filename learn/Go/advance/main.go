@@ -18,18 +18,18 @@ import (
 var wg sync.WaitGroup
 
 func main() {
-	for i := 0; i < 10; i++ {
-		wg.Add(1)
-		go hello()
-	}
 
-	wg.Wait()
-}
+	ch := make(chan int)
 
-func hello() {
-	fmt.Println("hello world")
-	time.Sleep(time.Second * 5)
-	wg.Done()
+	go func() {
+		ch <- 1
+	}()
+
+	time.Sleep(time.Second)
+
+	close(ch)
+
+	time.Sleep(time.Second)
 }
 
 func stopServer() {

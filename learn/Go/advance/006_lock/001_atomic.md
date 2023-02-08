@@ -22,6 +22,7 @@ func main() {
 	}
 
 	time.Sleep(time.Second * 1)
+
 	fmt.Println(a)
 }
 ```
@@ -51,6 +52,7 @@ func main() {
 	}
 
 	time.Sleep(time.Second * 1)
+
 	fmt.Println(a)
 }
 ```
