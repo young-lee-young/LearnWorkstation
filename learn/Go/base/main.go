@@ -14,18 +14,35 @@ func changeName(p Person) {
 }
 
 func main() {
+	var s []int
 
-	nums := []int{1, 2, 3}
+	s = append(s, 1)
 
-	nums = append(nums, []int{4, 5, 6, 7, 8, 9}...)
+	m := make(map[int]int)
 
-	fmt.Println("nums", nums, len(nums), cap(nums))
+	fmt.Printf("s %p, m %p", &s, &m)
 
-	a := &Person{
-		firstName: "lee",
-		lastName:  "young",
-	}
-	hello(a)
+	t(s, m)
+
+	fmt.Println(s, m)
+
+	//nums := []int{1, 2, 3}
+	//
+	//nums = append(nums, []int{4, 5, 6, 7, 8, 9}...)
+	//
+	//fmt.Println("nums", nums, len(nums), cap(nums))
+	//
+	//a := &Person{
+	//	firstName: "lee",
+	//	lastName:  "young",
+	//}
+	//hello(a)
+}
+
+func t(s []int, m map[int]int) {
+	m[1] = 1
+	s = append(s, 2)
+	fmt.Printf("s %p, m %p", &s, &m)
 }
 
 func hello(v interface{}) {
