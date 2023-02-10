@@ -1,6 +1,6 @@
 ### Sema
 
-也叫信号量锁/信号锁，本质是一个 uint32 值，含义是同时可并发的数量
+也叫信号量锁/信号锁，本质是一个**uint32**值，含义是同时可并发的数量
 
 * 结构体
 
@@ -42,14 +42,15 @@ type sudog struct {
 }
 ```
 
+
 * 作用
 
-sema 经常被用作休眠队列（）
+sema 经常被用作休眠队列
 
 
-### 获取、释放锁
+### 获取锁
 
-* 获取锁
+当 uint32 值 > 0，将 uint32 值减 1，即获取锁成功
 
 ```go
 // runtime/sema.go/semacquire
@@ -61,7 +62,7 @@ func semacquire(addr *uint32) {
 }
 
 func semacquire1(addr *uint32, lifo bool, profile semaProfileFlags, skipframes int) {
-	// 获取到锁
+	// 判断是否获取到锁
 	if cansemacquire(addr) {
 		return
 	}
@@ -79,10 +80,12 @@ func semacquire1(addr *uint32, lifo bool, profile semaProfileFlags, skipframes i
 func cansemacquire(addr *uint32) bool {
 	for {
 		v := atomic.Load(addr)
+		
 		// 等于 0，直接返回 false
 		if v == 0 {
 			return false
 		}
+		
 		// 将信号量减 1，返回 true
 		if atomic.Cas(addr, v, v-1) {
 			return true
@@ -92,7 +95,7 @@ func cansemacquire(addr *uint32) bool {
 ```
 
 
-* 释放锁
+### 释放锁
 
 ```go
 // runtime/sema.go/semrelease

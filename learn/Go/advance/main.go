@@ -15,38 +15,20 @@ import (
 	"time"
 )
 
-var wg sync.WaitGroup
+type s struct {
+}
 
 func main() {
-	m := map[string]int{
-		"1":  1,
-		"2":  2,
-		"3":  3,
-		"4":  4,
-		"5":  5,
-		"6":  6,
-		"7":  7,
-		"8":  8,
-		"9":  9,
-		"10": 10,
-		"11": 11,
-		"12": 12,
-		"13": 13,
-		"14": 14,
-		"15": 15,
-		"16": 16,
-		"17": 17,
-		"18": 18,
-		"19": 19,
-		"20": 20,
-		"21": 21,
-		"22": 22,
-		"23": 23,
-		"24": 24,
-		"25": 25,
-		"26": 26,
-	}
-	fmt.Println(m)
+	var a interface{}
+	fmt.Println(a == nil) // true
+
+	var b *int
+	fmt.Println(b == nil) // true
+
+	a = b
+
+	// 赋值过后，eface 的 data 还是 nil，但是 _type 是 *int 了，所以 a 接口不再是 nil 了
+	fmt.Println(a == nil) // false
 }
 
 func stopServer() {
