@@ -1,6 +1,13 @@
 ### pollDesc
 
+* 作用
+
+Go 网络层对于 Socket 的描述，描述一个网络连接
+
+
 * pollCache
+
+作用：仅仅提供一个链表头和给整个链表加锁
 
 ```go
 // runtime/netpoll.go/pollCache
@@ -12,6 +19,8 @@ type pollCache struct {
 	first *pollDesc
 }
 ```
+
+pollCache -> pollDesc -> pollDesc -> pollDesc
 
 
 * pollDesc 结构体
@@ -51,19 +60,26 @@ type pollDesc struct {
 // runtime/netpoll.go/poll_runtime_pollServerInit
 package runtime
 
+var (
+    netpollInited  uint32
+)
+
 func poll_runtime_pollServerInit() {
 	netpollGenericInit()
+    atomic.Store(&netpollInited, 1)
 }
 
 func netpollGenericInit() {
 	// 使用原子操作，保证只初始化一次
 	// 一个 Go 程序只初始化一个 Network Poller
-	lock(&netpollInitLock)
-
-	// 初始化 epoll
-	netpollinit()
-
-	unlock(&netpollInitLock)
+	if atomic.Load(&netpollInited) == 0 {
+        lock(&netpollInitLock)
+    
+        // 初始化 epoll
+        netpollinit()
+    
+        unlock(&netpollInitLock)
+	}
 }
 ```
 

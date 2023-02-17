@@ -1,11 +1,47 @@
+# 反射
+
+
 ### 需求
 
-1. 获取对象的类型
-2. 对任意类型变量赋值
+1. 动态获取对象的类型
+2. 对任意类型变量（interface）赋值
 3. 调用任意方法
 
 
+### 元数据
+
+元数据就是 "数据的数据"
+
+把对象的类型表示成一个数据类型
+
+把对象的值表示成一个数据类型
+
+
 ### 反射
+
+* 对象的类型
+
+```go
+package reflect
+
+type Type interface {
+    
+}
+```
+
+
+* 对象的值
+
+```go
+package reflect
+
+type Value struct {
+
+}
+```
+
+
+* 反射代码
 
 ```go
 package main
@@ -20,14 +56,14 @@ func main() {
 	
 	// 反射出类型
 	t := reflect.TypeOf(s)
-	fmt.Println(t)
+	fmt.Println(t) // string
 
 	// 反射出值
 	v := reflect.ValueOf(s)
-	fmt.Println(v)
+	fmt.Println(v) // lee
 	
 	s2 := v.Interface().(string)
-	fmt.Println(s2)
+	fmt.Println(s2) // lee
 }
 ```
 

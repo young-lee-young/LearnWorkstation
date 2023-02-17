@@ -1,4 +1,7 @@
-# InnoDB存储引擎
+# InnoDB 逻辑存储结构
+
+
+![InnoDB 逻辑存储结构](051_InnoDB逻辑存储结构.png)
 
 
 ### 表空间（tablespace）
@@ -10,11 +13,9 @@
 
 ### 段（Segment）
 
-* 段
+Leaf node segment：叶子节点段，数据段，B+ 树的叶子节点
 
-Leaf node segment：叶子节点段，数据段
-
-Non-Leaf node segment：非叶子结点段，索引段
+Non-Leaf node segment：非叶子结点段，索引段，B+ 树的非叶子节点
 
 Rollback segment：回滚段
 
@@ -28,14 +29,14 @@ Rollback segment：回滚段
 
 ### 页（Page）
 
-每个Page 是 B+ 树的一个节点，是 InnoDB 中磁盘读写的最小逻辑单位，默认 16 KB
+每个 Page 是 B+ 树的一个节点，是 InnoDB 中磁盘读写的最小逻辑单位，默认 16 KB
 
 * 为什么页不能太大
 
-磁盘读写压力（有可能取出很多数据，但只需要一条）
+1. 磁盘读写压力（有可能取出很多数据，但只需要一条）
+2. 页过大，需要在内存中按链表遍历数据，速度慢
 
-页过大，需要在内存中按链表遍历数据，速度慢
 
 * 为什么页不能过小
 
-机械盘每个块大小为 512B，SSD 每个块为 4KB，页太小会导致磁盘浪费
+1. 机械盘每个块大小为 512B，SSD 每个块为 4KB，页太小会导致磁盘浪费

@@ -28,6 +28,7 @@ func main() {
 	go once.Do(a.promote)
 
 	time.Sleep(time.Second * 1)
+	
 	fmt.Println(a.level, a.salary)
 }
 ```

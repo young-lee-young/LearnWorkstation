@@ -1,3 +1,35 @@
+# panic 和 recover
+
+
+### panic
+
+panic 会抛出错误，终止协程运行，带崩整个 Go 程序
+
+* 示例
+
+```go
+package main
+
+import (
+	"time"
+	"fmt"
+)
+
+func main() {
+	go func() {
+		panic("panic ----------")
+		// 下面的代码都不会执行
+		fmt.Println("end g")
+	}()
+
+	time.Sleep(time.Second)
+
+    // 执行不到
+	fmt.Println("end main g")
+}
+```
+
+
 ### panic + defer
 
 panic 在退出协程之前会执行所有已注册的 defer
@@ -22,11 +54,16 @@ func main() {
 		// 会执行到
 		defer fmt.Println("defer g")
 		panic("panic -------------")
+		// 下面的代码都不会执行
+		fmt.Println("end g")
 	}()
 
 	time.Sleep(time.Second)
+	
+	fmt.Println("end main g")
 }
 ```
+
 
 * 源码
 
@@ -74,9 +111,12 @@ func main() {
 			recover()
 		}()
 		panic("panic ----------------")
+		// 下面的代码都不会执行
+		fmt.Println("end g")
 	}()
 
 	time.Sleep(time.Second)
+	
 	// 会执行到
 	fmt.Println("end main g")
 }

@@ -3,30 +3,39 @@
 一个（组）协程需要等待另一组协程完成
 
 
-### 结构
-
-![WaitGroup 结构](images/wait_group结构.png)
-
-waiter：有多少协程在等待运行
-counter：有多少协程正在运行（被等待的协程）
-sema：正待等待协程队列
+### 结构体
 
 * 结构体
+
+![WaitGroup 结构](images/wait_group结构.png)
 
 ```go
 // sync/waitgroup.go/WaitGroup
 package sync
 
 type WaitGroup struct {
-	noCopy noCopy
+	noCopy noCopy // 结构体不能被拷贝
 
 	// 64-bit value: high 32 bits are counter, low 32 bits are waiter count.
 	// 64-bit atomic operations require 64-bit alignment, but 32-bit
 	// compilers do not ensure it. So we allocate 12 bytes and then use
 	// the aligned 8 bytes in them as state, and the other 4 as storage
 	// for the sema.
+	
+	// waiter：有多少协程在等待运行
+    // counter：有多少协程正在运行（被等待的协程）
+    // sema：正待等待协程队列
 	state1 [3]uint32
 }
+```
+
+```go
+// sync/cond.go/noCopy
+package sync
+
+// noCopy may be embedded into structs which must not be copied
+// after the first use.
+type noCopy struct{}
 ```
 
 
@@ -64,6 +73,7 @@ func (wg *WaitGroup) Wait() {
 }
 ```
 
+
 * done
 
 被等待协程做完，给 counter 减 1
@@ -78,9 +88,8 @@ func (wg *WaitGroup) Done() {
 }
 ```
 
+
 * add
-
-
 
 ```go
 // sync/waitgroup.go/Add
@@ -90,7 +99,15 @@ func (wg *WaitGroup) Add(delta int) {
 	// 给 counter 加对应的数值
     state := atomic.AddUint64(statep, uint64(delta)<<32)
     
-    // 将 waiter 释放
+    v := int32(state >> 32)
+    w := uint32(state)
+    
+    if v > 0 || w == 0 {
+    		return
+    }
+    
+    // 因为 Done 调用了 Add，在 Add 里处理 Done 的逻辑
+    // 当前协程工作做完，将 waiter 协程释放
     // Reset waiters count to 0.
 	*statep = 0
     for ; w != 0; w-- {

@@ -33,6 +33,7 @@ func main() {
 	}
 
 	time.Sleep(time.Second * 10)
+	
 	fmt.Println(a.level, a.salary)
 }
 ```
@@ -72,12 +73,15 @@ func main() {
 	}
 
 	time.Sleep(time.Second * 10)
+	
 	fmt.Println(a.level, a.salary)
 }
 ```
 
 
 ### 结构体
+
+* 结构体
 
 ![Mutex 锁结构](images/mutex锁结构.png)
 
@@ -102,11 +106,11 @@ state：共 32 位
 32：Locked，0 没有被锁，1 被锁住
 
 
-### 正常模式加锁
+### 正常模式（Starving = 0，非饥饿模式）加锁
 
 1. 尝试 CAS 直接加锁
 2. 若无法直接获取，进行多次**自旋**尝试
-3. 多次尝试失败，进入 sema 队列休眠
+3. 多次自旋尝试失败，进入 sema 队列休眠（直到其他协程解锁，将其从休眠队列出队）
 
 ```go
 // runtime/mutex.go/Lock
@@ -114,12 +118,16 @@ package sync
 
 const (
 	mutexLocked = 1 << iota // mutex is locked
+	mutexWoken
+    mutexStarving
+    mutexWaiterShift = iota
 )
 
 func (m *Mutex) Lock() {
 	// 尝试加锁：将 state 从 0 置为 1
+	// 加锁成功
     if atomic.CompareAndSwapInt32(&m.state, 0, mutexLocked) {
-	
+    	return
     }
     
     // 加锁失败
@@ -135,13 +143,25 @@ func (m *Mutex) lockSlow() {
 			continue
 		}
 		
-		// 协程进入 sema 队列休眠
+		if awoke {
+            new &^= mutexWoken
+		}
+		
+		// 协程进入 sema 队列休眠，sema uint32 = 0，作为休眠队列
         runtime_SemacquireMutex(&m.sema, queueLifo, 1)
 		
 		// 协程被唤醒后，会接着执行，再回到 for 循环里
         awoke = true
 	}
 }
+```
+
+```go
+// sync/runtime.go/runtime_doSpin
+package sync
+
+// runtime_doSpin does active spinning.
+func runtime_doSpin()
 ```
 
 
@@ -161,6 +181,7 @@ const (
 func (m *Mutex) Unlock() {
 	// 解锁：将状态置为 0
    	new := atomic.AddInt32(&m.state, -mutexLocked)
+   	
    	// 等待的协程数量是否为 0，不为 0，唤醒协程
    	if new != 0 {
 		m.unlockSlow(new)
@@ -168,12 +189,14 @@ func (m *Mutex) Unlock() {
 }
 
 func (m *Mutex) unlockSlow(new int32) {
-	// Grab the right to wake someone.
-	new = (old - 1<<mutexWaiterShift) | mutexWoken
-	if atomic.CompareAndSwapInt32(&m.state, old, new) {
-		// 将协程从 sema 队列释放
-		runtime_Semrelease(&m.sema, false, 1)
-		return
+	for {
+	    // Grab the right to wake someone.
+	    new = (old - 1<<mutexWaiterShift) | mutexWoken
+	    if atomic.CompareAndSwapInt32(&m.state, old, new) {
+		    // 将协程从 sema 队列释放
+		    runtime_Semrelease(&m.sema, false, 1)
+		    return
+	    }
 	}
 }
 ```

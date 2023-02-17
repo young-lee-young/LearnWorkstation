@@ -15,20 +15,12 @@ import (
 	"time"
 )
 
-type s struct {
-}
 
 func main() {
-	var a interface{}
-	fmt.Println(a == nil) // true
+	var s []int
+	s[0] = 0
 
-	var b *int
-	fmt.Println(b == nil) // true
-
-	a = b
-
-	// 赋值过后，eface 的 data 还是 nil，但是 _type 是 *int 了，所以 a 接口不再是 nil 了
-	fmt.Println(a == nil) // false
+	s2 := make([]int, 0)
 }
 
 func stopServer() {

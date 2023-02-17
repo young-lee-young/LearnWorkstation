@@ -42,7 +42,7 @@ func (fd *FD) Read(p []byte) (int, error) {
     	// 系统调用读取数据
         n, err := syscall.Read(fd.Sysfd, p)
         if err != nil {
-        	// 休眠等待数据
+        	// Network Poller 休眠等待数据
 			if err == syscall.EAGAIN && fd.pd.pollable() {
 				if err = fd.pd.waitRead(fd.isFile); err == nil {
 					continue
@@ -58,6 +58,9 @@ func (fd *FD) Read(p []byte) (int, error) {
 ```go
 // internal/poll/fd_poll_runtime.go/wait
 package poll
+
+// 链接到：runtime/netpoll.go/poll_runtime_pollWait
+func runtime_pollWait(ctx uintptr, mode int) int
 
 func (pd *pollDesc) wait(mode int, isFile bool) error {
 	res := runtime_pollWait(pd.runtimeCtx, mode)

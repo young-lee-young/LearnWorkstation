@@ -2,8 +2,8 @@
 
 * 获取新连接的方法：两种方法
 
-1. 直接调用系统 accept 检查是否有新的连接
-2. Listen 的 Socket 已经加入到 Network Poller 里面去监听新连接，可以通过 Network Poller 检查是否有新连接
+1. 先系统调用 accept 方法
+2. 如果上面方法错误，Listen 的 Socket 已经加入到 Network Poller 里面去监听新连接，可以通过 Network Poller 检查是否有新连接
 
 
 * Accept 方法
@@ -97,9 +97,11 @@ func (fd *FD) Accept() (int, syscall.Sockaddr, string, error) {
             return s, rsa, "", err
         }
         
+        // 系统调用获取 Socket 发生错误
         switch err {
+        // 可重试的错误
         case syscall.EAGAIN:
-            // 第二种方法：Network Poller 获取新连接
+            // 第二种方法：Network Poller 休眠等待新连接
             if err = fd.pd.waitRead(fd.isFile); err == nil {
                 continue
             }
@@ -108,9 +110,35 @@ func (fd *FD) Accept() (int, syscall.Sockaddr, string, error) {
 }
 ```
 
+
+### 第一条路径
+
+```go
+// internal/poll/sys_cloexec.go/accept
+package poll
+
+func accept(s int) (int, syscall.Sockaddr, string, error) {
+    ns, sa, err := AcceptFunc(s)
+}
+```
+
+```go
+// internal/poll/hook_unix.go/AcceptFunc
+package poll
+
+// AcceptFunc is used to hook the accept call.
+var AcceptFunc func(int) (int, syscall.Sockaddr, error) = syscall.Accept
+```
+
+
+### 第二条路径
+
 ```go
 // internal/poll/fd_poll_runtime.go/wait
 package poll
+
+// 链接到：runtime/netpoll.go/poll_runtime_pollWait
+func runtime_pollWait(ctx uintptr, mode int) int
 
 func (pd *pollDesc) wait(mode int, isFile bool) error {
 	res := runtime_pollWait(pd.runtimeCtx, mode)

@@ -2,6 +2,8 @@
 
 也叫信号量锁/信号锁，本质是一个**uint32**值，含义是同时可并发的数量
 
+硬件层面加锁的机制，数据类型和操作类型有限制
+
 * 结构体
 
 ![sema 锁结构](images/sema锁结构.png)
@@ -50,6 +52,8 @@ sema 经常被用作休眠队列
 
 ### 获取锁
 
+获取锁：协程休眠，进入堆树等待
+
 当 uint32 值 > 0，将 uint32 值减 1，即获取锁成功
 
 ```go
@@ -58,23 +62,42 @@ package runtime
 
 // Called from runtime.
 func semacquire(addr *uint32) {
-	semacquire1(addr, false, 0, 0)
+	semacquire1(addr, false, 0, 0)	
 }
 
 func semacquire1(addr *uint32, lifo bool, profile semaProfileFlags, skipframes int) {
 	// 判断是否获取到锁
+    // Easy case
 	if cansemacquire(addr) {
+	    // 获取到锁返回，uint32 值大于 0
 		return
 	}
 	
-	// 没有获取到锁
-	// 将 nwait 加 1
-    atomic.Xadd(&root.nwait, 1)
-    // Any semrelease after the cansemacquire knows we're waiting
-    // (we set nwait above), so go to sleep.
-    // 将协程放入平衡二叉树，然后将协程睡眠
-    root.queue(addr, s, lifo)
-    goparkunlock(&root.lock, waitReasonSemacquire, traceEvGoBlockSync, 4+skipframes)
+    // Harder case
+	// 没有获取到锁，uint32 值等于 0
+	s := acquireSudog()
+	
+    root := semroot(addr)
+	
+    for {
+    	// Add ourselves to nwait to disable "easy case" in semrelease
+        atomic.Xadd(&root.nwait, 1)
+        // Check cansemacquire to avoid missed wakeup.
+        if cansemacquire(addr) {
+            atomic.Xadd(&root.nwait, -1)
+            unlock(&root.lock)
+            break
+        }
+
+        // Any semrelease after the cansemacquire knows we're waiting
+        // (we set nwait above), so go to sleep.
+        // 将当前协程放入平衡二叉树排队
+        root.queue(addr, s, lifo)
+        // 将当前协程休眠
+        goparkunlock(&root.lock, waitReasonSemacquire, traceEvGoBlockSync, 4+skipframes)
+    }
+    
+    releaseSudog(s)
 }
 
 func cansemacquire(addr *uint32) bool {
@@ -96,6 +119,8 @@ func cansemacquire(addr *uint32) bool {
 
 
 ### 释放锁
+
+释放锁：从堆树中取出一个协程，唤醒
 
 ```go
 // runtime/sema.go/semrelease

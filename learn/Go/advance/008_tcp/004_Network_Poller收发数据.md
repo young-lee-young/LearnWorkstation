@@ -8,6 +8,8 @@
 
 ### GC 调用 netpoll
 
+检查是否有收发数据，是 GC 在一直调用 netpoll
+
 ```go
 // runtime/mgc.go/gcStart
 package runtime
@@ -47,6 +49,14 @@ const (
 )
 
 func netpoll(delay int64) gList {
+	var mode int32
+    if ev.events&(_EPOLLIN|_EPOLLRDHUP|_EPOLLHUP|_EPOLLERR) != 0 {
+        mode += 'r'
+    }
+    if ev.events&(_EPOLLOUT|_EPOLLHUP|_EPOLLERR) != 0 {
+        mode += 'w'
+    }
+    
 	// 可以读写
     if mode != 0 {
         pd := *(**pollDesc)(unsafe.Pointer(&ev.data))
@@ -68,8 +78,17 @@ func netpollready(toRun *gList, pd *pollDesc, mode int32) {
     if mode == 'w' || mode == 'r'+'w' {
         wg = netpollunblock(pd, 'w', true)
     }
+    
+    // 将协程放入链表
+    if rg != nil {
+    	toRun.push(rg)
+    }
+    if wg != nil {
+        toRun.push(wg)
+    }
 }
 
+// 将协程状态改成 pdReady
 func netpollunblock(pd *pollDesc, mode int32, ioready bool) *g {
 	// 获取当前的 rg/wg
 	gpp := &pd.rg
@@ -126,6 +145,13 @@ func netpollblock(pd *pollDesc, mode int32, waitio bool) bool {
 	}
 
 	for {
+		// 判断是 pdReady，可以读写
+		old := *gpp
+        if old == pdReady {
+            *gpp = 0
+            return true
+        }
+        
 		// 判断当前 rg/wg 是否为 pdReady
 		if gpp.CompareAndSwap(pdReady, 0) {
 			return true
@@ -146,12 +172,14 @@ runtime 的 GC 循环调用 netpoll() 方法（g0协程），发现没有 ready 
 package runtime
 
 func netpoll(delay int64) gList {
-	// epoll_wait系统调用，没有拿到 ready 的 Socket，一直重试
+retry:
+	// epoll_wait 系统调用，没有拿到 ready 的 Socket，一直重试
     n := epollwait(epfd, &events[0], int32(len(events)), waitms)
+    if n < 0 {
+    	goto retry
+    }
 }
 ```
-
-如果发现 Socket 可读写，将可读写协程列表返回给 runtime，由 runtime 唤起协程，进行数据处理
 
 
 * 业务方法调用 epoll_wait，没有 ready 的 Socket，休眠等待
@@ -199,3 +227,8 @@ func netpollblockcommit(gp *g, gpp unsafe.Pointer) bool {
 	return r
 }
 ```
+
+
+* runtime 唤醒协程
+
+如果 retry 发现 Socket 可读写，将可读写协程列表返回给 runtime，由 runtime 唤起协程，进行数据处理

@@ -1,6 +1,8 @@
 ### 阻塞模型 + 多路复用
 
-在底层使用操作系统的IO多路复用；在协程层次使用阻塞模型，阻塞协程时，休眠协程
+在底层使用操作系统的IO多路复用
+
+在协程层次使用阻塞模型，阻塞协程时，休眠协程
 
 
 ### epoll 多路复用
@@ -20,23 +22,12 @@ epoll_wait()：查询发生的事件
 
 epoll 抽象层是为了统一各个操作系统对多路复用器的实现
 
-![Go 的 epoll 抽象](images/005_Go的epoll抽象.png)
+![Go 的 epoll 抽象](images/005_Go网络层抽象.png)
 
 
-* 系统指令集
+### 抽象方法
 
-```go
-// syscall/zsysnum_linux_amd64.go
-package unix
-
-const (
-	SYS_EPOLL_CREATE  = 213
-	SYS_EPOLL_CREATE1 = 291
-)
-```
-
-
-* netpollinit：新建多路复用器
+* netpollinit：相当于操作系统的 epoll_create
 
 1. 新建 epoll
 2. 新建一个 pipe 管道用于中断 epoll
@@ -66,8 +57,7 @@ func netpollinit() {
 }
 ```
 
-
-* epoll_create（汇编实现：runtime/sys_linux_amd64.s/runtime.epollcreate）
+epoll_create（汇编实现）
 
 ```go
 // runtime/netpoll_epoll.go
@@ -80,6 +70,7 @@ func epollcreate1(flags int32) int32
 ```
 
 ```assembly
+// runtime/sys_linux_amd64.s/runtime.epollcreate
 // int32 runtime·epollcreate(int32 size);
 TEXT runtime·epollcreate(SB),NOSPLIT,$0
     // 系统调用，创建 epoll
@@ -93,6 +84,17 @@ TEXT runtime·epollcreate1(SB),NOSPLIT,$0
 	MOVL	$SYS_epoll_create1, AX
 	SYSCALL
 	RET
+```
+
+```go
+// syscall/zsysnum_linux_amd64.go
+package unix
+
+// 系统调用指令
+const (
+	SYS_EPOLL_CREATE  = 213
+	SYS_EPOLL_CREATE1 = 291
+)
 ```
 
 
@@ -135,15 +137,18 @@ type gList struct {
 
 // netpoll checks for ready network connections
 // 检查是否有事件发生
+// 返回的协程列表，代表有哪些协程有事件发生
 func netpoll(delay int64) gList {
 	var events [128]epollevent
-
+	
+retry:
 	// 系统调用 epollwait，初始化长度为 128 的数组用来接收事件
 	n := epollwait(epfd, &events[0], int32(len(events)), waitms)
 
 	// 没有事件发生
 	if n < 0 {
 		// 重试
+		goto retry
 	}
 
 	// 协程列表

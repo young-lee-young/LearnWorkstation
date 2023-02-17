@@ -13,6 +13,8 @@
 
 ### 结构体
 
+* 结构体
+
 ![RWMutex 锁结构](images/rwmutex锁结构.png)
 
 ```go
@@ -36,8 +38,9 @@ type RWMutex struct {
 在加写锁之前没有协程在读，此时 readerCount 为 0，readerWait 为 0
 
 加锁过程：
+
 1. 加 mutex 锁
-2. 并且将 readerCount 置为 rwmutexMaxReaders
+2. 并且将 readerCount 置为 -rwmutexMaxReaders
 
 
 * 有读协程
@@ -45,19 +48,23 @@ type RWMutex struct {
 在加写锁之前有 3 个协程在读，此时 readerCount 为 3，readerWait 为 0
 
 加锁过程：
+
 1. 加 mutex 锁
-2. 将 readerCount 置为 3 - rwmutexMaxReaders
-3. readerWait 置为 3，将写协程加入 writerSem 队列
+2. 将 readerCount 置为 3 - rwmutexMaxReaders（保留 2 个信息，负数：表示加了写锁，3：表示有 3 个读协程）
+3. readerWait 置为 3（表示需要释放 3 个读锁后，当前写协程才会被从 writerSema 队列释放），将写协程加入 writerSem 队列
 
 ```go
 // sync/rwmutex.go/Lock
 package sync
+
+const rwmutexMaxReaders = 1 << 30
 
 func (rw *RWMutex) Lock() {
     // First, resolve competition with other writers.
 	rw.w.Lock()
 	
 	// 将 readerCount 减 rwmutexMaxReaders
+	// 这里的 r 是 readerWait
     r := atomic.AddInt32(&rw.readerCount, -rwmutexMaxReaders) + rwmutexMaxReaders
     
     // 存在读协程，写协程进入 sema 队列休眠
@@ -68,12 +75,13 @@ func (rw *RWMutex) Lock() {
 ```
 
 
-### 解写锁
+### 释放写锁
 
-在解写锁之前有 2 个读协程在 readerSem 队列，此时 readerCount 为 2 - rwmutexMaxReaders，readerWait 为 0
+在释放写锁之前有 2 个读协程在 readerSem 队列，此时 readerCount 为 2 - rwmutexMaxReaders，readerWait 为 0
 
 解锁过程：
-1. 将 readerCount 加 rwmutexMaxReaders
+
+1. 将 readerCount 加 rwmutexMaxReaders，变为正值
 2. 释放在 readerSem 中等待的读协程
 3. 释放 mutex 锁
 
@@ -86,6 +94,7 @@ func (rw *RWMutex) Unlock() {
     r := atomic.AddInt32(&rw.readerCount, rwmutexMaxReaders)
     
     // Unblock blocked readers, if any.
+    // 释放读协程队列
 	for i := 0; i < int(r); i++ {
 		runtime_Semrelease(&rw.readerSem, false, 0)
 	}
@@ -103,6 +112,7 @@ func (rw *RWMutex) Unlock() {
 在加读锁之前，有 2 个协程在读，此时 readerCount 为 2
 
 加锁过程：
+
 1. 将 readerCount 加 1，变为 3
 
 
@@ -111,8 +121,9 @@ func (rw *RWMutex) Unlock() {
 在加读锁之前，有写锁存在，假如此时有 2 个读协程，此时 readerCount 为 2 - rwmutexMaxReaders
 
 加锁过程：
-1. 将 readerCount 加 1，变为 3 - rwmutexMaxReaders
-2. 将协程放入 readerSem 队列
+
+1. 将 readerCount 加 1，变为 3 - rwmutexMaxReaders（表示又来了一个读协程）
+2. 将读协程放入 readerSem 队列
 
 ```go
 // sync/rwmutex.go/RLock
@@ -120,22 +131,24 @@ package sync
 
 func (rw *RWMutex) RLock() {
     // readerCount 加 1
+    // readerCount 加 1 后小于 0，说明有写锁
 	if atomic.AddInt32(&rw.readerCount, 1) < 0 {
 		// A writer is pending, wait for it.
-		// 加读协程加入 readerSem 队列
+		// 将读协程加入 readerSem 队列
 		runtime_SemacquireMutex(&rw.readerSem, false, 0)
 	}
 }
 ```
 
 
-### 解读锁
+### 释放读锁
 
 * 无写锁（readerCount > 0）
 
 在解读锁前，有 3 个协程在读，此时 readerCount 为 3
 
 解锁过程：
+
 1. 将 readerCount 减 1，变为 2
 
 
@@ -144,22 +157,26 @@ func (rw *RWMutex) RLock() {
 在解读锁之前，有写锁存在，假如此时有 3 个读协程，此时 readerCount 为 3 - rwmutexMaxReaders，readerWait 为 3
 
 解锁过程：
+
 1. 将 readerCount 减 1，变为 2 - rwmutexMaxReaders
 2. 将 readerWait 减 1，变为 2
-3. 将**写协程**释放
+3. 最后一个读协程释放锁时，readerWait 等于 0，将**写协程**释放
 
 ```go
 // sync/rwmutex.go/RUnlock
 
 func (rw *RWMutex) RUnlock() {
 	// 将 readerCount 减 1
+    // 将 readerCount 减 1 后，如果是非正数，说明存在写锁
 	if r := atomic.AddInt32(&rw.readerCount, -1); r < 0 {
 		rw.rUnlockSlow(r)
 	}
+    // 如果是正数，说明还有读协程在工作，什么都不用做
 }
 
 func (rw *RWMutex) rUnlockSlow(r int32) {
 	// 将 readerWait 减 1
+	// 将 readerWait 减 1 后，等于 0，说明所有读锁工作完成
 	if atomic.AddInt32(&rw.readerWait, -1) == 0 {
         // The last reader unblocks the writer.
 		// 释放写协程
