@@ -116,6 +116,6 @@ def login(username,password):
     redirect_login(token)
 
 if __name__ == '__main__':
-    username = '18401681943'
-    password = 'lyzy1314'
+    username = '18400000000'
+    password = 'helloworld'
     login(username,password)

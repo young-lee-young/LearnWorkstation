@@ -19,8 +19,8 @@ def login():
     logindata = {
         'source': 'index_nav',
         'redir': 'https://www.douban.com',
-        'form_email': '18401681943',
-        'form_password': 'lyzy1314',
+        'form_email': '18400000000',
+        'form_password': 'helloworld',
         'login': u'登录'
     }
     response = session.post(loginurl, data=logindata, headers=headers)

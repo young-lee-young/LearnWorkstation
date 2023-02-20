@@ -32,16 +32,6 @@ HTTP 允许传输任意类型的数据对象
 HTTP 协议自身不对请求和响应之间的通信状态进行保存
 
 
-### cookie 和 session
-
-1. session 在服务器端，cookie 在客户端（浏览器）
-2. session 可以放在 文件、数据库、或内存中都可以
-3. session 的运行依赖 session ID，而 session ID 是存在 cookie 中的，也就是说，如果浏览器禁用了 cookie，同时 session 也会失效（但是可以通过其它方式实现，比如在 URL 中传递 session ID）
-4. 用户验证这种场合一般会用 session
-
-因此，维持一个会话的核心就是客户端的唯一标识，即 session id
-
-
 ### 输入网址后发生了什么
 
 1. 浏览器解析域名，解析先后顺序为：浏览器缓存 > hosts > DNS服务器

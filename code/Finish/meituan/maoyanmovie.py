@@ -208,6 +208,6 @@ def main(username,password):
             save_to_mongo(data)
 
 if __name__ == '__main__':
-    username = '18401681943'
-    password = 'lyzy1314'
+    username = '18400000000'
+    password = 'helloworld'
     main(username,password)

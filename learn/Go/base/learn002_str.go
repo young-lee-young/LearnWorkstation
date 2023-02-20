@@ -46,7 +46,7 @@ func stringProcess() {
 
 // Unicode和UTF-8
 func unicodeLearn()  {
-	username := "李遥"
+	username := "李二狗"
 
 	fmt.Println(username)
 	// 是byte数

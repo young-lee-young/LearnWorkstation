@@ -54,8 +54,8 @@ label3 =['','星期日','星期一','星期二','星期三','星期四','星期�
 x = np.arange(7)
 y1 = np.random.randint(1,10,7)
 y2 = np.random.randint(1,10,7)
-ax1_4.bar(left=x, height=y1, width=0.4, color='b', label='李遥')
-ax1_4.bar(left=x, height=y2, bottom=y1, width=0.4, color='y', label='张亚')
+ax1_4.bar(left=x, height=y1, width=0.4, color='b', label='李二狗')
+ax1_4.bar(left=x, height=y2, bottom=y1, width=0.4, color='y', label='赵三猫')
 ax1_4.set_xticklabels(label3)
 ax1_4.grid(True)    # 显示网格
 plt.legend(loc='upper left')
