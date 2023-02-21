@@ -29,7 +29,6 @@ class Sender(object):
             # properties将消息设置为持久化
             self.channel.basic_publish(exchange='', routing_key='hello', body=self.message, properties=pika.BasicProperties(delivery_mode=2,))
             logger.info('>>>>>>>>>>>>>>> send message success')
-            len(logger)
         except Exception as e:
             logger.info('>>>>>>>>>>>>>>> send message fail, the reason is %s', e.message, exc_info=True)
 
