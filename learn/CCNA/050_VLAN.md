@@ -3,9 +3,9 @@
 
 ### VLAN基础
 
-VLAN是交换机组网才有的概念
+VLAN 是交换机组网才有的概念
 
-一个VLAN = 一个广播域 = 一个逻辑子网网段
+一个 VLAN = 一个广播域 = 一个逻辑子网网段
 
 * VLAN优点
 
@@ -20,9 +20,9 @@ VLAN是交换机组网才有的概念
 
 VLAN帧：目的MAC地址，源MAC地址，VLAN标记，类型，数据，冗余校验值
 
-VLAN标记的的最后 12比特 称为 VLAN标识符VID，标识以太网帧属于哪一个VLAN，取值范围 0 - (2^12 - 1)，0 和 4095 不用来表示VLAN，有效取值范围 0 - 4094
+VLAN 标记的**最后 12 比特**称为 VLAN标识符VID，标识以太网帧属于哪一个VLAN，取值范围 0 - (2^12 - 1)，0 和 4095 不用来表示 VLAN，有效取值范围 0 - 4094
 
-802.1 Q帧 是由交换机处理，当交换机收到普通以太网帧，会将其插入 4字节 的VLAN标记转变为 802.1 Q帧，简称"打标签"
+802.1 Q 帧是由交换机处理，当交换机收到普通以太网帧，会将其插入**4 字节的 VLAN 标记**转变为 802.1 Q帧，简称"打标签"
 
 * Trunk口转发规则
 
@@ -43,18 +43,22 @@ VLAN标记的的最后 12比特 称为 VLAN标识符VID，标识以太网帧属�
 
 * 三层交换机（具有数据交换模块和路由模块的交换机）
 
-```sh
+```bash
 # 交换机开启路由功能
 ip routing
-# 创建VLAN
+
+# 创建 VLAN
 vlan 10
-# 为VLAN添加IP地址
+
+# 为 VLAN 添加IP地址
 interface vlan 10
 ip address 192.168.1.1 255.255.255.0
-# 给连接PC一段口设置为access口
+
+# 给连接 PC 一端口设置为 access 口
 interface f0/2
 switchport mode access
-# 给出口设置为trunk口
+
+# 给出口设置为 trunk 口
 interface f0/1
 switchport trunk encapsulation dot1q
 switchport mode trunk

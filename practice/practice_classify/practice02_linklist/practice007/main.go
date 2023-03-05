@@ -68,6 +68,7 @@ func solution(head *ListNode) *ListNode {
 				start = start.Next
 			}
 
+			// 这里是入口点的位置
 			return meet
 		}
 	}

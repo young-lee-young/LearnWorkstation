@@ -1,12 +1,23 @@
 # TODO 
 
+强制缓存和协商缓存
+
+Redis 底层数据结构和日志
+
 1. 证书加密 和 TLS 握手
 2. git merge 和 git rebase
 
 
+openstack 架构
+
+python 复习
+
+openvswitch 基础
+
+
 ### 单位换算
 
-```
+```text
 带宽换算单位K：1000，M：1000 * 1000，G：1000 * 1000 * 1000
 
 内存、流量换算单位K(Kilo)：1024，M(Mega)：1024 * 1024，G：1024 * 1024 * 1024

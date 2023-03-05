@@ -9,23 +9,22 @@ UDP：不可靠传输
 
 ### 网络层协议
 
-* IP协议（选择最佳路径的协议，包括RIP、OSPF、EIGRP、BGP）
+* IP 协议（选择最佳路径的协议，包括RIP、OSPF、EIGRP、BGP）
 
-* ICMP协议（测试网络状态的协议）
 
-ping命令，ttl每通过一个路由器减1
+* ICMP 协议（测试网络状态的协议）
 
-* IGMP（INTERNET组播协议）
+ping 命令，TTL 每通过一个路由器减 1
 
-* ARP协议（将计算机的IP地址解析成MAC地址）
 
-```sh
+* IGMP 协议（INTERNET组播协议）
+
+
+* ARP 协议（将计算机的IP地址解析成MAC地址）
+
+```bash
 arp -a
 ```
 
 
-* RARP协议（反向地址转换协议）
-
-
-### 应用层协议
-
+* RARP 协议（反向地址转换协议）

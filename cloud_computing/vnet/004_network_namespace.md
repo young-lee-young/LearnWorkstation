@@ -4,16 +4,16 @@
 ### network namesapce操作
 
 ```bash
-# 添加netns
+# 添加 netns
 ip netns add $netns_name
 
-# 查看netns
+# 查看 netns
 ip netns list
 
-# 删除netns
+# 删除 netns
 ip netns delete $netns_name
 
-# 在netns上执行命令
+# 在 netns 上执行命令
 ip netns exec $netns_name 命令
 ```
 

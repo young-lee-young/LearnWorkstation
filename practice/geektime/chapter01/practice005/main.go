@@ -4,7 +4,7 @@
  * @File:    main.go
  * @Content:
 
-	K个一组反转链表 LeetCode No25
+	K个一组反转链表 LeetCode No025
 
  */
 package main

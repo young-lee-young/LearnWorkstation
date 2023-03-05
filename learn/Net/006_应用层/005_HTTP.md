@@ -40,3 +40,34 @@ HTTP 协议自身不对请求和响应之间的通信状态进行保存
 4. 服务端响应数据
 5. 浏览器收到数据后渲染页面
 6. TCP 四次挥手，断开连接
+
+
+### HTTP 报文
+
+* 请求报文
+
+请求行：请求方法、URL、HTTP协议及版本
+请求头：key：value 回车符 换行符（\r\n）
+       可以有很多组 key-value 
+回车符 换行符（\r\n）
+请求体
+
+
+* 响应状态码
+
+200：OK
+301：永久重定向
+302：暂时重定向
+400：Bad Reqeust
+401：Unauthorized
+403：Forbidden
+404：Not Found
+405：Method Not Allowed
+500：Internal Server Error
+501：Not Implemented
+502：Bad Gateway
+
+
+### 问题
+
+* 如何区分请求头和请求体

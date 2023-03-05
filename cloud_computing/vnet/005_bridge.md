@@ -1,8 +1,7 @@
 # 虚拟网桥
 
 
-
-### iproute2包操作网桥
+### iproute2 包操作网桥
 
 ```bash
 # 创建网桥
@@ -22,8 +21,7 @@ bridge link
 ```
 
 
-
-### bridge-utils包操作网桥
+### bridge-utils 包操作网桥
 
 ```bash
 # 安装操作网桥包

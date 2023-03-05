@@ -106,13 +106,13 @@ Fn 和 Fn' 为加密算法
 
 TLS 有四次握手，四次握手在 TCP 三次握手之后进行
 
-C -> S：支持的 TLS 版本、加密套件列表、client_random
+C -> S，client hello：TLS 版本、加密套件列表、client_random
 
-S -> C：确定加密算法、server_random、证书
+S -> C，server hello：TLS 版本、确认加密算法、server_random、数字证书
 
-C -> S：验证证书后，公钥加密的 pre_random
+C -> S：验证证书后，取出公钥，使用公钥加密 pre-master key
 
-S -> C：
+S、C：根据确定加密算法，混合 client_random、server_random、pre-master key 值，计算最后密钥
 
 
 ### 问题
