@@ -11,7 +11,7 @@ kube-scheduler：调度
 
 kube-controller-manager：容器编排（编排：处理容器之间的各种关系）
 
-整个集群的持久化数据，保存在 etcd 中
+etcd：整个集群的持久化数据，保存在 etcd 中
 
 
 * node（计算节点）

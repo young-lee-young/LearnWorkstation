@@ -42,33 +42,29 @@ func partition(nums []int, left int, right int) int {
 	/**
 	假如数组本来有序，选择第一个值为基准，则快速排序退化为O(n^2)，解决办法为随机选择基准
 	*/
-	// 取数组第一个元素
-	temp := nums[left]
 	// 随机选择
 	randomIndex := random.GenerateIntFromMinMax(left, right)
-	// 交换第一个值和随机选择的值
-	nums[left] = nums[randomIndex]
-	nums[randomIndex] = temp
 
-	// 数组第一个元素
-	first := nums[left]
+	// 将选中的值放在第一位
+	nums[left], nums[randomIndex] = nums[randomIndex], nums[left]
 
-	// 第一个元素应该在的位置的索引
-	partition := left
+	// 选中的值
+	pivotNum := nums[left]
+
+	// 选中值应该在的索引位置
+	pivotIndex := left
+
 	// 循环数组，[left ... partition] < first，nums[partition + 1, i) > first
 	for i := left + 1; i <= right; i++ {
 		// 如果当前值大于基准值，还在原来的位置，如果小于基准值，将当前值和partition后一个位置的值交换，并将partition前移一位
-		if nums[i] < first {
-			temp := nums[i]
-			nums[i] = nums[partition+1]
-			nums[partition+1] = temp
-			partition++
+		if nums[i] < pivotNum {
+			nums[i], nums[pivotIndex + 1] = nums[pivotIndex + 1], nums[i]
+			pivotIndex++
 		}
 	}
 
-	// 交换第一个值和partition位置的值
-	nums[left] = nums[partition]
-	nums[partition] = first
+	// 将选中的值放在正确的位置上
+	nums[left], nums[pivotIndex] = nums[pivotIndex], nums[left]
 
-	return partition
+	return pivotIndex
 }

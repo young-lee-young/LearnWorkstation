@@ -3,20 +3,22 @@
 
 ### Bash
 
-* 查看安装的bash
+* 查看安装的 bash
 
-```sh
+```bash
 cat /etc/shells
 ```
 
-* 查看当前bash
 
-```sh
+* 查看当前 bash
+
+```bash
 ps -p $$
 ```
 
-* 修改bash
 
-```sh
+* 修改 bash
+
+```bash
 chsh -s /bin/bash
 ```

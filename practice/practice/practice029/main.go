@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-x平方根 LeetCode No69
+x平方根 LeetCode No069
 
 标签：二分搜索
 */

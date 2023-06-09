@@ -1,18 +1,30 @@
-# TODO 
+### TODO 
 
 强制缓存和协商缓存
 
 Redis 底层数据结构和日志
 
-1. 证书加密 和 TLS 握手
+
 2. git merge 和 git rebase
 
+快排
 
-openstack 架构
+topK
 
-python 复习
+数组中出现次数超过一半的数字
 
-openvswitch 基础
+内存管理
+
+文件管理
+
+
+### 学习计划
+
+1. 慕课网 Moody 老师 RabbitMQ
+2. MIT 6.824 课程
+3. Go 1.18 泛型
+4. 代码随想录刷题
+5. vim 学习
 
 
 ### 单位换算
@@ -56,12 +68,12 @@ openvswitch 基础
 6. pipeline
 
 
-二分搜索树前、中、后序遍历非递归实现
-
-
 ### 数据结构复杂度分析
 
+二分搜索树前、中、后序遍历非递归实现
+
 渐近时间复杂度（n 趋近于正无穷时时间复杂度）
+
 复杂度震荡
 
 
@@ -82,3 +94,44 @@ x11vnc -storepasswd
 # 启动
 x11vnc -forever -shared -rfbauth ~/.vnc/passwd
 ```
+
+
+AI 图片生成
+
+Stable Diffusion
+
+Stable Diffusion 1：使用 OpenAI 的 CLIP
+
+Stable Diffusion 2：使用 OpenCLIP（CLIP 开源版本）
+
+
+三部分组成：变分自编码器（VAE）、U-Net、文本编码器
+
+VAE：负责图像处理
+U-Net：预测噪音
+文本编码器：处理文本
+
+
+* 图片处理分成 2 部分
+
+编码过程：提供图片素材，进行训练
+
+解码过程：文生图、图生图
+
+
+* 模型
+
+基础模型：
+
+微调模型：
+
+
+Checkpoint：大模型
+
+Dreambooth：大模型，预调模型，深度学习模型，微调现有文生图模型
+
+Lora：产出单个特征的图像，和大模型一起使用
+
+Embedding：本文反转，几张图片 -> 关键词，和大模型一起使用
+
+Hypernetwork：用的少

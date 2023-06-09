@@ -9,7 +9,7 @@ import "fmt"
 */
 func main() {
 	nums := []int{3, 0, 1}
-	ret := solution(nums)
+	ret := solution2(nums)
 	fmt.Println("ret:", ret)
 }
 
@@ -27,4 +27,22 @@ func solution(nums []int) int {
 	}
 
 	return -1
+}
+
+/**
+[0, n] 的和 - 实际的和
+ */
+func solution2(nums []int) int {
+	sum := 0
+
+	real := 0
+
+	for i := 0; i < len(nums); i ++ {
+		real += nums[i]
+		sum += i
+	}
+
+	sum += len(nums)
+
+	return sum - real
 }

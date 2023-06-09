@@ -2,10 +2,18 @@
 
 ### 基本命令
 
-debug 模式：编译快，运行慢，没有进行编译优化
-release 模式：编译慢，运行快
+* 创建新项目
+
+```bash
+cargo new $project_name
+```
+
 
 * 运行
+
+debug 模式：编译快，运行慢，没有进行编译优化
+
+release 模式：编译慢，运行快
 
 ```bash
 # 默认是 debug 模式
@@ -14,6 +22,7 @@ cargo run
 cargo run --release
 ```
 
+
 * 编译
 
 ```bash
@@ -21,6 +30,7 @@ cargo build
 
 cargo build --release
 ```
+
 
 * 检验
 

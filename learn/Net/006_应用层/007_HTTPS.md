@@ -119,6 +119,6 @@ S、C：根据确定加密算法，混合 client_random、server_random、pre-ma
 
 * 为什么看到的都是 SSL 证书，不是 TLS 证书
 
-[Why Aren't We All Using TLS Certificates Then 为什么我们不使用 TLS 证书](TLS证书.png)
+![Why Aren't We All Using TLS Certificates Then 为什么我们不使用 TLS 证书](TLS证书.png)
 
 翻译：使用什么样的协议取决于你的服务，虽然你看到的是 SSL 证书，但实际上使用的可能是 TLS 协议
