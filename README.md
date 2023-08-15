@@ -4,8 +4,7 @@
 
 Redis 底层数据结构和日志
 
-
-2. git merge 和 git rebase
+git merge 和 git rebase
 
 快排
 
@@ -16,6 +15,12 @@ topK
 内存管理
 
 文件管理
+
+扇入，扇出，pipeline这些
+
+还有 ratelimit 和 Context 包，尤其是 Context 包几乎必问
+
+OpenSpace：https://github.com/suqcnn/osp
 
 
 ### 学习计划
@@ -96,42 +101,12 @@ x11vnc -forever -shared -rfbauth ~/.vnc/passwd
 ```
 
 
-AI 图片生成
+### Kubernetes
 
-Stable Diffusion
+1. 存储 envoy 的配置到 ConfigMap
 
-Stable Diffusion 1：使用 OpenAI 的 CLIP
+2. 存储 envoy-initializer 的配置到 ConfigMap
 
-Stable Diffusion 2：使用 OpenCLIP（CLIP 开源版本）
+3. 编写 Initializer，作为 Pod 部署到 Kubernetes
 
-
-三部分组成：变分自编码器（VAE）、U-Net、文本编码器
-
-VAE：负责图像处理
-U-Net：预测噪音
-文本编码器：处理文本
-
-
-* 图片处理分成 2 部分
-
-编码过程：提供图片素材，进行训练
-
-解码过程：文生图、图生图
-
-
-* 模型
-
-基础模型：
-
-微调模型：
-
-
-Checkpoint：大模型
-
-Dreambooth：大模型，预调模型，深度学习模型，微调现有文生图模型
-
-Lora：产出单个特征的图像，和大模型一起使用
-
-Embedding：本文反转，几张图片 -> 关键词，和大模型一起使用
-
-Hypernetwork：用的少
+4. 创建 InitializerConfiguration
