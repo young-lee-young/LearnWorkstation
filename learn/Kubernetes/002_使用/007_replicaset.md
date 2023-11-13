@@ -3,21 +3,23 @@
 
 ### 基础命令
 
-* 查看
+* 查看所有 replicaset
 
 ```bash
-kubectl get rs
+kubectl get replicasets
 ```
+
 
 * 查看详情
 
 ```bash
-kubectl describe rs $rs_name
+kubectl describe replicaset $replicaset_name
 ```
+
 
 * 删除
 
 ```bash
 # 会删除所管理的 pod
-kubectl delete rs $rs_name
+kubectl delete replicaset $replicaset_name
 ```

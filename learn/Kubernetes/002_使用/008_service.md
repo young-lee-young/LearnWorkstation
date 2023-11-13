@@ -20,14 +20,14 @@ kubectl get service $service_name
 * 查看 service 详情
 
 ```bash
-kubectl describe $service_name
+kubectl describe service $service_name
 ```
 
 
 * 删除 service
 
 ```bash
-kubectl delete $service_name
+kubectl delete service $service_name
 ```
 
 

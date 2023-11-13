@@ -12,7 +12,7 @@ kubectl api-versions
 ```
 
 
-* 查看日志：-v=0-9
+* 查看日志：日志级别 -v=0-9
 
 ```bash
 kubectl get pods -v=9
@@ -22,5 +22,5 @@ kubectl get pods -v=9
 * 监听模式：-w
 
 ```bash
-kubectl get pos $pod_name -w
+kubectl get pod $pod_name -w
 ```

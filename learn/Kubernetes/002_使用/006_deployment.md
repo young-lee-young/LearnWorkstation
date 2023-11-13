@@ -16,7 +16,7 @@ Deployment 可以理解为由两部分组成，其中的 template 其实就是�
 kubectl apply -f $yaml_file_path
 ```
 
-* 查看所有 deployment
+* 查看所有的 deployment
 
 ```bash
 kubectl get deployments

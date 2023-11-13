@@ -43,6 +43,6 @@ brew deps --tree --installed
 # 不被任何包依赖的包
 brew leaves
 
-# 依赖依赖某个包的所有包
+# 依赖某个包的所有包
 brew uses $package --installed
 ```

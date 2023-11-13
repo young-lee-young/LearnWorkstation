@@ -3,7 +3,7 @@
 
 ### 基础
 
-* 作用:虚拟集群
+* 作用：虚拟集群
 
 
 ### 基础命令
@@ -13,11 +13,11 @@
 ```bash
 kubectl create namespace $namespace_name
 
-kubectl create -f $yaml_file_path
+kubectl create -f $yaml_file
 ```
 
 
-* 查看所有 namespace
+* 查看所有的 namespace
 
 ```bash
 kubectl get namespaces

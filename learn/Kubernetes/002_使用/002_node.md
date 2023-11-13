@@ -3,17 +3,19 @@
 
 ### 基础命令
 
-* 查看所有 node
+* 查看所有的 node
 
 ```bash
 kubectl get nodes
 ```
 
-* 查看node
+
+* 查看 node
 
 ```bash
 kubectl get node $node_name
 ```
+
 
 * 查看 node 详情
 
