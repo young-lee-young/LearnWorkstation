@@ -1,7 +1,7 @@
 /**
-LeetCode No019 删除链表倒数第k个节点
+	LeetCode No019 删除链表倒数第k个节点
 
-思路：快慢指针，快指针先走k步
+	思路：快慢指针，快指针先走k步
 */
 package main
 

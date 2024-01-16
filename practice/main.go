@@ -1,42 +1,21 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
+	n := 10
 
-	fmt.Println(191 % 10)
+	solution(n)
 }
 
-/**
-递归
-*/
-func recursion(num int) int {
-	fmt.Println(num)
-	result := recursion(num + 1)
-	fmt.Println(result)
-	return result
-}
+func solution(n int) {
+	rowTop := 0
 
-/**
-字符串转字符串列表
-*/
-func strToSlice(str string) []string {
-	strSlice := make([]string, 0)
-	for _, value := range str {
-		strSlice = append(strSlice, string(value))
+	rowBottom := n
+
+	columnLeft := 0
+
+	columnRight := n
+
+	for i := 1; i <= n*n; i++ {
+
 	}
-	return strSlice
-}
-
-/**
-字符串转字符列表
-*/
-func strToRuneSlice(str string) []rune {
-	runeSlice := make([]rune, 0)
-	for _, item := range str {
-		runeSlice = append(runeSlice, item)
-	}
-	return runeSlice
 }

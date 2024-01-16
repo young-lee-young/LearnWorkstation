@@ -1,7 +1,7 @@
 # MacOS Docker 研究
 
 
-* Mac Docker 宿主机
+### 旧版 Docker
 
 ```bash
 # 进入虚拟机
@@ -18,6 +18,14 @@ screen -r
 ```
 
 
-### Docker for mac 网络
+### Apple Silicon Docker
+
+```bash
+# 进入虚拟机
+docker run -it --rm --privileged --pid=host justincormack/nsenter1
+```
+
+
+### Docker for Mac 网络
 
 com.docker.hyperkit 进程来启动虚拟机

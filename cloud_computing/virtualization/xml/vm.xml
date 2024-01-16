@@ -9,24 +9,27 @@
     <vcpu placement='static'>4</vcpu>
     <!-- 操作系统 -->
     <os>
-        <!-- arch指定虚拟机CPU架构，machine指定机器类型，hvm表明该OS被设计为直接运行在裸金属上面，需要全虚拟化 -->
-        <type arch='x86_64' machine='pc'>hvm</type>
+        <!-- arch 指定 CPU 架构，machine 指定机器类型，hvm 表明该OS被设计为直接运行在裸金属上面，需要全虚拟化 -->
+        <type arch='x86_64' machine='pc'>hvm</type> <!-- 查看 machine 类型：qemu-system-x86_64 -M ? -->
         <!-- 可以为fd、hd、cdrom、network -->
-        <boot dev='hd'></boot>
-        <boot dev='cdrom'></boot>
-        <bootmenu enable='yes'></bootmenu>
+        <boot dev='hd'></boot> <!-- 第一个启动项：从硬盘启动 -->
+        <boot dev='cdrom'></boot> <!-- 第二个启动项：从光盘启动 -->
+        <bootmenu enable='yes'></bootmenu> <!-- 可以进入启动菜单 -->
     </os>
     <features>
-        <acpi></acpi>
-        <apic></apic>
-        <pae></pae>
+        <acpi></acpi> <!-- 高级配置与电源接口 -->
+        <apic></apic> <!-- 高级可编程中断控制器 -->
+        <pae></pae> <!-- 物理地址扩展 -->
     </features>
+    <!-- 时钟设置 -->
     <clock offset='utc'>
         <timer name='pit' tickpolicy='delay'></timer>
     </clock>
+    <!-- 突发事件动作 -->
     <on_poweroff>destroy</on_poweroff>
     <on_reboot>restart</on_reboot>
     <on_crash>restart</on_crash>
+    <!-- libvirt 透传宿主机所有的 CPU 指令集给虚拟机 -->
     <cpu mode='host-passthrough'></cpu>
     <devices>
         <serial type='pty'>
@@ -37,7 +40,7 @@
         </console>
         <input type='tablet' bus='usb'/>
         <input type='mouse' bus='ps2'/>
-        <graphics type='vnc' port='-1' autoport='yes'></graphics>
+        <graphics type='vnc' port='5910' autoport='no' listen='0.0.0.0'></graphics>
         <video>
             <model type='cirrus' vram='9216' heads='1'></model>
         </video>
@@ -46,15 +49,15 @@
             <driver name='qemu' type='qcow2' cache='writethrough' io='native'/>
             <source file='/root/lee/vm.img'/>
             <target dev='vda' bus='virtio'/>
-            <serial>UCLOUD_DISK_VDA</serial>
         </disk>
         <disk type='file' device='cdrom'>
-            <source file='/root/cjey/CentOS-7-x86_64-Minimal-1810.iso'/>
+            <source file='/home/lee/CentOS-7-x86_64-Minimal-1810.iso'/>
             <target dev='hdd' bus='ide'/>
             <readonly/>
         </disk>
+        <!-- 网络配置 -->
         <interface type="network">
-            <source network="net.demo"/>
+            <source network="lee"/>
             <mac address='00:00:00:00:00:11'/>
         </interface>
     </devices>

@@ -6,7 +6,7 @@
 
 	LeetCode No027 移除元素
 
-	标签：双指针
+	标签：快慢指针
  */
 package main
 
@@ -27,13 +27,13 @@ func solution(nums []int, val int) int {
 		return 0
 	}
 
-	i := 0
-	for j := 0; j < len(nums); j ++ {
-		if nums[j] != val {
-			nums[i] = nums[j]
-			i ++
+	slow := 0
+	for fast := 0; fast < len(nums); fast++ {
+		if nums[fast] != val {
+			nums[slow] = nums[fast]
+			slow++
 		}
 	}
 
-	return i
+	return slow
 }

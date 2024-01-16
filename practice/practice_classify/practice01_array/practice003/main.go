@@ -1,5 +1,5 @@
 /**
- * @Time:    2022/11/28 22:37 
+ * @Time:    2022/11/28 22:37
  * @Author:  leeyoung
  * @File:    main.go
  * @Content:
@@ -13,7 +13,7 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1}
+	nums := []int{-4, -1, 0, 3, 10}
 
 	ret := solution(nums)
 
