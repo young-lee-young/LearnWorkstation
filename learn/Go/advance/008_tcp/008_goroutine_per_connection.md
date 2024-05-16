@@ -4,8 +4,8 @@
 package main
 
 import (
-	"net"
 	"fmt"
+	"net"
 )
 
 func handleConnection(conn net.Conn) {
