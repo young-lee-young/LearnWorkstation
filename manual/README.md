@@ -1,0 +1,2 @@
+
+- [ComfyUI](/manual/ComfyUI)

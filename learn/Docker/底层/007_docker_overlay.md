@@ -25,9 +25,10 @@ ls -alh diff
 # 查看 link 文件内容
 cat link
 # 输出：S2AL7OU6U4QILWQC3VX5YETBSY
+# 这些软链接的文件是在 /var/lib/docker/overlay2/l 目录下
 
 # 查看实际目录，可以看到是一个软链接，链接到 diff 目录
-# 使用软连接目的：避免 mount 命令参数长度限制
+# 使用软连接目的：避免 mount 命令参数长度限制，查看最大限制的命令 getconf ARG_MAX
 ls -alh ../l/S2AL7OU6U4QILWQC3VX5YETBSY
 # 输出：lrwxrwxrwx 1 root root 72 Mar 28 07:10 ../l/S2AL7OU6U4QILWQC3VX5YETBSY -> ../85979fc2cfdc9be6b8537f3aa06804b6cf479beb6668d47f22420af890877e46/diff
 ```

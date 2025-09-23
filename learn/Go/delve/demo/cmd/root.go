@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short: "demo test",
 	Long:  "demo test long",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("hello world")
+		fmt.Println("root command")
 	},
 }
 

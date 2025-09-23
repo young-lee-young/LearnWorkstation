@@ -24,3 +24,10 @@ kubectl get pods -v=9
 ```bash
 kubectl get pod $pod_name -w
 ```
+
+
+* 查看解释
+
+```bash
+kubectl explain $resource
+```

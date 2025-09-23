@@ -64,3 +64,9 @@ mount -t overlay overlay -o lowerdir=A:B,upperdir=C,workdir=work /home/lee/merge
 
 1. upper > lower
 2. : 前面 > : 后面
+
+
+### 文件操作
+
+1. 在修改只读层文件时，会在读写层生成一个新文件，修改文件内容（Copy on Write）
+2. 在删除只读层文件时，会在读写层生成一个对应文件的 writeout 文件，来屏蔽底层文件

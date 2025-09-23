@@ -6,10 +6,20 @@
 
 * 下载
 
-command + option + L
+```bash
+Command + Option + L
+```
 
 
 * 地址栏
 
-command + L 
+```bash
+Command + L 
+```
 
+
+* 复制模式
+
+```bash
+# 在 visual model 下，移动 cursor，复制内容
+```

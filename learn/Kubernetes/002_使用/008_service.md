@@ -36,3 +36,8 @@ kubectl delete service $service_name
 ````bash
 kubectl get endpoints $service_name
 ````
+
+
+### Headless Service
+
+$pod-name.$service-name.$namespace.svc.cluster.local 会解析到对应 pod 的 IP

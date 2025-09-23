@@ -1,6 +1,8 @@
 package main
 
-import "demo/cmd"
+import (
+	"demo/cmd"
+)
 
 func main() {
 	cmd.Execute()

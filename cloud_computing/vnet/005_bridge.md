@@ -13,7 +13,7 @@ ip link set br0 up
 # 查看网桥
 ip link list type bridge
 
-# 将veth pair设备加入到网桥中
+# 将 veth pair 设备加入到网桥中
 ip link set dev veth0 master br0
 
 # 查看网桥连接网络设备
