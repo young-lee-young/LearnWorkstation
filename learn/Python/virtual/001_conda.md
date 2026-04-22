@@ -1,10 +1,17 @@
-### conda 基本操作
+### Python 版本
+
+```bash
+conda search python
+```
+
+
+### conda 环境
 
 * 创建虚拟环境
 
 ```bash
-# conda create -y -n $env_name python=$version
-conda create -y -n lee python=3.10
+# conda create -n $env_name python=$version
+conda create -n lee python=3.13.12
 ```
 
 

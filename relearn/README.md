@@ -4,13 +4,11 @@
 
 发现工作了 3 年时间，自己的水平确实没有明显的提升，反而计算机基础知识都忘的差不多了，心血来潮，准备把计算机基础知识补一下
 
-
 ### 箴言
 
 * 万丈高楼平地起 勿在浮沙筑高台
 
 * 纸上得来终觉浅 绝知此事要躬行
-
 
 ### 计划列表
 
@@ -52,6 +50,7 @@
 
 [慕课网 Moody 老师《高并发、高性能、高可用 MySQL 实战》课程](https://coding.imooc.com/class/515.html)
 [极客时间林晓斌老师《MySQL 实战 45 讲》](https://time.geekbang.org/column/intro/100020801)
+[Andy CMU 15-445 授课](https://www.bilibili.com/video/BV169QhYZEhn)
 [Moody 老师 CMU 15-445 讲解]()
 
 😩 Redis

@@ -1,7 +1,12 @@
-### Navicat快捷键使用
+### Navicat 快捷键使用
 
-Home到行首，然后Shift + End选中一行
-End到行尾，然后Shift + Home选中一行
+* 选中一行
 
-Ctrl + r    # 运行第一行
-Ctrl + Shift + r    #   运行选中行
+通过 Ctrl + A 到行首，然后按 Cmd + Ctrl + Shift + L 选中当前行
+
+通过 Ctrl + E 到行尾，然后按 Cmd + Ctrl + Shift + H 选中当前行
+
+
+* 运行
+
+Cmd + R

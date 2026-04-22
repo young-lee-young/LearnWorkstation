@@ -2,6 +2,6 @@
 - [📚 学习笔记](/learn/)
 - [💻 重学计划](/relearn/)
 - [🔄 算法练习](/practice/)
-- [☁️ 云计算](/cloud_computing/)
+- [☁️ 云计算](/virtualization/)
 - [📖 手册](/manual/)
 - [📝 其他](/others/) 

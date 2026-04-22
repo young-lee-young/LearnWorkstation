@@ -1,2 +1,1 @@
-
 - [ComfyUI](/manual/ComfyUI)
